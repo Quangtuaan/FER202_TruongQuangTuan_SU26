@@ -1,0 +1,201 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #f8fafc;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #334155;
+}
+
+table {
+  font-size: 14px;
+}
+
+/* App Shell & Layout */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+.app-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
+
+.brand-logo {
+  width: 48px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.brand-title {
+  font-weight: 600;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+}
+
+.dashboard-main {
+  flex-grow: 1;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.app-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  padding: 1.5rem 0;
+  margin-top: auto;
+}
+
+/* Login Page */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8fafc;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background-color: #ffffff;
+}
+
+.login-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.login-logo {
+  width: 64px;
+  height: 48px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+/* Cards & Forms */
+.feedback-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  background-color: #ffffff;
+  height: 100%;
+}
+
+.feedback-card .card-body {
+  padding: 1.5rem;
+}
+
+.feedback-form .form-label {
+  font-weight: 500;
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+.feedback-form .form-control,
+.feedback-form .form-select {
+  border-color: #cbd5e1;
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.95rem;
+}
+
+.feedback-form .form-control:focus,
+.feedback-form .form-select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+}
+
+.feedback-form button {
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+}
+
+/* Table */
+.feedback-table th {
+  background-color: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  padding: 1rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.feedback-table td {
+  padding: 1rem;
+  vertical-align: middle;
+  color: #1e293b;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* Badges & Buttons */
+.rating-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eff6ff;
+  color: #2563eb;
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+.action-btn {
+  border-radius: 6px;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.action-btn.btn-warning {
+  background-color: #ffc107;
+  color: #212529;
+  border: none;
+}
+
+.action-btn.btn-warning:hover {
+  background-color: #e0a800;
+  color: #212529;
+}
+
+.action-btn.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+}
+
+.action-btn.btn-danger:hover {
+  background-color: #c82333;
+  color: #fff;
+}
+
+.login-btn {
+  border-radius: 8px;
+  padding: 0.6rem;
+  font-weight: 500;
+  background-color: #2563eb;
+  border: none;
+}
+
+.login-btn:hover {
+  background-color: #1d4ed8;
+}
