@@ -1,0 +1,37 @@
+.car-search-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.car-search-bar-label {
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.car-search-bar-input {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  outline: none;
+  padding: 0 16px;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.car-search-bar-input::placeholder {
+  color: rgba(245, 245, 245, 0.42);
+}
+
+.car-search-bar-input:focus {
+  border-color: var(--color-gold);
+  background: rgba(255, 255, 255, 0.07);
+}

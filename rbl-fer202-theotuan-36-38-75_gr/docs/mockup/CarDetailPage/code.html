@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ATELIER | FERRARI SF90 STRADALE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;700;800&amp;family=Space+Grotesk:wght@500&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#e5e2e1",
+                    "outline": "#8e9192",
+                    "surface": "#141313",
+                    "on-surface": "#e5e2e1",
+                    "surface-variant": "#353434",
+                    "on-error": "#690005",
+                    "error-container": "#93000a",
+                    "inverse-primary": "#5f5e5e",
+                    "tertiary-fixed-dim": "#c6c6c6",
+                    "surface-bright": "#3a3939",
+                    "on-surface-variant": "#c4c7c7",
+                    "tertiary-container": "#040505",
+                    "surface-container-high": "#2b2a2a",
+                    "surface-container-highest": "#353434",
+                    "error": "#ffb4ab",
+                    "surface-tint": "#c9c6c5",
+                    "background": "#141313",
+                    "on-tertiary-container": "#767777",
+                    "inverse-surface": "#e5e2e1",
+                    "on-tertiary": "#2f3131",
+                    "on-background": "#e5e2e1",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "surface-container-low": "#1c1b1b",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "surface-dim": "#141313",
+                    "secondary": "#c8c6c5",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "inverse-on-surface": "#313030",
+                    "surface-container": "#201f1f",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-primary-fixed-variant": "#474646",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-fixed": "#e3e2e2",
+                    "on-primary": "#313030",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "primary": "#c9c6c5",
+                    "secondary-container": "#4a4949",
+                    "on-primary-container": "#797777",
+                    "on-secondary": "#313030",
+                    "outline-variant": "#444748",
+                    "tertiary": "#c6c6c6",
+                    "on-tertiary-fixed-variant": "#464747",
+                    "on-secondary-container": "#bab8b7",
+                    "primary-fixed": "#e5e2e1",
+                    "primary-container": "#050505",
+                    "on-secondary-fixed-variant": "#474646",
+                    "gold": "#D4AF37",
+                    "silver": "#C0C0C0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Anybody"],
+                    "label-md": ["Space Grotesk"],
+                    "display-lg": ["Anybody"],
+                    "body-lg": ["Manrope"],
+                    "headline-lg-mobile": ["Anybody"],
+                    "body-md": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "0.03em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "0.05em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "0.03em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-surface {
+            background: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid transparent;
+            border-image: linear-gradient(to bottom right, rgba(255,255,255,0.1), rgba(255,255,255,0.02)) 1;
+        }
+        .spec-divider {
+            border-color: rgba(192, 192, 192, 0.1);
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(201, 198, 197, 0.3);
+        }
+        .scrolling-text {
+            white-space: nowrap;
+            animation: scroll 40s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-gold selection:text-surface">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-white/10">
+<div class="flex justify-between items-center px-margin-desktop py-6 w-full max-w-container-max mx-auto">
+<a class="font-display-lg text-[32px] md:text-headline-lg tracking-tighter text-primary active:scale-95 transition-transform" href="#">ATELIER</a>
+<div class="hidden md:flex gap-10">
+<a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Home</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-primary border-b border-primary pb-1 transition-colors duration-300" href="#">Cars</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Brands</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">search</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">account_circle</span>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section: Identity & Summary -->
+<section class="px-margin-desktop py-12 max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-end">
+<div class="md:col-span-8">
+<p class="font-label-md text-label-md text-gold uppercase tracking-[0.3em] mb-4">THE HYBRID BENCHMARK</p>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg leading-tight mb-2">SF90 STRADALE</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Beyond any boundary. The most powerful road-going Ferrari ever produced, combining a 4.0L V8 twin-turbo with three electric motors.</p>
+</div>
+<div class="md:col-span-4 flex justify-end gap-4 pb-2">
+<button class="bg-gold text-surface px-8 py-4 font-label-md text-label-md uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all">Reserve Now</button>
+<button class="border border-white/20 px-8 py-4 font-label-md text-label-md uppercase tracking-widest hover:bg-white/5 active:scale-95 transition-all glass-surface">Spec Sheet</button>
+</div>
+</section>
+<!-- 360 Degree Viewer Mockup -->
+<section class="relative w-full h-[614px] md:h-[819px] bg-surface-container-lowest overflow-hidden flex flex-col items-center justify-center">
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+
+</div>
+<div class="relative w-full max-w-6xl aspect-video px-4 group">
+<!-- Rotate UI -->
+<div class="absolute inset-0 flex items-center justify-between px-8 z-10 pointer-events-none">
+<button class="p-4 glass-surface rounded-full pointer-events-auto opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-3xl">chevron_left</span>
+</button>
+<button class="p-4 glass-surface rounded-full pointer-events-auto opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-3xl">chevron_right</span>
+</button>
+</div>
+<div class="w-full h-full flex items-center justify-center">
+<img class="w-full h-full object-contain filter drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)]" data-alt="A sleek, side-profile studio shot of a Rosso Corsa Ferrari SF90 Stradale in a high-end, dark midnight showroom. The car is illuminated by cinematic overhead strip lighting that creates sharp specular highlights along its carbon fiber aero channels. The floor is a polished black obsidian that reflects the car's aggressive stance. The atmosphere is quiet, luxurious, and technologically advanced, typical of a professional atelier." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQV1O8ip3SjdcC-fLBuV2RlWA6Ne9nE1-43JLPSXjUD4qMJIbDq1mshMV_i2gm9mhd223UNLuQaDzX_GVQ_huDQMb27KLz5KoH5t2tRjfoPsPl1fShHkx9BUQ-7fld8ANBMfUU2eCyGQY3UBcYBMS9KU1CBox7JF5LZe0XaWccR_ou9cCCxSFi_0cnAKAAFN22PznG9R7PTSq0cAojDxJQmsd3i1nfjgNuAxpLgVmcCOEXp_s8rQ-sYt-6WvU_uNKW1_nr38jUwn8"/>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
+<div class="flex items-center gap-2 bg-surface/50 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+<span class="material-symbols-outlined text-gold animate-spin" style="animation-duration: 5s">refresh</span>
+<span class="font-label-md text-[10px] uppercase tracking-widest">Rotate 360°</span>
+</div>
+</div>
+</div>
+<!-- Interaction Panel -->
+<div class="absolute bottom-8 w-full max-w-xl px-margin-mobile md:px-0">
+<div class="glass-surface p-2 rounded-xl flex justify-between gap-2">
+<button class="flex-1 py-3 bg-white/10 rounded-lg font-label-md text-[11px] uppercase tracking-widest text-primary">Exterior View</button>
+<button class="flex-1 py-3 hover:bg-white/5 rounded-lg font-label-md text-[11px] uppercase tracking-widest text-on-surface-variant transition-colors">Interior View</button>
+<button class="flex-1 py-3 hover:bg-white/5 rounded-lg font-label-md text-[11px] uppercase tracking-widest text-on-surface-variant transition-colors">Wheel Detail</button>
+</div>
+</div>
+</section>
+<!-- Technical Specification Grid -->
+<section class="bg-surface py-24 px-margin-desktop border-t border-white/10">
+<div class="max-w-container-max mx-auto">
+<div class="flex items-baseline gap-4 mb-16">
+<h2 class="font-headline-lg text-headline-lg uppercase italic">Technical Prowess</h2>
+<div class="h-px flex-1 bg-white/10"></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-y-12 md:gap-y-0 text-center">
+<div class="px-8 border-r border-white/10 last:border-0">
+<p class="font-label-md text-[12px] text-on-surface-variant uppercase mb-4 tracking-widest">Engine</p>
+<p class="font-headline-lg text-2xl md:text-3xl text-primary">V8 Twin-Turbo</p>
+</div>
+<div class="px-8 border-r border-white/10 last:border-0">
+<p class="font-label-md text-[12px] text-on-surface-variant uppercase mb-4 tracking-widest">Max Power</p>
+<p class="font-headline-lg text-2xl md:text-3xl text-primary">986 HP</p>
+</div>
+<div class="px-8 border-r border-white/10 last:border-0">
+<p class="font-label-md text-[12px] text-on-surface-variant uppercase mb-4 tracking-widest">Max Torque</p>
+<p class="font-headline-lg text-2xl md:text-3xl text-primary">800 Nm</p>
+</div>
+<div class="px-8 border-r border-white/10 last:border-0">
+<p class="font-label-md text-[12px] text-on-surface-variant uppercase mb-4 tracking-widest">0-100 KM/H</p>
+<p class="font-headline-lg text-2xl md:text-3xl text-primary">2.5s</p>
+</div>
+<div class="px-8 last:border-0">
+<p class="font-label-md text-[12px] text-on-surface-variant uppercase mb-4 tracking-widest">Top Speed</p>
+<p class="font-headline-lg text-2xl md:text-3xl text-primary">340 KM/H</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Gallery -->
+<section class="px-margin-desktop py-24 max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 grid-rows-2 gap-gutter h-auto md:h-[900px]">
+<!-- Large Feature -->
+<div class="md:col-span-7 md:row-span-2 relative group overflow-hidden glass-card">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="High-detail close-up of the Ferrari SF90 Stradale's carbon fiber steering wheel and digital cockpit. The instrument cluster is fully illuminated with high-contrast graphics. The leather stitching is visible in Rosso Corsa red against black Alcantara. Cinematic lighting highlights the texture of the carbon fiber paddle shifters. The overall aesthetic is ultra-modern, driver-centric, and exudes extreme performance luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDejHNLxeuTJTV8M-oChkkhWhothmkjYwlxuOPC56Jpnr9scX3sw-G_nI1OOmpBSe2oVV9pGeMA3KKE6bukfD9QKENwZ4EvLazUIRz-fWzXh_zpShfIyqj89pFQRX9cWf-tGot4Q27QsjMIRGTJRf2Zt9lGv-_sdD0GnRqT0gYG7z_43zk-GCihzEoJ3T4f3b-KxbtBmam7svhJoaIC969HQ-WNzNi2Rnzh8hyfvBFJg8_UQTVVgTEAZodoP2yp29RccpkCpMFJsqg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+<div class="absolute bottom-10 left-10">
+<p class="font-label-md text-label-md text-gold uppercase tracking-[0.2em] mb-2">Architecture</p>
+<h3 class="font-headline-lg text-2xl">Digital Cockpit</h3>
+</div>
+</div>
+<!-- Small Detail 1 -->
+<div class="md:col-span-5 md:row-span-1 relative group overflow-hidden glass-card">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Macro photography of the Ferrari SF90 Stradale's aerodynamic side profile and air intake. The smooth, sculpted aluminum body reflects a minimalist showroom environment with soft, cool-toned lighting. The iconic Ferrari Scuderia shield is sharp and clear on the wing. Deep shadows accentuate the complex curves designed for extreme downforce. Professional automotive studio photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0ksq8eKeR7a6KHBgjqs6fsshbCBGQhJwlbbLZV7chb4IVTfqqfX2ADKg2yGYEOKFcTk5JzLayaRh5p4x3CvPAe8MzbO1yHszf8bIiS3D9ah5C6x2V8h70ngo33SkE1EHWrX54HQTFwfRWbwBD5LFMte-SO1AkX_Fv8pnxCpi5XAf6-N-ar3BfRN8h_SEBodfZdTkce5fzNesu7wq24OM5HptdoQgRTknwgrJpKiO6WMFJ0SqubfyPgI94TsyirEx74P_teOKWRvM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+<h3 class="font-headline-lg text-xl">Aerodynamic Soul</h3>
+</div>
+</div>
+<!-- Small Detail 2 -->
+<div class="md:col-span-5 md:row-span-1 relative group overflow-hidden glass-card">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Extreme close-up of the hand-stitched leather racing seats in a Ferrari SF90. The pattern is complex and technical, using a mix of perforated leather and smooth hide. The lighting is moody and directional, catching the edge of the carbon fiber seat frame. The mood is intimate and focused on the tactile quality of the world's finest materials used in a high-performance supercar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFtdEx1YzS8FFpZ1G3NFttuj5ka7vbd7t8zlUfDURZCdjK6hkojbNa1yfBFaKUPeTNJBDdT0tQjMN_PCdDjkzNWtlqg5J7vyCTsSbCK0OST1o-nh5TwB4SBgQEsqKAUE51urGXfRcqFxdoplMkdyjyo7OxMNOp3jRmyvlGfa5OQwThgr-7Y88jxdA11wgUzgQrhuolSdFy3GSScSedGz9Er1eF0AUmfK574rp3xjgRPIVBxgxbnb--nGNFuhHT-TkLlEtK10PRMXk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+<h3 class="font-headline-lg text-xl">Crafted Precision</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Booking CTA -->
+<section class="relative py-32 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-surface-container-low"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gold/10 blur-[120px] rounded-full"></div>
+</div>
+<div class="relative z-10 px-margin-desktop text-center max-w-4xl mx-auto">
+<h2 class="font-display-lg text-headline-lg-mobile md:text-headline-lg mb-8 uppercase">A New Chapter of Speed</h2>
+<p class="font-body-lg text-on-surface-variant mb-12">The SF90 Stradale is waiting for its next master. Experience the raw emotion of hybrid performance at our private atelier.</p>
+<div class="flex flex-col md:flex-row justify-center gap-6">
+<button class="bg-primary text-surface px-12 py-5 font-label-md text-label-md uppercase tracking-widest hover:bg-white transition-colors">Book a Test Drive</button>
+<button class="border border-white/20 glass-surface px-12 py-5 font-label-md text-label-md uppercase tracking-widest hover:bg-white/10 transition-colors">Reserve This Car</button>
+</div>
+</div>
+</section>
+<!-- Scrolling Brand Banner -->
+<div class="w-full border-y border-white/10 py-6 overflow-hidden bg-surface-container-lowest">
+<div class="scrolling-text flex gap-24 items-center">
+<span class="font-display-lg text-4xl opacity-10 uppercase">SF90 STRADALE</span>
+<span class="font-display-lg text-4xl opacity-10 uppercase">FERRARI ATELIER</span>
+<span class="font-display-lg text-4xl opacity-10 uppercase">HYBRID POWER</span>
+<span class="font-display-lg text-4xl opacity-10 uppercase">SF90 STRADALE</span>
+<span class="font-display-lg text-4xl opacity-10 uppercase">FERRARI ATELIER</span>
+<span class="font-display-lg text-4xl opacity-10 uppercase">HYBRID POWER</span>
+<span class="font-display-lg text-4xl opacity-10 uppercase">SF90 STRADALE</span>
+<span class="font-display-lg text-4xl opacity-10 uppercase">FERRARI ATELIER</span>
+<span class="font-display-lg text-4xl opacity-10 uppercase">HYBRID POWER</span>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface border-t border-white/10">
+<div class="flex flex-col md:flex-row justify-between items-start px-margin-desktop py-16 gap-gutter w-full max-w-container-max mx-auto">
+<div class="flex flex-col gap-6">
+<a class="font-display-lg text-headline-lg text-primary tracking-tighter" href="#">ATELIER</a>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">The world's most exclusive collection of automotive masterpieces, curated for those who demand the pinnacle of performance.</p>
+</div>
+<div class="grid grid-cols-2 gap-x-24 gap-y-4">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Dealer Network</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a>
+</div>
+<div class="w-full md:w-auto mt-12 md:mt-0">
+<p class="font-label-md text-[11px] text-on-surface-variant uppercase tracking-widest mb-6">Stay Ahead</p>
+<div class="flex border-b border-white/20 pb-2">
+<input class="bg-transparent border-none focus:ring-0 text-label-md w-48 placeholder:text-outline/50 uppercase" placeholder="YOUR EMAIL" type="email"/>
+<button class="material-symbols-outlined text-primary">arrow_forward</button>
+</div>
+</div>
+</div>
+<div class="px-margin-desktop py-8 border-t border-white/5 text-center">
+<p class="font-body-md text-[12px] text-outline/50 uppercase tracking-widest">© 2024 ATELIER SUPERCAR COLLECTIVE. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for the spec grid cards
+        const specDivs = document.querySelectorAll('.grid > div');
+        specDivs.forEach(div => {
+            div.addEventListener('mouseenter', () => {
+                div.querySelector('p:last-child').style.transform = 'translateY(-2px)';
+                div.querySelector('p:last-child').style.transition = 'transform 0.3s ease';
+            });
+            div.addEventListener('mouseleave', () => {
+                div.querySelector('p:last-child').style.transform = 'translateY(0)';
+            });
+        });
+
+        // Parallax effect for gallery images
+        window.addEventListener('scroll', () => {
+            const images = document.querySelectorAll('.glass-card img');
+            images.forEach(img => {
+                const speed = 0.05;
+                const rect = img.getBoundingClientRect();
+                const offset = (window.innerHeight - rect.top) * speed;
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    img.style.transform = `scale(1.1) translateY(${offset}px)`;
+                }
+            });
+        });
+    </script>
+</body></html>

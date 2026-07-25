@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Favorite Cars | ATELIER</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;700;800&family=Manrope:wght@400;500&family=Space+Grotesk:wght@500&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@100..900&family=Manrope:wght@100..900&family=Space+Grotesk:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .glass-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border: 1px solid transparent;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02)) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        .spec-divider {
+            height: 1px;
+            background: rgba(192, 192, 192, 0.1);
+        }
+        body {
+            background-color: #050505;
+            color: #e5e2e1;
+        }
+        .gold-glow:hover {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#141313",
+                        "surface-container-low": "#1c1b1b",
+                        "error": "#ffb4ab",
+                        "surface-container-high": "#2b2a2a",
+                        "on-background": "#e5e2e1",
+                        "tertiary-container": "#040505",
+                        "surface-variant": "#353434",
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#c6c6c6",
+                        "outline": "#8e9192",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "secondary-container": "#4a4949",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-secondary-container": "#bab8b7",
+                        "surface": "#141313",
+                        "outline-variant": "#444748",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "on-primary": "#313030",
+                        "on-tertiary": "#2f3131",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container-highest": "#353434",
+                        "surface-container": "#201f1f",
+                        "primary-fixed": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "tertiary-fixed": "#e3e2e2",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "background": "#141313",
+                        "surface-bright": "#3a3939",
+                        "on-surface": "#e5e2e1",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "primary-container": "#050505",
+                        "secondary": "#c8c6c5",
+                        "secondary-fixed": "#e5e2e1",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "primary": "#c9c6c5",
+                        "on-primary-container": "#797777",
+                        "surface-tint": "#c9c6c5",
+                        "on-secondary": "#313030",
+                        "on-primary-fixed": "#1c1b1b",
+                        "inverse-primary": "#5f5e5e",
+                        "on-error": "#690005",
+                        "on-tertiary-container": "#767777",
+                        "on-primary-fixed-variant": "#474646",
+                        "gold": "#D4AF37",
+                        "silver": "#C0C0C0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "container-max": "1440px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Anybody"],
+                        "body-lg": ["Manrope"],
+                        "headline-lg-mobile": ["Anybody"],
+                        "body-md": ["Manrope"],
+                        "label-md": ["Space Grotesk"],
+                        "display-lg": ["Anybody"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "0.03em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "0.03em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "0.05em", "fontWeight": "800"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="selection:bg-gold selection:text-black">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-white/10 flex justify-between items-center px-margin-desktop py-4 w-full">
+<div class="font-display-lg text-headline-lg tracking-tighter text-on-surface">ATELIER</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-colors" href="#">Showroom</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-colors" href="#">Comparison</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-colors" href="#">Journal</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-colors" href="#">About</a>
+</div>
+<div class="flex gap-6 items-center">
+<button class="font-label-md text-label-md uppercase tracking-widest text-primary border-b-2 border-primary pb-1">Favorites</button>
+<button class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-colors">Sign In</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Header Section -->
+<header class="mb-16 space-y-4">
+<div class="flex items-center gap-4">
+<div class="h-[1px] w-12 bg-gold"></div>
+<span class="font-label-md text-label-md uppercase text-gold tracking-[0.2em]">Curation</span>
+</div>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface">Favorite Cars</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl">Your curated collection of dream machines. Precision engineered, performance verified, and ready for your next acquisition.</p>
+</header>
+<!-- Bento/Grid of Cars -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<!-- Ferrari SF90 Card -->
+<div class="glass-card group flex flex-col h-full rounded-lg transition-transform duration-500 hover:-translate-y-2">
+<div class="relative aspect-[16/9] overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-[#050505] to-transparent z-10 opacity-60"></div>
+<div class="absolute top-6 right-6 z-20">
+<button class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-gold gold-glow transition-all active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A low-angle cinematic shot of a Rosso Corsa Ferrari SF90 Stradale parked in a midnight showroom with cold blue spotlights hitting the carbon fiber details. The environment is dark and moody, reflecting an ultra-luxury supercar atelier aesthetic with polished concrete floors and smoked glass walls." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB_X4_Nk0p_UHr-i0rvX1DA2BtXvbwX9YeZdvoOEjRcSXu_bFZjGH58IFQ8PD4QWNA2cAkyMPnE9gwzIyM0dwNqDNYATPv5TCcmz3HM5NwZfAtvjoSk66cFGG2ZEx9D4c3nM9F2YQyzUdwUCoX1np9rusdJRQRfsx7YajTU4_3Gg6xgwhfDTiHlmpCysjmB0rYXohq27GlnPEfB8QRvmbyxh-Zz9x-jYhslLOuAnLOm8QCDHOgh2NjdF6TEQYdSDb0-wyqEni3zgB8')"></div>
+<div class="absolute bottom-6 left-6 z-20">
+<span class="font-label-md text-label-md uppercase px-3 py-1 bg-white/10 backdrop-blur-md rounded-sm text-silver border border-white/10">Plug-in Hybrid</span>
+</div>
+</div>
+<div class="p-8 space-y-8 flex-grow">
+<div class="flex justify-between items-end">
+<div>
+<p class="font-label-md text-label-md text-gold uppercase tracking-widest mb-1">Ferrari</p>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">SF90 STRADALE</h2>
+</div>
+<div class="text-right">
+<p class="font-label-md text-label-md text-secondary uppercase mb-1">MSRP From</p>
+<p class="font-headline-lg text-headline-lg text-on-surface">$524,814</p>
+</div>
+</div>
+<div class="spec-divider"></div>
+<!-- Spec Grid -->
+<div class="grid grid-cols-2 gap-y-6">
+<div class="border-r border-white/5 pr-4">
+<p class="font-label-md text-label-md text-secondary uppercase tracking-tighter mb-1">Max Power</p>
+<p class="font-headline-lg text-headline-lg text-on-surface">986 <span class="text-body-md font-body-md text-secondary">HP</span></p>
+</div>
+<div class="pl-4">
+<p class="font-label-md text-label-md text-secondary uppercase tracking-tighter mb-1">Top Speed</p>
+<p class="font-headline-lg text-headline-lg text-on-surface">211 <span class="text-body-md font-body-md text-secondary">MPH</span></p>
+</div>
+<div class="border-r border-white/5 pr-4">
+<p class="font-label-md text-label-md text-secondary uppercase tracking-tighter mb-1">0-60 MPH</p>
+<p class="font-headline-lg text-headline-lg text-on-surface">2.5 <span class="text-body-md font-body-md text-secondary">SEC</span></p>
+</div>
+<div class="pl-4">
+<p class="font-label-md text-label-md text-secondary uppercase tracking-tighter mb-1">Engine</p>
+<p class="font-headline-lg text-headline-lg text-on-surface">V8 <span class="text-body-md font-body-md text-secondary">TURBO</span></p>
+</div>
+</div>
+<div class="flex gap-4 pt-4">
+<button class="flex-1 bg-gold text-on-primary py-4 px-6 font-label-md text-label-md uppercase tracking-[0.2em] font-bold transition-all hover:brightness-110 active:scale-[0.98]">View Details</button>
+<button class="flex-1 border border-silver/30 backdrop-blur-sm text-on-surface py-4 px-6 font-label-md text-label-md uppercase tracking-[0.2em] transition-all hover:bg-white/5 active:scale-[0.98]">Compare</button>
+</div>
+</div>
+</div>
+<!-- McLaren 750S Card -->
+<div class="glass-card group flex flex-col h-full rounded-lg transition-transform duration-500 hover:-translate-y-2">
+<div class="relative aspect-[16/9] overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-[#050505] to-transparent z-10 opacity-60"></div>
+<div class="absolute top-6 right-6 z-20">
+<button class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-gold gold-glow transition-all active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A sleek McLaren 750S in Ludus Blue shown from a side profile in a technical, minimalist studio with linear floor lights. The image captures the aerodynamic silhouettes and the glossy metallic finish of the car. The lighting is focused, creating sharp highlights and deep shadows that emphasize the high-end atelier design language." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCBvjTk0aAGlzV1stw7BIDFp8aoBmMb5H3fWZO7PFnVJ_CbUoedWWWy5OLY4Jkedo2sxDjwl2k2dN4Weg11N0xCWViadmcYhuMwA1KrLVlzUYd14EB4QhW1mPtMiphAlH6Blrw7OvD89P969Qk22fDx__NcR7JdxbAN_3CNbhJmqAhavV4Zw1f-3k4C-xasfYWBhLQ1SLyOUyFJdpHSHcn7UccLquR5y8cYii6LPBZ7DkVu-P8G2ZUBvcQ8VvFC1HnNLqGEM_vWRwc')"></div>
+<div class="absolute bottom-6 left-6 z-20">
+<span class="font-label-md text-label-md uppercase px-3 py-1 bg-white/10 backdrop-blur-md rounded-sm text-silver border border-white/10">Internal Combustion</span>
+</div>
+</div>
+<div class="p-8 space-y-8 flex-grow">
+<div class="flex justify-between items-end">
+<div>
+<p class="font-label-md text-label-md text-gold uppercase tracking-widest mb-1">McLaren</p>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">750S SPIDER</h2>
+</div>
+<div class="text-right">
+<p class="font-label-md text-label-md text-secondary uppercase mb-1">MSRP From</p>
+<p class="font-headline-lg text-headline-lg text-on-surface">$345,000</p>
+</div>
+</div>
+<div class="spec-divider"></div>
+<!-- Spec Grid -->
+<div class="grid grid-cols-2 gap-y-6">
+<div class="border-r border-white/5 pr-4">
+<p class="font-label-md text-label-md text-secondary uppercase tracking-tighter mb-1">Max Power</p>
+<p class="font-headline-lg text-headline-lg text-on-surface">740 <span class="text-body-md font-body-md text-secondary">HP</span></p>
+</div>
+<div class="pl-4">
+<p class="font-label-md text-label-md text-secondary uppercase tracking-tighter mb-1">Top Speed</p>
+<p class="font-headline-lg text-headline-lg text-on-surface">206 <span class="text-body-md font-body-md text-secondary">MPH</span></p>
+</div>
+<div class="border-r border-white/5 pr-4">
+<p class="font-label-md text-label-md text-secondary uppercase tracking-tighter mb-1">0-60 MPH</p>
+<p class="font-headline-lg text-headline-lg text-on-surface">2.7 <span class="text-body-md font-body-md text-secondary">SEC</span></p>
+</div>
+<div class="pl-4">
+<p class="font-label-md text-label-md text-secondary uppercase tracking-tighter mb-1">Weight</p>
+<p class="font-headline-lg text-headline-lg text-on-surface">2,815 <span class="text-body-md font-body-md text-secondary">LBS</span></p>
+</div>
+</div>
+<div class="flex gap-4 pt-4">
+<button class="flex-1 bg-gold text-on-primary py-4 px-6 font-label-md text-label-md uppercase tracking-[0.2em] font-bold transition-all hover:brightness-110 active:scale-[0.98]">View Details</button>
+<button class="flex-1 border border-silver/30 backdrop-blur-sm text-on-surface py-4 px-6 font-label-md text-label-md uppercase tracking-[0.2em] transition-all hover:bg-white/5 active:scale-[0.98]">Compare</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Technical Specs Empty Slot (Bento Pattern) -->
+<div class="mt-12 glass-card p-12 rounded-lg flex flex-col md:flex-row items-center justify-between border-dashed border-white/20">
+<div class="space-y-4 mb-8 md:mb-0">
+<h3 class="font-headline-lg text-headline-lg-mobile text-on-surface">Add to your Collection</h3>
+<p class="font-body-md text-body-md text-secondary max-w-lg">Continuously explore the showroom to add more automotive masterpieces to your curated list. Our advisors are standing by for consultation.</p>
+</div>
+<button class="group flex items-center gap-4 bg-white/5 border border-white/10 px-8 py-4 rounded-full transition-all hover:bg-gold hover:text-black">
+<span class="font-label-md text-label-md uppercase tracking-widest">Explore Showroom</span>
+<span class="material-symbols-outlined transition-transform group-hover:translate-x-2">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-dim border-t border-white/10 w-full py-12 flex flex-col items-center gap-8 px-margin-desktop">
+<div class="font-display-lg text-headline-lg-mobile text-on-surface">ATELIER</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-label-md text-label-md uppercase text-secondary hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md uppercase text-secondary hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-md text-label-md uppercase text-secondary hover:text-primary transition-colors" href="#">Contact</a>
+<a class="font-label-md text-label-md uppercase text-secondary hover:text-primary transition-colors" href="#">Careers</a>
+</div>
+<div class="font-label-md text-label-md uppercase text-secondary-container">© 2024 ATELIER SUPERCAR ATELIER. ALL RIGHTS RESERVED.</div>
+</footer>
+<!-- Interactive Layer for micro-interactions -->
+<script>
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousedown', () => {
+                btn.style.transform = 'scale(0.96)';
+            });
+            btn.addEventListener('mouseup', () => {
+                btn.style.transform = 'scale(1)';
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'scale(1)';
+            });
+        });
+
+        // Simple animation for numbers when visible (if needed in real app)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.classList.add('transition-all', 'duration-700', 'ease-out', 'opacity-0', 'translate-y-4');
+            observer.observe(card);
+        });
+    </script>
+</body></html>

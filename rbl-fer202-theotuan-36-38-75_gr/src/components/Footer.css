@@ -1,0 +1,73 @@
+.atelier-footer {
+  background: linear-gradient(to bottom, #18140e 0%, #08080a 100%);
+  border-top: 2px solid var(--color-gold);
+  padding-top: 4rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 3rem;
+}
+
+.footer-logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-white);
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.footer-logo span {
+  color: var(--color-gold);
+}
+
+.footer-brand p {
+  color: var(--color-text-muted);
+  max-width: 400px;
+}
+
+.footer-links h3, .footer-contact h3 {
+  font-family: var(--font-heading);
+  color: var(--color-white);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.footer-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footer-links a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--color-gold);
+}
+
+.footer-contact p {
+  color: var(--color-text-muted);
+  margin-bottom: 0.8rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(197, 168, 128, 0.1);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}

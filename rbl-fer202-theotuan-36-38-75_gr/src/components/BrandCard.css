@@ -1,0 +1,32 @@
+.brand-card {
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+  border-radius: 4px !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: pointer;
+  text-decoration: none !important;
+  display: block;
+}
+
+.brand-card:hover {
+  border-color: rgba(197, 168, 128, 0.35) !important;
+  background: rgba(197, 168, 128, 0.05) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.brand-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+  transition: all 0.3s ease;
+}
+
+.brand-card:hover .brand-name {
+  color: var(--color-gold);
+  text-shadow: 0 0 8px rgba(197, 168, 128, 0.25);
+}

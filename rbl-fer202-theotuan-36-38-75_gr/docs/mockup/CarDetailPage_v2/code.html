@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ATELIER | FERRARI SF90 STRADALE - 360 EXPERIENCE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;700;800&amp;family=Space+Grotesk:wght@500&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#e5e2e1",
+                    "outline": "#8e9192",
+                    "surface": "#141313",
+                    "on-surface": "#e5e2e1",
+                    "surface-variant": "#353434",
+                    "on-error": "#690005",
+                    "error-container": "#93000a",
+                    "inverse-primary": "#5f5e5e",
+                    "tertiary-fixed-dim": "#c6c6c6",
+                    "surface-bright": "#3a3939",
+                    "on-surface-variant": "#c4c7c7",
+                    "tertiary-container": "#040505",
+                    "surface-container-high": "#2b2a2a",
+                    "surface-container-highest": "#353434",
+                    "error": "#ffb4ab",
+                    "surface-tint": "#c9c6c5",
+                    "background": "#141313",
+                    "on-tertiary-container": "#767777",
+                    "inverse-surface": "#e5e2e1",
+                    "on-tertiary": "#2f3131",
+                    "on-background": "#e5e2e1",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "surface-container-low": "#1c1b1b",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "surface-dim": "#141313",
+                    "secondary": "#c8c6c5",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "inverse-on-surface": "#313030",
+                    "surface-container": "#201f1f",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-primary-fixed-variant": "#474646",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-fixed": "#e3e2e2",
+                    "on-primary": "#313030",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "primary": "#c9c6c5",
+                    "secondary-container": "#4a4949",
+                    "on-primary-container": "#797777",
+                    "on-secondary": "#313030",
+                    "outline-variant": "#444748",
+                    "tertiary": "#c6c6c6",
+                    "on-tertiary-fixed-variant": "#464747",
+                    "on-secondary-container": "#bab8b7",
+                    "primary-fixed": "#e5e2e1",
+                    "primary-container": "#050505",
+                    "on-secondary-fixed-variant": "#474646",
+                    "gold": "#D4AF37",
+                    "silver": "#C0C0C0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Anybody"],
+                    "label-md": ["Space Grotesk"],
+                    "display-lg": ["Anybody"],
+                    "body-lg": ["Manrope"],
+                    "headline-lg-mobile": ["Anybody"],
+                    "body-md": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "0.03em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "0.05em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "0.03em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-surface {
+            background: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid transparent;
+            border-image: linear-gradient(to bottom right, rgba(255,255,255,0.1), rgba(255,255,255,0.02)) 1;
+        }
+        .scrolling-text {
+            white-space: nowrap;
+            animation: scroll 40s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .progress-ring {
+            stroke-dasharray: 283;
+            stroke-dashoffset: 70;
+            transition: stroke-dashoffset 0.3s ease;
+        }
+        .metallic-text {
+            background: linear-gradient(135deg, #e5e2e1 0%, #8e9192 50%, #e5e2e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .viewer-shadow {
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-gold selection:text-surface">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-white/10">
+<div class="flex justify-between items-center px-margin-desktop py-6 w-full max-w-container-max mx-auto">
+<a class="font-display-lg text-[32px] md:text-headline-lg tracking-tighter text-primary active:scale-95 transition-transform" href="#">ATELIER</a>
+<div class="hidden md:flex gap-10">
+<a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Home</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-primary border-b border-primary pb-1 transition-colors duration-300" href="#">Cars</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Brands</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">search</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">account_circle</span>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Title Section -->
+<section class="px-margin-desktop py-12 max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-end gap-gutter">
+<div>
+<p class="font-label-md text-label-md text-gold uppercase tracking-[0.3em] mb-4">THE HYBRID BENCHMARK</p>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg leading-tight mb-2 metallic-text">SF90 STRADALE</h1>
+</div>
+<div class="flex gap-4">
+<button class="bg-gold text-surface px-8 py-4 font-label-md text-label-md uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all">Reserve Now</button>
+<button class="border border-white/20 px-8 py-4 font-label-md text-label-md uppercase tracking-widest hover:bg-white/5 active:scale-95 transition-all glass-surface">Contact Dealer</button>
+</div>
+</section>
+<!-- Main Experience Section -->
+<section class="px-margin-desktop max-w-container-max mx-auto mb-24 grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- 360 Viewer Module -->
+<div class="lg:col-span-9 relative flex flex-col gap-6">
+<div class="relative w-full aspect-video bg-surface-container-lowest overflow-hidden rounded-xl viewer-shadow border border-white/5 group">
+<!-- Progress / Angle Ring -->
+<div class="absolute bottom-8 right-8 z-20 flex items-center gap-4">
+<div class="relative w-12 h-12">
+<svg class="w-full h-full -rotate-90">
+<circle class="text-white/10" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-width="2"></circle>
+<circle class="text-gold progress-ring" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-linecap="round" stroke-width="2"></circle>
+</svg>
+<span class="absolute inset-0 flex items-center justify-center font-label-md text-[10px] text-on-surface">124°</span>
+</div>
+</div>
+<!-- Viewer Controls Top -->
+<div class="absolute top-6 left-6 right-6 flex justify-between items-center z-20">
+<div class="flex gap-2 p-1 bg-surface/40 backdrop-blur-md rounded-lg border border-white/10">
+<button class="px-4 py-2 bg-white/10 rounded font-label-md text-[10px] uppercase tracking-widest text-primary">Exterior</button>
+<button class="px-4 py-2 hover:bg-white/5 rounded font-label-md text-[10px] uppercase tracking-widest text-on-surface-variant transition-colors">Interior</button>
+</div>
+<div class="flex gap-4">
+<button class="p-3 glass-surface rounded-full hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-xl">fullscreen</span>
+</button>
+</div>
+</div>
+<!-- Navigation Arrows -->
+<div class="absolute inset-0 flex items-center justify-between px-6 pointer-events-none z-10">
+<button class="p-4 glass-surface rounded-full pointer-events-auto opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+</button>
+<button class="p-4 glass-surface rounded-full pointer-events-auto opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-2xl">arrow_forward_ios</span>
+</button>
+</div>
+<!-- Rotate 360 Indicator Center -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="flex flex-col items-center gap-3 opacity-60 group-hover:opacity-0 transition-opacity duration-500">
+<span class="material-symbols-outlined text-5xl text-gold animate-spin" style="animation-duration: 8s">cached</span>
+<span class="font-label-md text-[10px] uppercase tracking-[0.4em] text-gold">Drag to Rotate</span>
+</div>
+</div>
+<!-- Main Image Area -->
+<div class="w-full h-full flex items-center justify-center pointer-events-auto cursor-grab active:cursor-grabbing">
+<img alt="Ferrari SF90 Stradale Rosso Corsa profile" class="w-full h-full object-contain filter drop-shadow-[0_40px_80px_rgba(0,0,0,0.9)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQV1O8ip3SjdcC-fLBuV2RlWA6Ne9nE1-43JLPSXjUD4qMJIbDq1mshMV_i2gm9mhd223UNLuQaDzX_GVQ_huDQMb27KLz5KoH5t2tRjfoPsPl1fShHkx9BUQ-7fld8ANBMfUU2eCyGQY3UBcYBMS9KU1CBox7JF5LZe0XaWccR_ou9cCCxSFi_0cnAKAAFN22PznG9R7PTSq0cAojDxJQmsd3i1nfjgNuAxpLgVmcCOEXp_s8rQ-sYt-6WvU_uNKW1_nr38jUwn8"/>
+</div>
+</div>
+<!-- Detail Gallery Thumbnails -->
+<div class="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
+<div class="flex-shrink-0 w-32 aspect-square rounded-lg border-2 border-gold/50 overflow-hidden cursor-pointer bg-surface-container">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQV1O8ip3SjdcC-fLBuV2RlWA6Ne9nE1-43JLPSXjUD4qMJIbDq1mshMV_i2gm9mhd223UNLuQaDzX_GVQ_huDQMb27KLz5KoH5t2tRjfoPsPl1fShHkx9BUQ-7fld8ANBMfUU2eCyGQY3UBcYBMS9KU1CBox7JF5LZe0XaWccR_ou9cCCxSFi_0cnAKAAFN22PznG9R7PTSq0cAojDxJQmsd3i1nfjgNuAxpLgVmcCOEXp_s8rQ-sYt-6WvU_uNKW1_nr38jUwn8"/>
+</div>
+<div class="flex-shrink-0 w-32 aspect-square rounded-lg border border-white/10 overflow-hidden cursor-pointer bg-surface-container opacity-50 hover:opacity-100 transition-opacity">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDejHNLxeuTJTV8M-oChkkhWhothmkjYwlxuOPC56Jpnr9scX3sw-G_nI1OOmpBSe2oVV9pGeMA3KKE6bukfD9QKENwZ4EvLazUIRz-fWzXh_zpShfIyqj89pFQRX9cWf-tGot4Q27QsjMIRGTJRf2Zt9lGv-_sdD0GnRqT0gYG7z_43zk-GCihzEoJ3T4f3b-KxbtBmam7svhJoaIC969HQ-WNzNi2Rnzh8hyfvBFJg8_UQTVVgTEAZodoP2yp29RccpkCpMFJsqg"/>
+</div>
+<div class="flex-shrink-0 w-32 aspect-square rounded-lg border border-white/10 overflow-hidden cursor-pointer bg-surface-container opacity-50 hover:opacity-100 transition-opacity">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0ksq8eKeR7a6KHBgjqs6fsshbCBGQhJwlbbLZV7chb4IVTfqqfX2ADKg2yGYEOKFcTk5JzLayaRh5p4x3CvPAe8MzbO1yHszf8bIiS3D9ah5C6x2V8h70ngo33SkE1EHWrX54HQTFwfRWbwBD5LFMte-SO1AkX_Fv8pnxCpi5XAf6-N-ar3BfRN8h_SEBodfZdTkce5fzNesu7wq24OM5HptdoQgRTknwgrJpKiO6WMFJ0SqubfyPgI94TsyirEx74P_teOKWRvM"/>
+</div>
+<div class="flex-shrink-0 w-32 aspect-square rounded-lg border border-white/10 overflow-hidden cursor-pointer bg-surface-container opacity-50 hover:opacity-100 transition-opacity">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFtdEx1YzS8FFpZ1G3NFttuj5ka7vbd7t8zlUfDURZCdjK6hkojbNa1yfBFaKUPeTNJBDdT0tQjMN_PCdDjkzNWtlqg5J7vyCTsSbCK0OST1o-nh5TwB4SBgQEsqKAUE51urGXfRcqFxdoplMkdyjyo7OxMNOp3jRmyvlGfa5OQwThgr-7Y88jxdA11wgUzgQrhuolSdFy3GSScSedGz9Er1eF0AUmfK574rp3xjgRPIVBxgxbnb--nGNFuhHT-TkLlEtK10PRMXk"/>
+</div>
+</div>
+</div>
+<!-- Technical Specification Panel -->
+<div class="lg:col-span-3 flex flex-col gap-6">
+<div class="glass-surface p-8 rounded-xl border border-white/10 flex flex-col gap-8">
+<div>
+<h3 class="font-label-md text-label-md text-gold uppercase tracking-[0.2em] mb-6">Technical Soul</h3>
+<div class="space-y-6">
+<div class="border-b border-white/5 pb-4">
+<p class="font-label-md text-[10px] text-outline uppercase tracking-widest mb-1">ICE Unit</p>
+<p class="font-headline-lg text-xl text-on-surface">V8 90° Twin-Turbo</p>
+</div>
+<div class="border-b border-white/5 pb-4">
+<p class="font-label-md text-[10px] text-outline uppercase tracking-widest mb-1">Hybrid System</p>
+<p class="font-headline-lg text-xl text-on-surface">3 Electric Motors</p>
+</div>
+<div class="border-b border-white/5 pb-4">
+<p class="font-label-md text-[10px] text-outline uppercase tracking-widest mb-1">Max Power</p>
+<p class="font-headline-lg text-3xl text-primary">1000 CV <span class="text-xs font-normal text-outline">Combined</span></p>
+</div>
+<div class="border-b border-white/5 pb-4">
+<p class="font-label-md text-[10px] text-outline uppercase tracking-widest mb-1">0-100 KM/H</p>
+<p class="font-headline-lg text-3xl text-primary">2.5s</p>
+</div>
+<div>
+<p class="font-label-md text-[10px] text-outline uppercase tracking-widest mb-1">Top Speed</p>
+<p class="font-headline-lg text-3xl text-primary">340 KM/H</p>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary text-surface px-6 py-4 font-label-md text-[11px] uppercase tracking-[0.2em] hover:bg-white transition-colors flex items-center justify-center gap-2">
+                        Book a Test Drive
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="glass-surface p-6 rounded-xl border border-white/5 bg-surface-container-low/30">
+<p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+                        Experience the most powerful road-going Ferrari ever. A masterpiece of engineering that pushes the boundaries of automotive technology.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Gallery / Detail Content (Bento) -->
+<section class="px-margin-desktop py-24 max-w-container-max mx-auto border-t border-white/10">
+<div class="grid grid-cols-1 md:grid-cols-12 grid-rows-2 gap-gutter h-auto md:h-[900px]">
+<!-- Large Feature -->
+<div class="md:col-span-7 md:row-span-2 relative group overflow-hidden glass-card rounded-xl">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="High-detail close-up of steering wheel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDejHNLxeuTJTV8M-oChkkhWhothmkjYwlxuOPC56Jpnr9scX3sw-G_nI1OOmpBSe2oVV9pGeMA3KKE6bukfD9QKENwZ4EvLazUIRz-fWzXh_zpShfIyqj89pFQRX9cWf-tGot4Q27QsjMIRGTJRf2Zt9lGv-_sdD0GnRqT0gYG7z_43zk-GCihzEoJ3T4f3b-KxbtBmam7svhJoaIC969HQ-WNzNi2Rnzh8hyfvBFJg8_UQTVVgTEAZodoP2yp29RccpkCpMFJsqg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+<div class="absolute bottom-10 left-10">
+<p class="font-label-md text-label-md text-gold uppercase tracking-[0.2em] mb-2">Architecture</p>
+<h3 class="font-headline-lg text-2xl">Digital Cockpit</h3>
+</div>
+</div>
+<!-- Small Detail 1 -->
+<div class="md:col-span-5 md:row-span-1 relative group overflow-hidden glass-card rounded-xl">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Aerodynamic side profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0ksq8eKeR7a6KHBgjqs6fsshbCBGQhJwlbbLZV7chb4IVTfqqfX2ADKg2yGYEOKFcTk5JzLayaRh5p4x3CvPAe8MzbO1yHszf8bIiS3D9ah5C6x2V8h70ngo33SkE1EHWrX54HQTFwfRWbwBD5LFMte-SO1AkX_Fv8pnxCpi5XAf6-N-ar3BfRN8h_SEBodfZdTkce5fzNesu7wq24OM5HptdoQgRTknwgrJpKiO6WMFJ0SqubfyPgI94TsyirEx74P_teOKWRvM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+<h3 class="font-headline-lg text-xl">Aerodynamic Soul</h3>
+</div>
+</div>
+<!-- Small Detail 2 -->
+<div class="md:col-span-5 md:row-span-1 relative group overflow-hidden glass-card rounded-xl">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Stitched leather racing seats" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFtdEx1YzS8FFpZ1G3NFttuj5ka7vbd7t8zlUfDURZCdjK6hkojbNa1yfBFaKUPeTNJBDdT0tQjMN_PCdDjkzNWtlqg5J7vyCTsSbCK0OST1o-nh5TwB4SBgQEsqKAUE51urGXfRcqFxdoplMkdyjyo7OxMNOp3jRmyvlGfa5OQwThgr-7Y88jxdA11wgUzgQrhuolSdFy3GSScSedGz9Er1eF0AUmfK574rp3xjgRPIVBxgxbnb--nGNFuhHT-TkLlEtK10PRMXk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+<h3 class="font-headline-lg text-xl">Crafted Precision</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Scrolling Brand Banner -->
+<div class="w-full border-y border-white/10 py-6 overflow-hidden bg-surface-container-lowest mt-12">
+<div class="scrolling-text flex gap-24 items-center">
+<span class="font-display-lg text-4xl opacity-10 uppercase">SF90 STRADALE</span>
+<span class="font-display-lg text-4xl opacity-10 uppercase">FERRARI ATELIER</span>
+<span class="font-display-lg text-4xl opacity-10 uppercase">HYBRID POWER</span>
+<span class="font-display-lg text-4xl opacity-10 uppercase">SF90 STRADALE</span>
+<span class="font-display-lg text-4xl opacity-10 uppercase">FERRARI ATELIER</span>
+<span class="font-display-lg text-4xl opacity-10 uppercase">HYBRID POWER</span>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface border-t border-white/10">
+<div class="flex flex-col md:flex-row justify-between items-start px-margin-desktop py-16 gap-gutter w-full max-w-container-max mx-auto">
+<div class="flex flex-col gap-6">
+<a class="font-display-lg text-headline-lg text-primary tracking-tighter" href="#">ATELIER</a>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">The world's most exclusive collection of automotive masterpieces, curated for those who demand the pinnacle of performance.</p>
+</div>
+<div class="grid grid-cols-2 gap-x-24 gap-y-4">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Dealer Network</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a>
+</div>
+<div class="w-full md:w-auto mt-12 md:mt-0">
+<p class="font-label-md text-[11px] text-on-surface-variant uppercase tracking-widest mb-6">Stay Ahead</p>
+<div class="flex border-b border-white/20 pb-2">
+<input class="bg-transparent border-none focus:ring-0 text-label-md w-48 placeholder:text-outline/50 uppercase" placeholder="YOUR EMAIL" type="email"/>
+<button class="material-symbols-outlined text-primary">arrow_forward</button>
+</div>
+</div>
+</div>
+<div class="px-margin-desktop py-8 border-t border-white/5 text-center">
+<p class="font-body-md text-[12px] text-outline/50 uppercase tracking-widest">© 2024 ATELIER SUPERCAR COLLECTIVE. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+<script>
+        // Parallax effect for gallery images
+        window.addEventListener('scroll', () => {
+            const images = document.querySelectorAll('.glass-card img');
+            images.forEach(img => {
+                const speed = 0.05;
+                const rect = img.getBoundingClientRect();
+                const offset = (window.innerHeight - rect.top) * speed;
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    img.style.transform = `scale(1.1) translateY(${offset}px)`;
+                }
+            });
+        });
+    </script>
+</body></html>

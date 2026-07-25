@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ATELIER | Supercar Collective</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@700;800&amp;family=Space+Grotesk:wght@500&amp;family=Manrope:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#e5e2e1",
+                    "outline": "#8e9192",
+                    "surface": "#141313",
+                    "on-surface": "#e5e2e1",
+                    "surface-variant": "#353434",
+                    "on-error": "#690005",
+                    "error-container": "#93000a",
+                    "inverse-primary": "#5f5e5e",
+                    "tertiary-fixed-dim": "#c6c6c6",
+                    "surface-bright": "#3a3939",
+                    "on-surface-variant": "#c4c7c7",
+                    "tertiary-container": "#040505",
+                    "surface-container-high": "#2b2a2a",
+                    "surface-container-highest": "#353434",
+                    "error": "#ffb4ab",
+                    "surface-tint": "#c9c6c5",
+                    "background": "#141313",
+                    "on-tertiary-container": "#767777",
+                    "inverse-surface": "#e5e2e1",
+                    "on-tertiary": "#2f3131",
+                    "on-background": "#e5e2e1",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "surface-container-low": "#1c1b1b",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "surface-dim": "#141313",
+                    "secondary": "#c8c6c5",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "inverse-on-surface": "#313030",
+                    "surface-container": "#201f1f",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-primary-fixed-variant": "#474646",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-fixed": "#e3e2e2",
+                    "on-primary": "#313030",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "primary": "#c9c6c5",
+                    "secondary-container": "#4a4949",
+                    "on-primary-container": "#797777",
+                    "on-secondary": "#313030",
+                    "outline-variant": "#444748",
+                    "tertiary": "#c6c6c6",
+                    "on-tertiary-fixed-variant": "#464747",
+                    "on-secondary-container": "#bab8b7",
+                    "primary-fixed": "#e5e2e1",
+                    "primary-container": "#050505",
+                    "on-secondary-fixed-variant": "#474646",
+                    "gold": "#D4AF37",
+                    "silver": "#C0C0C0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Anybody"],
+                    "label-md": ["Space Grotesk"],
+                    "display-lg": ["Anybody"],
+                    "body-lg": ["Manrope"],
+                    "headline-lg-mobile": ["Anybody"],
+                    "body-md": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "0.03em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "0.05em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "0.03em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #050505;
+            color: #e5e2e1;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-panel {
+            background: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+        }
+        .glass-panel::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid transparent;
+            background: linear-gradient(to bottom right, rgba(255,255,255,0.1), rgba(255,255,255,0.02)) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        .spec-grid-line {
+            border-bottom: 1px solid rgba(192, 192, 192, 0.1);
+        }
+        .hero-gradient {
+            background: linear-gradient(180deg, rgba(5,5,5,0) 60%, rgba(5,5,5,1) 100%);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(192, 192, 192, 0.3);
+        }
+        .btn-hover-glow:hover {
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-white/10">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-container-max mx-auto">
+<div class="font-display-lg text-headline-lg tracking-tighter text-primary">ATELIER</div>
+<div class="hidden md:flex items-center gap-10 font-label-md text-label-md uppercase tracking-widest">
+<a class="text-primary border-b border-primary pb-1 active:scale-95 transition-all" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 active:scale-95" href="#">Cars</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 active:scale-95" href="#">Brands</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 active:scale-95" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 active:scale-95" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-primary hover:scale-110 transition-transform">search</button>
+<button class="material-symbols-outlined text-primary hover:scale-110 transition-transform">account_circle</button>
+<button class="md:hidden material-symbols-outlined text-primary">menu</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative h-screen w-full flex items-end overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-[10s] hover:scale-105" data-alt="A low-angle, dramatic shot of a matte black Lamborghini Revuelto positioned in a high-end, dark architectural showroom. The scene is illuminated by sharp cinematic spotlighting that highlights the aggressive carbon fiber lines and aerodynamic surfaces of the car. The floor is a polished obsidian black with sharp mirror reflections. The overall aesthetic is one of raw power and elite technical precision, dominated by deep blacks and cool silver metallic glints." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD6no3XozMCBBUKKeoC9SHIPfJNIaoPdDyUb28DRDMImeUwbMzB5TIHdKF8dnsxZZf-Jg4W0Rk4OP9SMQjVqAL1ruFK8xkmt5KHe2GfXdxHeNOYbzCrRZOufFm6eusLvGR6bcNy7nIk34j6gn-cNCa8Y0h9Ib_T9Fwcue_MdjlRL4k-sMD_XYE4i_WbzNf4v7m_TahulKftFOsft-QgiSC85hhBxtZWbQXT-s2bW651k69EaKRHdTTrjyym0bifLkM6iEP3vtE_YbY')">
+</div>
+<div class="absolute inset-0 hero-gradient"></div>
+<div class="absolute inset-0 bg-black/30"></div>
+</div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-24">
+<div class="max-w-4xl space-y-8">
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-glow leading-none">
+                    DRIVE THE EXTRAORDINARY
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                    A curated collection of the world's most elite supercars. Technical perfection meets raw visceral power in our midnight atelier.
+                </p>
+<div class="flex flex-wrap gap-6 pt-4">
+<button class="px-10 py-4 bg-primary text-on-primary font-label-md text-label-md uppercase tracking-widest transition-all btn-hover-glow active:scale-95">
+                        EXPLORE CARS
+                    </button>
+<button class="px-10 py-4 border border-silver/40 backdrop-blur-md text-primary font-label-md text-label-md uppercase tracking-widest transition-all hover:bg-white/10 active:scale-95">
+                        VIEW COLLECTION
+                    </button>
+</div>
+</div>
+</div>
+</header>
+<!-- Brand Gallery Section -->
+<section class="py-24 bg-surface border-b border-white/5">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-wrap justify-between items-center gap-12 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+<div class="font-display-lg text-2xl tracking-[0.2em]">LAMBORGHINI</div>
+<div class="font-display-lg text-2xl tracking-[0.2em]">FERRARI</div>
+<div class="font-display-lg text-2xl tracking-[0.2em]">MCLAREN</div>
+<div class="font-display-lg text-2xl tracking-[0.2em]">PORSCHE</div>
+<div class="font-display-lg text-2xl tracking-[0.2em]">BUGATTI</div>
+<div class="font-display-lg text-2xl tracking-[0.2em]">ROLLS-ROYCE</div>
+</div>
+</div>
+</section>
+<!-- Featured Collection -->
+<section class="py-32 bg-surface-lowest">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex justify-between items-end mb-16">
+<div>
+<span class="font-label-md text-label-md text-silver/60 uppercase tracking-[0.3em]">Curated</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mt-2">FEATURED SELECTION</h2>
+</div>
+<a class="hidden md:flex items-center gap-2 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">
+                    VIEW ALL MODELS <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Ferrari SF90 -->
+<div class="glass-panel group cursor-pointer overflow-hidden rounded-lg">
+<div class="aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A side profile of a silver Ferrari SF90 Stradale under cool studio lighting. The car's sleek hybrid aerodynamic silhouette is captured against a dark, minimalist backdrop with subtle smoke effects near the tires. High-contrast reflections on the metallic silver paint emphasize its sculpted lines. The vibe is sophisticated, high-tech, and luxurious, fitting a midnight supercar atelier theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcthUqYkSl05LIIk4KJIcZkGQCyMomtV80b6Mrn5Sy2r5E9cdOHyoPEsETux3NsleulM32yVCnP-hs-Yb0Cxv2uOSS-Nxn7izv9ks3ZFk0TSP2ITTQ1fXATAzoXaT68_0QB98CJhylGsfaSyac9md21Vzy1Rc7yWjGXLTQrdTq0l31ECjq5bN8oyGw71xAr2KNMXFSDi7C-vuGSY8pkQFbuCTNMX4M2nVC2rAO3ILGdnqNbLi5KwXA6CWBuRQM9JuIPCKJqScOe2k"/>
+</div>
+<div class="p-8 space-y-6">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label-md text-[10px] text-silver/50 uppercase tracking-widest">Maranello, Italy</p>
+<h3 class="font-headline-lg text-2xl text-primary mt-1">FERRARI SF90</h3>
+</div>
+<div class="bg-silver/10 px-3 py-1 rounded text-[10px] font-label-md text-primary tracking-tighter">HYBRID</div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between spec-grid-line pb-2">
+<span class="text-on-surface-variant font-label-md text-xs">0-100 KM/H</span>
+<span class="text-primary font-label-md text-xs">2.5 SEC</span>
+</div>
+<div class="flex justify-between spec-grid-line pb-2">
+<span class="text-on-surface-variant font-label-md text-xs">TOP SPEED</span>
+<span class="text-primary font-label-md text-xs">340 KM/H</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant font-label-md text-xs">POWER</span>
+<span class="text-primary font-label-md text-xs">1000 CV</span>
+</div>
+</div>
+<button class="w-full py-4 border border-white/10 hover:bg-white/5 transition-colors font-label-md text-[12px] uppercase tracking-widest text-primary active:scale-95">
+                            QUICK VIEW
+                        </button>
+</div>
+</div>
+<!-- McLaren 750S -->
+<div class="glass-panel group cursor-pointer overflow-hidden rounded-lg">
+<div class="aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A front three-quarter view of a McLaren 750S in a deep metallic grey finish. The car is set in a dark, atmospheric hangar with vertical strip lights reflecting in its glossy bodywork. The carbon fiber details of the front splitter and side intakes are sharp and clear. The atmosphere is technical and precise, evoking a feeling of lightweight performance and British engineering excellence in a high-end luxury setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtt3nKb1dwivNmeV_wMJxq8eZpcBSZiQfNGtXvSjctFI-4XvkYpZlhqBco4RDiAhwYXnkO2bftffS6RACqHkFYkTIslbji-Mrcs6UQZfMV1jQ5jdWsMEAlSHycnF8nxlTHHuRGloJxvW61FMjoQbhIAEFEJn3rH6M-38RPa2zOQTG4lKfucquonzENpJbk2l6fC0DOLex4aU-5pJF1nIVPsrx4IYelgoanPzk_EgdkFo17jZzK3hs889riRnzHURcrZ6Is_KW4sDE"/>
+</div>
+<div class="p-8 space-y-6">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label-md text-[10px] text-silver/50 uppercase tracking-widest">Woking, UK</p>
+<h3 class="font-headline-lg text-2xl text-primary mt-1">MCLAREN 750S</h3>
+</div>
+<div class="bg-silver/10 px-3 py-1 rounded text-[10px] font-label-md text-primary tracking-tighter">V8 BITURBO</div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between spec-grid-line pb-2">
+<span class="text-on-surface-variant font-label-md text-xs">0-100 KM/H</span>
+<span class="text-primary font-label-md text-xs">2.8 SEC</span>
+</div>
+<div class="flex justify-between spec-grid-line pb-2">
+<span class="text-on-surface-variant font-label-md text-xs">TOP SPEED</span>
+<span class="text-primary font-label-md text-xs">332 KM/H</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant font-label-md text-xs">WEIGHT</span>
+<span class="text-primary font-label-md text-xs">1,277 KG</span>
+</div>
+</div>
+<button class="w-full py-4 border border-white/10 hover:bg-white/5 transition-colors font-label-md text-[12px] uppercase tracking-widest text-primary active:scale-95">
+                            QUICK VIEW
+                        </button>
+</div>
+</div>
+<!-- Porsche 911 GT3 RS -->
+<div class="glass-panel group cursor-pointer overflow-hidden rounded-lg">
+<div class="aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A rear three-quarter view of a Porsche 911 GT3 RS in Shark Blue with grey accents, highlighting its massive swan-neck rear wing. The setting is a minimalist concrete architectural space at dusk, with subtle blue and orange ambient lighting. The raw, track-focused aesthetic of the GT3 RS is emphasized by its wide stance and aggressive aero elements. The design is sleek, functional, and embodies high-performance German automotive engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_xvP4HH3_MyK0psLxz5KKFvfDzjNDUZOGUMz4yPMwfRLpD4RqLyqDbLyUJncyiAHVKu0DK9if9qCYkJ_sIsKpf1sqBAiJJ7Fx7KUCHGVMz_nQmK8wHtl_bGGRBzFx2RPQPv6rUOArNclKpvYsh4FPsAuUKRG6GhZAjaZi5XdRBxHw8JzTvpjEalKLxYeTRWh78Qd_-99Hk9-BlflvJ4uTQPgV3Yy5evFkS23ns3w3-CN9MuqIJeijGfkCQvgbAN66TckZCw0X_i4"/>
+</div>
+<div class="p-8 space-y-6">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label-md text-[10px] text-silver/50 uppercase tracking-widest">Stuttgart, Germany</p>
+<h3 class="font-headline-lg text-2xl text-primary mt-1">PORSCHE 911 GT3 RS</h3>
+</div>
+<div class="bg-silver/10 px-3 py-1 rounded text-[10px] font-label-md text-primary tracking-tighter">TRACK ONLY</div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between spec-grid-line pb-2">
+<span class="text-on-surface-variant font-label-md text-xs">0-100 KM/H</span>
+<span class="text-primary font-label-md text-xs">3.2 SEC</span>
+</div>
+<div class="flex justify-between spec-grid-line pb-2">
+<span class="text-on-surface-variant font-label-md text-xs">TOP SPEED</span>
+<span class="text-primary font-label-md text-xs">296 KM/H</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant font-label-md text-xs">DOWNFORCE</span>
+<span class="text-primary font-label-md text-xs">860 KG</span>
+</div>
+</div>
+<button class="w-full py-4 border border-white/10 hover:bg-white/5 transition-colors font-label-md text-[12px] uppercase tracking-widest text-primary active:scale-95">
+                            QUICK VIEW
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Decorative Section / Spec Showcase -->
+<section class="relative h-[614px] bg-surface flex items-center overflow-hidden border-y border-white/5">
+<div class="absolute right-0 top-0 w-1/2 h-full hidden lg:block opacity-30">
+
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full grid grid-cols-1 md:grid-cols-2 gap-20">
+<div class="space-y-6">
+<h2 class="font-headline-lg text-headline-lg text-primary">PRECISION ENGINEERED</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    At ATELIER, we don't just sell cars; we curate engineering marvels. Every vehicle in our collective undergoes a rigorous 150-point technical validation by our master artisans.
+                </p>
+<div class="h-[2px] w-full bg-surface-variant overflow-hidden">
+<div class="h-full w-2/3 bg-gradient-to-r from-silver/20 via-silver to-silver/20 animate-[pulse_3s_infinite]"></div>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<div class="text-3xl font-display-lg text-primary">15+</div>
+<div class="text-[10px] font-label-md text-silver/50 uppercase tracking-[0.2em] mt-1">Exclusive Brands</div>
+</div>
+<div>
+<div class="text-3xl font-display-lg text-primary">120+</div>
+<div class="text-[10px] font-label-md text-silver/50 uppercase tracking-[0.2em] mt-1">Vehicles Managed</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface border-t border-white/10">
+<div class="flex flex-col md:flex-row justify-between items-start px-margin-mobile md:px-margin-desktop py-16 gap-gutter w-full max-w-container-max mx-auto">
+<div class="space-y-6">
+<div class="font-display-lg text-headline-lg text-primary">ATELIER</div>
+<p class="max-w-xs font-body-md text-body-md text-on-surface-variant">
+                    Defining the next generation of automotive exclusivity. The midnight atelier for the world's most discerning collectors.
+                </p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 pt-10 md:pt-0">
+<div class="space-y-4">
+<h4 class="font-label-md text-label-md text-primary uppercase">COLLECTION</h4>
+<ul class="space-y-2 font-body-md text-body-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Supercars</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Hypercars</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Classics</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">New Arrivals</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-md text-label-md text-primary uppercase">SERVICES</h4>
+<ul class="space-y-2 font-body-md text-body-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Acquisition</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Logistics</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Maintenance</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Financing</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-md text-label-md text-primary uppercase">COMPANY</h4>
+<ul class="space-y-2 font-body-md text-body-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Our Story</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Team</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Network</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-md text-label-md text-primary uppercase">LEGAL</h4>
+<ul class="space-y-2 font-body-md text-body-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Dealer Network</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="px-margin-mobile md:px-margin-desktop py-8 border-t border-white/5 w-full max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="font-body-md text-body-md text-on-surface-variant/60 text-xs">
+                © 2024 ATELIER SUPERCAR COLLECTIVE. ALL RIGHTS RESERVED.
+            </span>
+<div class="flex gap-6">
+<a class="text-primary hover:opacity-70 transition-opacity" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-primary hover:opacity-70 transition-opacity" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+<a class="text-primary hover:opacity-70 transition-opacity" href="#"><span class="material-symbols-outlined">location_on</span></a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for smooth scrolling or hover effects
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Sticky Navbar effect on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-4');
+                nav.classList.remove('py-6');
+                nav.classList.add('bg-surface/90');
+            } else {
+                nav.classList.add('py-6');
+                nav.classList.remove('py-4');
+                nav.classList.remove('bg-surface/90');
+            }
+        });
+    </script>
+</body></html>

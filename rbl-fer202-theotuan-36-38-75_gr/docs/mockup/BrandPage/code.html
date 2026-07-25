@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Legendary Brands | ATELIER</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;700;800&amp;family=Manrope:wght@400;500&amp;family=Space+Grotesk:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#141313",
+                    "surface-container-low": "#1c1b1b",
+                    "error": "#ffb4ab",
+                    "surface-container-high": "#2b2a2a",
+                    "on-background": "#e5e2e1",
+                    "tertiary-container": "#040505",
+                    "surface-variant": "#353434",
+                    "on-error-container": "#ffdad6",
+                    "tertiary": "#c6c6c6",
+                    "outline": "#8e9192",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "secondary-container": "#4a4949",
+                    "on-surface-variant": "#c4c7c7",
+                    "on-secondary-container": "#bab8b7",
+                    "surface": "#141313",
+                    "outline-variant": "#444748",
+                    "on-tertiary-fixed-variant": "#464747",
+                    "on-primary": "#313030",
+                    "on-tertiary": "#2f3131",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-container-highest": "#353434",
+                    "surface-container": "#201f1f",
+                    "primary-fixed": "#e5e2e1",
+                    "error-container": "#93000a",
+                    "surface-container-lowest": "#0e0e0e",
+                    "tertiary-fixed": "#e3e2e2",
+                    "inverse-on-surface": "#313030",
+                    "on-secondary-fixed-variant": "#474646",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "background": "#141313",
+                    "surface-bright": "#3a3939",
+                    "on-surface": "#e5e2e1",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "primary-container": "#050505",
+                    "secondary": "#c8c6c5",
+                    "secondary-fixed": "#e5e2e1",
+                    "tertiary-fixed-dim": "#c6c6c6",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "primary": "#c9c6c5",
+                    "on-primary-container": "#797777",
+                    "surface-tint": "#c9c6c5",
+                    "on-secondary": "#313030",
+                    "on-primary-fixed": "#1c1b1b",
+                    "inverse-primary": "#5f5e5e",
+                    "on-error": "#690005",
+                    "on-tertiary-container": "#767777",
+                    "on-primary-fixed-variant": "#474646",
+                    "brand-gold": "#D4AF37",
+                    "brand-silver": "#C0C0C0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "container-max": "1440px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Anybody"],
+                    "body-lg": ["Manrope"],
+                    "headline-lg-mobile": ["Anybody"],
+                    "body-md": ["Manrope"],
+                    "label-md": ["Space Grotesk"],
+                    "display-lg": ["Anybody"]
+            },
+            "fontSize": {
+                    "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "0.03em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "0.03em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "0.05em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #050505;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.05);
+            transform: translateY(-4px);
+        }
+        .spec-grid-divider {
+            border-right: 1px solid rgba(192, 192, 192, 0.1);
+        }
+        .glint-border {
+            position: relative;
+        }
+        .glint-border::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid transparent;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 50%, rgba(255,255,255,0) 100%) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #444748;
+        }
+    </style>
+</head>
+<body class="custom-scrollbar">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-white/10 flex justify-between items-center px-margin-desktop py-4 w-full">
+<div class="font-display-lg text-headline-lg tracking-tighter text-on-surface">ATELIER</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md uppercase tracking-widest text-primary border-b-2 border-primary pb-1" href="#">Showroom</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-colors" href="#">Comparison</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-colors" href="#">Journal</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-colors" href="#">About</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+<span>Favorites</span>
+</button>
+<button class="bg-brand-gold text-on-primary px-6 py-2 font-label-md text-label-md uppercase tracking-widest active:scale-95 transition-transform">
+                Sign In
+            </button>
+</div>
+</nav>
+<main class="pt-24 pb-20">
+<!-- Hero Section -->
+<section class="px-margin-desktop mb-16">
+<div class="max-w-4xl">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-4 leading-none">Legendary Brands</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl">
+                    The master artisans behind the world's most iconic supercars. Explore the legacy, precision, and raw power of the elite automotive houses.
+                </p>
+</div>
+</section>
+<!-- Featured Brand Banner (Lamborghini) -->
+<section class="px-margin-desktop mb-24">
+<div class="relative w-full h-[600px] overflow-hidden glint-border group">
+<div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10"></div>
+<div class="absolute inset-0 scale-105 group-hover:scale-100 transition-transform duration-1000 ease-out" data-alt="A cinematic, low-angle shot of a matte black Lamborghini Revuelto parked in a high-end, minimalist midnight showroom. The scene is illuminated by dramatic overhead spotlights creating sharp highlights on the car's aggressive carbon fiber bodywork. Subtle smoke swirls around the wheels, and the gold brake calipers catch the light. The background features polished concrete floors and dark smoked glass walls, evoking a sense of extreme luxury and high-performance engineering." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBoC_lQ96A8Je-L-6aHKDUEuOHPN_hA3I4quZABQBNNjm-DMKU0DwhifpdYmsQ9DDhImZoklrM93XFOPpVzoFcbEgFB5g0H5i6e5sTDTF85NEmSbrSEAZsuqb4xqqtxoJ_JpIU-CwKG2-FSwd2mWbgIYVyU5n_1SXyICUeMWqhJxS3vfaU7_023UIA33Q7A6lSomZyy0yh1nmIkzxZ2shg_B3NSzW7RSJ_trcblb0Ru-XYfeWrzgvNA7nC8syHa4dvA9YavVRpq7qw')">
+</div>
+<div class="relative z-20 h-full flex flex-col justify-end p-12 max-w-3xl">
+<div class="flex items-center gap-4 mb-6">
+<div class="bg-brand-gold/10 border border-brand-gold/30 px-3 py-1 text-brand-gold font-label-md text-label-md uppercase tracking-widest">Featured Brand</div>
+<div class="text-secondary font-label-md text-label-md uppercase tracking-widest">Since 1963</div>
+</div>
+<h2 class="font-display-lg text-display-lg text-white mb-4">Lamborghini</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl">
+                        Uncompromising, extreme, and Italian. Lamborghini defines the supercar genre with visceral V12 soundtracks and fighter-jet inspired design language.
+                    </p>
+<div class="flex items-center gap-6">
+<button class="bg-brand-gold text-on-primary px-10 py-4 font-label-md text-label-md uppercase tracking-widest hover:brightness-110 transition-all">Explore Collection</button>
+<div class="flex flex-col">
+<span class="text-white font-headline-lg text-headline-lg leading-none">14</span>
+<span class="text-secondary font-label-md text-label-md uppercase">Models Available</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Grid -->
+<section class="px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Ferrari -->
+<div class="glass-card glint-border flex flex-col h-full group">
+<div class="relative h-64 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A macro detail shot of a Ferrari's Rosso Corsa paint and the Scuderia Ferrari shield logo on a front wing. The lighting is dark and moody, emphasizing the fluid aerodynamic curves and the pristine glossy finish. Soft reflections of workshop neon lights trace the car's body lines, creating a high-end luxury atmosphere typical of a midnight supercar atelier." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC14Scxpp--kH0kAtS4QfpqBXbxxre4FPYeLkULGi8_gqx2N4IEGL7ARjUB77oS7ycU8dmFdko2a9z5xXFkjhvV-dwuP3XlqLghKC2lPmHyWCvsi-zDm4zSa_CJc17xTpAX7MXO3k0SP5-xcdL4ZE2TjbrD_ujceRxASzF4nWRcgCukCv2YtiaFpxWok6IkTkkXDo-MuFau0UUeJtis-1X2p7RPMSqgJQGBuGqGboD18rnarWEhC4FKnv6bmRbZEWBKVoPS6Ave_Yw')"></div>
+</div>
+<div class="p-8 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-white leading-tight">Ferrari</h3>
+<p class="text-secondary font-label-md text-label-md uppercase tracking-widest">Italy</p>
+</div>
+<span class="material-symbols-outlined text-brand-gold/50 text-[32px]">shield</span>
+</div>
+<p class="font-body-md text-body-md text-secondary-fixed-dim mb-8 flex-grow">
+                            The pinnacle of automotive passion. Every Ferrari is a masterpiece of engineering born from the racetrack.
+                        </p>
+<div class="border-t border-white/5 pt-6 flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-white font-headline-lg text-[24px]">12</span>
+<span class="text-secondary-fixed-dim text-[12px] uppercase">Models</span>
+</div>
+<button class="text-brand-gold font-label-md text-label-md uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all">
+                                Explore <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bugatti -->
+<div class="glass-card glint-border flex flex-col h-full group">
+<div class="relative h-64 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A wide-angle interior view of a Bugatti Chiron's cockpit at night. The focus is on the center console's polished aluminum and the horseshoe-shaped lighting element. The materials visible are navy blue leather and exposed carbon fiber. The lighting is sophisticated and dim, highlighting the technical precision and ultra-luxury craftsmanship of the French hypercar manufacturer." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA5qIJFnWWgUZ82t2DU92yz-FGN6pTqhHQaYAJ5CJa6le2W9ofSPtvO0QrQVpvveRUirSDeJZFfk4eISKWIOuNna8a9_STIJG5wWnS78SHfpvJdHAIzjJHqA-LOvXjNYICdc9SbBBb8dnY5TiKMO4bKGLtdeWVwdkQVgAyZ2631maMvRM5CL40ML0dxoBuXaueAdw06GX8-3hbLLyoZ9SEVB0yW-6eWPw0NnkRM9UOz_685cqPLQMDpICKve1ZWvgYC3Zd_SixuY9o')"></div>
+</div>
+<div class="p-8 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-white leading-tight">Bugatti</h3>
+<p class="text-secondary font-label-md text-label-md uppercase tracking-widest">France</p>
+</div>
+<span class="material-symbols-outlined text-brand-gold/50 text-[32px]">diamond</span>
+</div>
+<p class="font-body-md text-body-md text-secondary-fixed-dim mb-8 flex-grow">
+                            Defining the ultra-high performance segment through unmatched exclusivity and 1,500+ horsepower.
+                        </p>
+<div class="border-t border-white/5 pt-6 flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-white font-headline-lg text-[24px]">04</span>
+<span class="text-secondary-fixed-dim text-[12px] uppercase">Models</span>
+</div>
+<button class="text-brand-gold font-label-md text-label-md uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all">
+                                Explore <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- McLaren -->
+<div class="glass-card glint-border flex flex-col h-full group">
+<div class="relative h-64 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A high-tech studio shot focusing on the rear aerodynamic wing and active airbrake of a McLaren 750S. The car is painted in a vibrant papaya orange that contrasts sharply with the deep obsidian black of the studio. Precision-cut panel gaps and carbon fiber textures are visible under cold, clinical lighting, reflecting McLaren's obsession with weight and technical perfection." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCo5Wg0jBtSqHUguyZ-1tc_w6iswYuiivh6PVFRtFtlqQSMBKoxU1-vlsWXKDJEiCqgBtSTekDrSa6qWYmqeGvSE_uxoIBfeagxkz_WFBdMCmNXW1WbduVi3jivEiR5hiK_De4A7q8U7tSxPKrQi2f_wNnd5MXLjifmu4NELNsT0FG_y2A_Q_mQcM12gJyxoAH2q08MZMY5JRheazI7GqIEtU12FdpTabNCmDFZ1Nv10ZKAditfnr2xl1QhKcSO5xVRIvxnWtwCUYg')"></div>
+</div>
+<div class="p-8 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-white leading-tight">McLaren</h3>
+<p class="text-secondary font-label-md text-label-md uppercase tracking-widest">UK</p>
+</div>
+<span class="material-symbols-outlined text-brand-gold/50 text-[32px]">precision_manufacturing</span>
+</div>
+<p class="font-body-md text-body-md text-secondary-fixed-dim mb-8 flex-grow">
+                            Born from Formula 1. McLaren applies racing technology to the road with surgical precision.
+                        </p>
+<div class="border-t border-white/5 pt-6 flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-white font-headline-lg text-[24px]">08</span>
+<span class="text-secondary-fixed-dim text-[12px] uppercase">Models</span>
+</div>
+<button class="text-brand-gold font-label-md text-label-md uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all">
+                                Explore <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Porsche -->
+<div class="glass-card glint-border flex flex-col h-full group">
+<div class="relative h-64 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A minimalist architectural shot of a silver Porsche 911 GT3 RS parked outside a brutalist concrete building at twilight. The car's silhouette is iconic, with the large rear wing and hood vents creating a powerful profile. The lighting is soft and blue-toned, emphasizing the brushed metal textures and the German engineering brand's philosophy of functional elegance." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCfnRw6-wAAUbg4XYt6ZzC0vzavFYa0kjRVswOOPfkyQGDCy8akHqWCOw0Bh7ZlJaNulaHiljH10zLaqdvgWSHuugvmDJiVAeSjhtdyijbDxTuq7c6VEwckViDa9_whZt4D8Je7iUkMWfHVbu9laqDL-uVM5jwzbVanEgiPX_pVJ0D4o7TwxBCTXC2L36N5ROHHiLAj3BVICj0A3Sbqs2AK62DNgkdeCwxEJHlJnostb_NFO2ydw1YfcVArHAvqFVtOsiMWy5_sJj0')"></div>
+</div>
+<div class="p-8 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-white leading-tight">Porsche</h3>
+<p class="text-secondary font-label-md text-label-md uppercase tracking-widest">Germany</p>
+</div>
+<span class="material-symbols-outlined text-brand-gold/50 text-[32px]">verified</span>
+</div>
+<p class="font-body-md text-body-md text-secondary-fixed-dim mb-8 flex-grow">
+                            Engineering excellence and everyday usability. The gold standard for sports cars worldwide.
+                        </p>
+<div class="border-t border-white/5 pt-6 flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-white font-headline-lg text-[24px]">21</span>
+<span class="text-secondary-fixed-dim text-[12px] uppercase">Models</span>
+</div>
+<button class="text-brand-gold font-label-md text-label-md uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all">
+                                Explore <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Rolls-Royce -->
+<div class="glass-card glint-border flex flex-col h-full group">
+<div class="relative h-64 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="An extreme close-up of the Spirit of Ecstasy ornament on a Rolls-Royce bonnet. The figurine is made of polished stainless steel and glows under soft, warm amber streetlights. The background is a blurred cityscape at night, suggesting an effortless glide through a major metropolis. The focus is sharp on the ornament, representing the ultimate in British luxury and heritage." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA7wlafjlmn7XTLnUJVNKzfx_kKH5sc9GVo0MAIt0wBVWVmG_HbI2-4XzcPPkHtb0fVXWShZrjG-vyS038ntznYOT1l5b9JRdARSDqiHrUbAcH-B59CmsFO5g_ztGguCEIj9nNclWkVqonx6QpdE7toz7dBGEZHsbtxJQhJuw61u9R13aR3RoB7k5-RLOlPJ4PudU2ZeEkWKdr3Tp-VAKgKv4Yw4KIBKWxLCsYB2Ujl3eT-cneih3MorCf20lAca_Zh1bKAv3XUdPw')"></div>
+</div>
+<div class="p-8 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-white leading-tight">Rolls-Royce</h3>
+<p class="text-secondary font-label-md text-label-md uppercase tracking-widest">UK</p>
+</div>
+<span class="material-symbols-outlined text-brand-gold/50 text-[32px]">star</span>
+</div>
+<p class="font-body-md text-body-md text-secondary-fixed-dim mb-8 flex-grow">
+                            The world's most luxurious cars. Bespoke craftsmanship that transcends transportation.
+                        </p>
+<div class="border-t border-white/5 pt-6 flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-white font-headline-lg text-[24px]">06</span>
+<span class="text-secondary-fixed-dim text-[12px] uppercase">Models</span>
+</div>
+<button class="text-brand-gold font-label-md text-label-md uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all">
+                                Explore <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Aston Martin -->
+<div class="glass-card glint-border flex flex-col h-full group">
+<div class="relative h-64 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A cinematic night shot of an Aston Martin DBS 770 Ultimate driving through a misty London street. The headlights cut through the fog, revealing the distinctive front grille and sleek silhouette. The color palette is dark British Racing Green and deep grays, evoking a sense of timeless sophistication, power, and the brand's long-standing cinematic heritage." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuACyqjAutgPWsgNB6WQKJ3Cyx96eE6GERHLX_FB5XRUBvalwpnhUP64qwVTgun4p-b6J0RNvp2vJSaQuI5KJAeqY9Btgq09EzicKJ2LPikKm8gKj8vkgIaTp6RTCM4d3jDrcZ3FdGN38oIaUf5uoi1runqioJdv1l7ip_1XobRys_q9NaTQhKD8GPxleWyoiNrBSf_ZykWmisUjEwZFzzgacyTrFpf-igeUur70zbBYcfCUTAWMwMvZHrwyU1C-bq69Xvagd-a0WA4')"></div>
+</div>
+<div class="p-8 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-white leading-tight">Aston Martin</h3>
+<p class="text-secondary font-label-md text-label-md uppercase tracking-widest">UK</p>
+</div>
+<span class="material-symbols-outlined text-brand-gold/50 text-[32px]">auto_awesome</span>
+</div>
+<p class="font-body-md text-body-md text-secondary-fixed-dim mb-8 flex-grow">
+                            The definition of grand touring. Aston Martin combines beauty, soul, and performance.
+                        </p>
+<div class="border-t border-white/5 pt-6 flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-white font-headline-lg text-[24px]">09</span>
+<span class="text-secondary-fixed-dim text-[12px] uppercase">Models</span>
+</div>
+<button class="text-brand-gold font-label-md text-label-md uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all">
+                                Explore <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Pagani -->
+<div class="glass-card glint-border flex flex-col h-full group">
+<div class="relative h-64 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A focused shot on the quad-exhaust system and intricate rear carbon-fiber diffuser of a Pagani Huayra. The lighting is warm and golden, reflecting off the blue-tinted titanium exhaust tips. The surrounding textures are matte carbon fiber and polished aluminum, showcasing Horacio Pagani's philosophy of 'Art and Science' in automotive design." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbcDKoXji_TL2OiESNCvTRn7jwTnXrPoKUCstkmBIaG97vxeb-h5kzz4sLGPULv_lM0_Xq4eVy_6Ylt8x9N1FNE5Y37abmx3eS-BYHfyR8orAyTaHSnl6W406qQb0dHheXLt74S7rGqHP5-Ml_F8RpVzkZ6wspBBT9B-NXTo9vIOfwB_i-Jr15Y9E5jSID1aIGaWKx6-ecNnLtaB8ifsS9PJ71ANAfHJD2Xfxf8H0_yAvMbzPEcouG3g3ZPrVnfLDQMeO3OYyzm00')"></div>
+</div>
+<div class="p-8 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-white leading-tight">Pagani</h3>
+<p class="text-secondary font-label-md text-label-md uppercase tracking-widest">Italy</p>
+</div>
+<span class="material-symbols-outlined text-brand-gold/50 text-[32px]">palette</span>
+</div>
+<p class="font-body-md text-body-md text-secondary-fixed-dim mb-8 flex-grow">
+                            Automotive art. Pagani crafts carbon fiber sculptures that happen to be world-class hypercars.
+                        </p>
+<div class="border-t border-white/5 pt-6 flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-white font-headline-lg text-[24px]">03</span>
+<span class="text-secondary-fixed-dim text-[12px] uppercase">Models</span>
+</div>
+<button class="text-brand-gold font-label-md text-label-md uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all">
+                                Explore <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Maserati -->
+<div class="glass-card glint-border flex flex-col h-full group">
+<div class="relative h-64 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A side-profile shot of a Maserati MC20 in a white studio. The butterfly doors are open, revealing the minimalist interior. The lighting is bright and even, highlighting the car's flowing, aerodynamic silhouette and the trident badge on the C-pillar. The image conveys Italian flair and a modern rebirth of the historic racing brand." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD_1lLIjE755F1ljTH_2Z6sU0tPWW92cGE02IKmCAkhHdhBDf-RYV2M8g1UA9nzWo1UoSwHBp_gmkI6j4s26B2HvwXk7aK9_TAMhKzFUjvVldcGgsFUwBLCQhgJZKtRo2EIXnODE6mnEVlzgOMEf2Gud_0eoWkB-qTZRSDvnLFeAOGUyFEzpQChL6RvQmqh2u5Tavm6qmLC5PAfcFfasIZiv7urt4OyY4N9bRy-JAH4Opu8AwSlvyJ1tqzSuNy4Ve94C7EdCN9D3io')"></div>
+</div>
+<div class="p-8 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-white leading-tight">Maserati</h3>
+<p class="text-secondary font-label-md text-label-md uppercase tracking-widest">Italy</p>
+</div>
+<span class="material-symbols-outlined text-brand-gold/50 text-[32px]">water_drop</span>
+</div>
+<p class="font-body-md text-body-md text-secondary-fixed-dim mb-8 flex-grow">
+                            Italian elegance and grand touring heritage, newly invigorated by cutting-edge mid-engine performance.
+                        </p>
+<div class="border-t border-white/5 pt-6 flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-white font-headline-lg text-[24px]">07</span>
+<span class="text-secondary-fixed-dim text-[12px] uppercase">Models</span>
+</div>
+<button class="text-brand-gold font-label-md text-label-md uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all">
+                                Explore <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Footer CTA -->
+<section class="mt-32 px-margin-desktop mb-20">
+<div class="glass-card glint-border p-16 flex flex-col md:flex-row items-center justify-between gap-12 overflow-hidden relative">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none">
+
+</div>
+<div class="relative z-10 max-w-xl">
+<h2 class="font-display-lg text-headline-lg text-white mb-4">Stay at the Cutting Edge</h2>
+<p class="font-body-lg text-body-lg text-secondary">Join our inner circle for exclusive previews of new collection arrivals and invitations to private showroom events.</p>
+</div>
+<div class="relative z-10 w-full md:w-auto flex flex-col md:flex-row gap-4">
+<input class="bg-black border-none border-b border-brand-silver/30 text-white font-label-md px-6 py-4 w-full md:w-80 focus:ring-0 focus:border-brand-gold transition-all" placeholder="ENTER YOUR EMAIL" type="email"/>
+<button class="bg-brand-gold text-on-primary font-label-md text-label-md uppercase tracking-widest px-10 py-4 hover:brightness-110 active:scale-95 transition-all">Subscribe</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-dim border-t border-white/10 w-full py-12 flex flex-col items-center gap-8 px-margin-desktop">
+<div class="font-display-lg text-headline-lg-mobile text-on-surface">ATELIER</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-label-md text-label-md uppercase text-secondary-container hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md uppercase text-secondary-container hover:text-secondary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-md text-label-md uppercase text-secondary-container hover:text-secondary transition-colors" href="#">Contact</a>
+<a class="font-label-md text-label-md uppercase text-secondary-container hover:text-secondary transition-colors" href="#">Careers</a>
+</div>
+<div class="font-label-md text-label-md uppercase text-secondary text-center">
+            © 2024 ATELIER SUPERCAR ATELIER. ALL RIGHTS RESERVED.
+        </div>
+</footer>
+<script>
+        // Subtle interaction script for magnetic button effect
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px) scale(1.02)`;
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = `translate(0px, 0px) scale(1)`;
+            });
+        });
+
+        // Sticky nav opacity change on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-black/90');
+                nav.classList.remove('bg-surface/70');
+            } else {
+                nav.classList.remove('bg-black/90');
+                nav.classList.add('bg-surface/70');
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>News &amp; Reviews | ATELIER Supercar Atelier</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@700;800&amp;family=Manrope:wght@400;500;700&amp;family=Space+Grotesk:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@100..900&amp;family=Manrope:wght@100..900&amp;family=Space+Grotesk:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        .glass-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border: 1px solid transparent;
+            background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02)) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+        body {
+            background-color: #050505;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+        .spec-grid-line {
+            height: 1px;
+            background: rgba(192, 192, 192, 0.1);
+            width: 100%;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#141313",
+                        "surface-container-low": "#1c1b1b",
+                        "error": "#ffb4ab",
+                        "surface-container-high": "#2b2a2a",
+                        "on-background": "#e5e2e1",
+                        "tertiary-container": "#040505",
+                        "surface-variant": "#353434",
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#c6c6c6",
+                        "outline": "#8e9192",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "secondary-container": "#4a4949",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-secondary-container": "#bab8b7",
+                        "surface": "#141313",
+                        "outline-variant": "#444748",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "on-primary": "#313030",
+                        "on-tertiary": "#2f3131",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container-highest": "#353434",
+                        "surface-container": "#201f1f",
+                        "primary-fixed": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "tertiary-fixed": "#e3e2e2",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "background": "#141313",
+                        "surface-bright": "#3a3939",
+                        "on-surface": "#e5e2e1",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "primary-container": "#050505",
+                        "secondary": "#c8c6c5",
+                        "secondary-fixed": "#e5e2e1",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "primary": "#c9c6c5",
+                        "on-primary-container": "#797777",
+                        "surface-tint": "#c9c6c5",
+                        "on-secondary": "#313030",
+                        "on-primary-fixed": "#1c1b1b",
+                        "inverse-primary": "#5f5e5e",
+                        "on-error": "#690005",
+                        "on-tertiary-container": "#767777",
+                        "on-primary-fixed-variant": "#474646",
+                        "gold": "#D4AF37",
+                        "silver": "#C0C0C0"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Anybody"],
+                        "body-lg": ["Manrope"],
+                        "headline-lg-mobile": ["Anybody"],
+                        "body-md": ["Manrope"],
+                        "label-md": ["Space Grotesk"],
+                        "display-lg": ["Anybody"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "0.03em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "0.03em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "0.05em", "fontWeight": "800"}]
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "container-max": "1440px",
+                        "gutter": "24px"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-white/10 flex justify-between items-center px-margin-desktop py-4 w-full">
+<div class="font-display-lg text-headline-lg tracking-tighter text-on-surface">ATELIER</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-colors" href="#">Showroom</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-colors" href="#">Comparison</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-primary border-b-2 border-primary pb-1" href="#">Journal</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-colors" href="#">About</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-all active:scale-95">Favorites</button>
+<button class="bg-white/10 px-6 py-2 rounded-full font-label-md text-label-md uppercase tracking-widest text-on-surface hover:bg-white/20 transition-all active:scale-95">Sign In</button>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Hero Featured Article -->
+<section class="px-margin-desktop mb-20">
+<div class="relative w-full h-[716px] rounded-xl overflow-hidden glass-card group cursor-pointer">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A side-profile shot of a sleek, aerodynamic hypercar in a deep obsidian black finish, parked inside a modern minimalist showroom at midnight. The car's silhouette is traced by a thin, sharp gold light from a single overhead strip, highlighting its carbon fiber textures and aggressive vents. The atmosphere is quiet, luxurious, and technologically advanced, using a high-contrast dark-mode aesthetic with subtle silver metallic reflections." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAkjvWU4gmr1K5_oAVw4xMj8lkJ82Lwu4AI5ilfCeuRKi7O29qbBi80mAksRxqO73iq3y0pyPIn1HidupinRVSw7EfXVCzexPv86UxS4u5LNW0ZIo_PoNyIlm4U64Lrlv4Qv6kKCCC1wdmfuLaE7wFP8BlRG7O-Jrrq_0yL6oDQhtL-bA06VduxGFw-OGo7gKyU96s8I4M63Fttv7HznSK2ZU7N4Qsw3QNZ84KurzFiGWsWR6D1bCL_CcH7RjvQpKBOXtd0WwGE_Yc')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90"></div>
+</div>
+<div class="absolute bottom-0 left-0 p-12 z-10 max-w-3xl">
+<div class="inline-block px-3 py-1 bg-gold text-on-primary font-label-md text-label-md uppercase mb-6">Launch</div>
+<h1 class="font-display-lg text-display-lg mb-6 leading-none">THE APEX: ZERO EMISSION REDEFINED.</h1>
+<p class="font-body-lg text-body-lg text-secondary-fixed-dim mb-8">Exploring the boundaries of physics with the world's first true carbon-neutral hyper-GT. ATELIER goes behind the scenes of the midnight testing phase.</p>
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-gold">person</span>
+</div>
+<span class="font-label-md text-label-md uppercase tracking-wider">Julian Voss</span>
+</div>
+<div class="h-4 w-px bg-white/20"></div>
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary">October 24, 2024</span>
+</div>
+</div>
+<div class="absolute right-12 bottom-12 z-10">
+<button class="w-20 h-20 rounded-full bg-gold flex items-center justify-center hover:scale-110 transition-transform active:scale-95 shadow-[0_0_40px_rgba(212,175,55,0.4)]">
+<span class="material-symbols-outlined text-black text-4xl">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Filters & Headline -->
+<section class="px-margin-desktop mb-12">
+<div class="flex flex-col md:flex-row justify-between items-end gap-8 mb-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg uppercase mb-4">News &amp; Reviews</h2>
+<div class="w-24 h-1 bg-gold"></div>
+</div>
+<div class="flex gap-4">
+<button class="px-8 py-3 bg-white text-black font-label-md text-label-md uppercase tracking-widest transition-all">Latest</button>
+<button class="px-8 py-3 border border-white/20 hover:border-gold font-label-md text-label-md uppercase tracking-widest transition-all">Reviews</button>
+<button class="px-8 py-3 border border-white/20 hover:border-gold font-label-md text-label-md uppercase tracking-widest transition-all">Events</button>
+<button class="px-8 py-3 border border-white/20 hover:border-gold font-label-md text-label-md uppercase tracking-widest transition-all">New Releases</button>
+</div>
+</div>
+<div class="spec-grid-line mb-12 opacity-30"></div>
+<!-- News Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1: Review -->
+<article class="glass-card flex flex-col h-full group">
+<div class="relative h-64 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A close-up shot of a high-performance steering wheel made of alcantara and carbon fiber, with glowing digital dials in the background. The scene is illuminated by cool blue and warm amber LEDs, creating a moody, technical atmosphere inside a supercar cockpit at night. The focus is sharp on the texture of the materials, reflecting a luxury automotive design aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBpOb9E0lrvsPsNvsvZFhAuLdDPl1HZLX6M65wAEbdSzCjGq7FkP_5njlL-On-_7_5J5X73AtqgL0Lx_9yI3DhlTWdoCeuqf6RJUA5X2TJJCG3zjih0d2G8ywPdw71qP_EpXt9R4ZKMU_U3UMDHGmtlJqkMB0ynBP9VR8CklvE6aQcDdhEDKLzdbKtcUeudl9jRihVTCRSEGKiJM1cjKBq-MpqR7a7wxgzsXJeaML1brfa4l0onrQ9qytE1PTMaUIam6sN_DcDT5Ac')"></div>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-dim/80 backdrop-blur-md px-3 py-1 font-label-md text-label-md uppercase border border-white/10">Review</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<span class="font-label-md text-label-md text-gold uppercase mb-3">Track Report</span>
+<h3 class="font-headline-lg text-headline-lg uppercase mb-4 text-2xl">The 1,200HP Symphony: Testing the Monza V12</h3>
+<p class="font-body-md text-body-md text-secondary-container mb-8 flex-grow">Can naturally aspirated engines survive in the electric era? We take the new Monza to its absolute limit at the Nürburgring.</p>
+<div class="flex justify-between items-center mt-auto">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Marcello Rossi</span>
+<span class="text-xs text-secondary-container font-label-md uppercase">Oct 20, 2024</span>
+</div>
+<button class="flex items-center gap-2 font-label-md text-label-md uppercase tracking-widest hover:text-gold transition-colors">
+                                READ <span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 2: Event -->
+<article class="glass-card flex flex-col h-full group">
+<div class="relative h-64 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="An expansive aerial view of an elite supercar gathering in the courtyard of a futuristic architectural estate in the Alps at dusk. Rows of exotic cars in vibrant metallic colors are parked on dark stone pavement, glowing under soft architectural floodlights. The surrounding landscape is dramatic and foggy, evoking a sense of exclusivity, wealth, and high-end automotive culture." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBKal0JVamAPHviEN7nV0Hcc_GkLBMFGVI8SqWAanGDsLwTG1f_1ljLryHd-0aUCEaerNbjp_llmYnBNB09hp7b_smCIlsp6MHmCjR0o9tWbRA8jfkCICcWgXoV2gDDgWfV5PZl5fQkMD6rBnI-Zkx0c3VTGvuSDkBkbN310tsp2BD-mOBvN2mjHaRFK3uv8yLmtsaaJAd_WRJn1yNqyotvw_yoIag-VLpXwY7mhB0v2nmIo5mdkx9g_zHa--hZeBuCgm2s5kZepME')"></div>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-dim/80 backdrop-blur-md px-3 py-1 font-label-md text-label-md uppercase border border-white/10">Event</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<span class="font-label-md text-label-md text-gold uppercase mb-3">Midnight Concours</span>
+<h3 class="font-headline-lg text-headline-lg uppercase mb-4 text-2xl">Under the Obsidian Sky: ATELIER Private Meet</h3>
+<p class="font-body-md text-body-md text-secondary-container mb-8 flex-grow">An exclusive look into the most prestigious private gathering of collectors, showcasing three never-before-seen prototypes.</p>
+<div class="flex justify-between items-center mt-auto">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Elena Drago</span>
+<span class="text-xs text-secondary-container font-label-md uppercase">Oct 18, 2024</span>
+</div>
+<button class="flex items-center gap-2 font-label-md text-label-md uppercase tracking-widest hover:text-gold transition-colors">
+                                READ <span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 3: News -->
+<article class="glass-card flex flex-col h-full group">
+<div class="relative h-64 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A highly detailed close-up of a carbon fiber brake disc glowing cherry-red during a stress test in a laboratory environment. Sparks fly from the contact point as the mechanical calipers clamp down. The lighting is focused and dramatic, emphasizing the raw engineering power and thermal dynamics of luxury supercar components in a dark, high-contrast workshop setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD4T65dIrum2yEipLRLt62l6aVL38rzkZoV4529VP7-gQStcL-gdBauWiBEPmEJEoZwMWckCA-3mTaZ15uAMso915swTp2fFjWrquv4GhVsgruX0VS8wM9fp8Iv4uWDzHjjR5HIEWduNRzw79Cwgy8xUTpFThYRNheFpGto5WMSgNcOMPOdbUG9PEn-_imyBYGUSlIbaAf5Qs8exxBvBRTHCM_qLlRcG-XECW_wVEGHod3sr4lerZrgncmLaQIrI46OqkRgMXjL8oI')"></div>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-dim/80 backdrop-blur-md px-3 py-1 font-label-md text-label-md uppercase border border-white/10">News</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<span class="font-label-md text-label-md text-gold uppercase mb-3">Technology</span>
+<h3 class="font-headline-lg text-headline-lg uppercase mb-4 text-2xl">The Graphene Revolution: Chassis Evolution</h3>
+<p class="font-body-md text-body-md text-secondary-container mb-8 flex-grow">ATELIER's engineering lab reveals a new graphene-weave carbon fiber that reduces weight by 12% while increasing rigidity.</p>
+<div class="flex justify-between items-center mt-auto">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Viktor Thorne</span>
+<span class="text-xs text-secondary-container font-label-md uppercase">Oct 15, 2024</span>
+</div>
+<button class="flex items-center gap-2 font-label-md text-label-md uppercase tracking-widest hover:text-gold transition-colors">
+                                READ <span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 4: Review -->
+<article class="glass-card flex flex-col h-full group">
+<div class="relative h-64 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A low-angle dynamic shot of a silver supercar speeding through a neon-lit urban tunnel at night. The motion blur of the tunnel lights creates long, glowing streaks along the car's body. The aesthetic is cinematic and high-energy, highlighting the car's elegant curves and its interaction with the futuristic city lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAAEU9IZqCDAiTLZUE-8--1IPr2ehPqKTp1nMfskNJ1E_WD8_cP0dgCjlaZjq7XsztlLzJhuP05hlastRAuv-Td4z8SsCQKlUsjziVanQs3AMmlqRqbD0Zh6sFw22pACd8DorgUb_GgdAZXAORuexT_-0QoIhtV81rDTZytGXY2tbwW6X-4GhIo4sY8Mq82pf5xaIjey3_HAg-JXVCqzXa03bDPid2BEdJgxnm4MzE4prdOGAo939iGS0-TZ7VDFkQxbchPpnwaXsA')"></div>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-dim/80 backdrop-blur-md px-3 py-1 font-label-md text-label-md uppercase border border-white/10">Review</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<span class="font-label-md text-label-md text-gold uppercase mb-3">City Living</span>
+<h3 class="font-headline-lg text-headline-lg uppercase mb-4 text-2xl">The Daily Hypercar: Living with the Phantom</h3>
+<p class="font-body-md text-body-md text-secondary-container mb-8 flex-grow">We spent 7 days using a 2000hp monster as a daily driver in London. Here is the surprising truth about usability.</p>
+<div class="flex justify-between items-center mt-auto">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">James Sterling</span>
+<span class="text-xs text-secondary-container font-label-md uppercase">Oct 12, 2024</span>
+</div>
+<button class="flex items-center gap-2 font-label-md text-label-md uppercase tracking-widest hover:text-gold transition-colors">
+                                READ <span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 5: Launch -->
+<article class="glass-card flex flex-col h-full group">
+<div class="relative h-64 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A dramatic reveal of a supercar under a silk shroud, with one headlight peeking through. The scene is set on a rotating platform in a dark, vaulted warehouse. Smoke machines create a thick atmospheric fog around the base. Intense spotlights cut through the dark, creating a mysterious and highly anticipated product launch vibe." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCgwlP_JL0bqBCSsSiKpzZIh5CdvPALvTIUrQ7DzSEvHTfWWg-CPzdcMQ3TE3HFB7mVVz8khA_Eht5cZfIg80ycgTWVIS31GL-qJfJ-qa8gRbnWn2Eyl11KMz59enV5i88iDtpK3qyHbHNq9zGLPv6WPqn8OLtDq4t8K-Dk3CDrKZlj9CD3Mf4pAZw_5XZpgFk4uRkCN-YHLvGiAdzzq5oIZNvDkZO4c3ycQC6yFgqwQ6TxH4f41xEL6UX4LNyU1dNCDjQzyXvS2rU')"></div>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-dim/80 backdrop-blur-md px-3 py-1 font-label-md text-label-md uppercase border border-white/10">Launch</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<span class="font-label-md text-label-md text-gold uppercase mb-3">Unveiling</span>
+<h3 class="font-headline-lg text-headline-lg uppercase mb-4 text-2xl">Project Midnight: The Final Production Version</h3>
+<p class="font-body-md text-body-md text-secondary-container mb-8 flex-grow">The long-awaited Project Midnight finally sheds its camouflage. See the first official studio photos and performance stats.</p>
+<div class="flex justify-between items-center mt-auto">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Julian Voss</span>
+<span class="text-xs text-secondary-container font-label-md uppercase">Oct 08, 2024</span>
+</div>
+<button class="flex items-center gap-2 font-label-md text-label-md uppercase tracking-widest hover:text-gold transition-colors">
+                                READ <span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Newsletter Bento -->
+<article class="bg-primary/5 rounded-xl border border-gold/20 flex flex-col justify-center items-center p-12 text-center relative overflow-hidden group">
+<div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+
+</div>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-gold text-5xl mb-6">mail</span>
+<h3 class="font-headline-lg text-headline-lg uppercase mb-4 text-2xl">Join the Inner Circle</h3>
+<p class="font-body-md text-body-md text-secondary-container mb-8">Receive early access to performance reviews and private auction notifications.</p>
+<div class="w-full space-y-4">
+<input class="w-full bg-black border-0 border-b border-silver/30 text-white font-label-md text-label-md p-4 focus:ring-0 focus:border-gold transition-colors placeholder:text-silver/30" placeholder="ENCRYPTED EMAIL ADDRESS" type="email"/>
+<button class="w-full bg-gold text-black font-label-md text-label-md uppercase tracking-widest py-4 hover:scale-[1.02] active:scale-95 transition-all">Subscribe</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<div class="mt-20 flex justify-center items-center gap-4">
+<button class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined">west</span>
+</button>
+<div class="flex gap-2">
+<span class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center font-label-md text-label-md">01</span>
+<span class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center font-label-md text-label-md hover:bg-white/5 cursor-pointer">02</span>
+<span class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center font-label-md text-label-md hover:bg-white/5 cursor-pointer">03</span>
+</div>
+<button class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined">east</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Tech Spec Floating Stat Bar (Micro Interaction) -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 glass-card rounded-full px-8 py-4 flex items-center gap-12 border border-gold/30 z-50 transition-all duration-500 opacity-0 translate-y-10" id="stat-bar">
+<div class="flex flex-col items-center">
+<span class="text-[10px] text-gold uppercase tracking-[0.2em] mb-1 font-label-md">New Updates</span>
+<span class="font-headline-lg text-headline-lg text-2xl leading-none">12</span>
+</div>
+<div class="w-px h-8 bg-white/10"></div>
+<div class="flex flex-col items-center">
+<span class="text-[10px] text-gold uppercase tracking-[0.2em] mb-1 font-label-md">Market Trend</span>
+<span class="font-headline-lg text-headline-lg text-2xl leading-none text-green-400">+4.2%</span>
+</div>
+<div class="w-px h-8 bg-white/10"></div>
+<div class="flex flex-col items-center">
+<span class="text-[10px] text-gold uppercase tracking-[0.2em] mb-1 font-label-md">Online Now</span>
+<span class="font-headline-lg text-headline-lg text-2xl leading-none">842</span>
+</div>
+</div>
+<!-- Footer Shell -->
+<footer class="bg-surface-dim border-t border-white/10 w-full py-12 flex flex-col items-center gap-8 px-margin-desktop">
+<div class="font-display-lg text-headline-lg-mobile text-on-surface uppercase tracking-tighter">ATELIER</div>
+<div class="flex flex-wrap justify-center gap-10">
+<a class="font-label-md text-label-md uppercase text-secondary-container hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md uppercase text-secondary-container hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-md text-label-md uppercase text-secondary-container hover:text-primary transition-colors" href="#">Contact</a>
+<a class="font-label-md text-label-md uppercase text-secondary-container hover:text-primary transition-colors" href="#">Careers</a>
+</div>
+<div class="spec-grid-line max-w-4xl opacity-10"></div>
+<div class="flex gap-6">
+<a class="w-10 h-10 rounded-full border border-white/5 flex items-center justify-center hover:text-gold transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="w-10 h-10 rounded-full border border-white/5 flex items-center justify-center hover:text-gold transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="w-10 h-10 rounded-full border border-white/5 flex items-center justify-center hover:text-gold transition-colors" href="#"><span class="material-symbols-outlined">rss_feed</span></a>
+</div>
+<p class="font-label-md text-label-md uppercase text-secondary/40">© 2024 ATELIER SUPERCAR ATELIER. ALL RIGHTS RESERVED.</p>
+</footer>
+<script>
+        // Micro-interaction for stat bar appearance
+        window.addEventListener('scroll', () => {
+            const bar = document.getElementById('stat-bar');
+            if (window.scrollY > 400) {
+                bar.classList.remove('opacity-0', 'translate-y-10');
+                bar.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                bar.classList.add('opacity-0', 'translate-y-10');
+                bar.classList.remove('opacity-100', 'translate-y-0');
+            }
+        });
+
+        // Hover effect for article cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>

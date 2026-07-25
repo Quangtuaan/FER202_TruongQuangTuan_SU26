@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Create Your ATELIER Account</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;700;800&family=Manrope:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@100..900&family=Manrope:wght@100..900&family=Space+Grotesk:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .glass-panel::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
+        }
+        .spec-divider {
+            height: 1px;
+            background: rgba(192, 192, 192, 0.1);
+            width: 100%;
+        }
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus {
+            -webkit-text-fill-color: #e5e2e1;
+            -webkit-box-shadow: 0 0 0px 1000px #000000 inset;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#141313",
+                        "surface-container-low": "#1c1b1b",
+                        "error": "#ffb4ab",
+                        "surface-container-high": "#2b2a2a",
+                        "on-background": "#e5e2e1",
+                        "tertiary-container": "#040505",
+                        "surface-variant": "#353434",
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#c6c6c6",
+                        "outline": "#8e9192",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "secondary-container": "#4a4949",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-secondary-container": "#bab8b7",
+                        "surface": "#141313",
+                        "outline-variant": "#444748",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "on-primary": "#313030",
+                        "on-tertiary": "#2f3131",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container-highest": "#353434",
+                        "surface-container": "#201f1f",
+                        "primary-fixed": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "tertiary-fixed": "#e3e2e2",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "background": "#141313",
+                        "surface-bright": "#3a3939",
+                        "on-surface": "#e5e2e1",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "primary-container": "#050505",
+                        "secondary": "#c8c6c5",
+                        "secondary-fixed": "#e5e2e1",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "primary": "#c9c6c5",
+                        "on-primary-container": "#797777",
+                        "surface-tint": "#c9c6c5",
+                        "on-secondary": "#313030",
+                        "on-primary-fixed": "#1c1b1b",
+                        "inverse-primary": "#5f5e5e",
+                        "on-error": "#690005",
+                        "on-tertiary-container": "#767777",
+                        "on-primary-fixed-variant": "#474646",
+                        "gold": "#D4AF37"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "container-max": "1440px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Anybody"],
+                        "body-lg": ["Manrope"],
+                        "headline-lg-mobile": ["Anybody"],
+                        "body-md": ["Manrope"],
+                        "label-md": ["Space Grotesk"],
+                        "display-lg": ["Anybody"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "0.03em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "0.03em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "0.05em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface selection:bg-gold/30 selection:text-white overflow-x-hidden min-h-screen">
+<main class="flex min-h-screen flex-col md:flex-row">
+<!-- Visual Column (Hidden on mobile or scaled appropriately) -->
+<section class="hidden md:flex md:w-1/2 relative overflow-hidden bg-surface-container-lowest items-end p-margin-desktop">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full" data-alt="A cinematic, low-angle shot of a matte black supercar parked in a futuristic, dark obsidian-floored atelier at midnight. Subtle, sharp volumetric lighting highlights the car's aerodynamic carbon fiber curves and gold brake calipers. The atmosphere is quiet, exclusive, and powerful, with a deep black and charcoal color palette and sharp metallic reflections on the ground." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCpEUAI102A15mdhoaTk7bzYUQkhMMp8pU2k_dRNQCvljOP01PCsIwbVpcBpZOPRrOKNnPuOKzBF0HOMU-Ufuv8_wF-_owcNkCiOdtK0O0ltjkKg5x9eqx9UUt4peyKohUI9L-psa10Vd8T6oMP5Frr2EN4HQnfLaGr2_N3uw_KwdG5lwO6gmccqpHaxWKM7XyCgWbxA-ontil3moY5bxS29c2gvVK0MpGAAYW9VZHAPJGpN-nJKgNHOrlzOp-Nn59Ai6nnIla8oXY')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-lg">
+<h2 class="font-headline-lg text-headline-lg text-white mb-4">Precision Engineered Luxury.</h2>
+<p class="font-body-md text-body-md text-secondary-fixed-dim max-w-sm">
+                    Access the world's most exclusive automotive collection. Your journey into the extraordinary begins here.
+                </p>
+<div class="mt-8 flex gap-8">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-gold uppercase tracking-widest">Performance</span>
+<span class="font-headline-lg text-headline-lg text-white">2.1<span class="text-body-md font-normal ml-1">S</span></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-gold uppercase tracking-widest">Exclusivity</span>
+<span class="font-headline-lg text-headline-lg text-white">01/50</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Form Column -->
+<section class="flex-1 flex flex-col justify-center items-center p-margin-mobile md:p-margin-desktop bg-surface-dim relative">
+<!-- Brand Anchor -->
+<div class="absolute top-8 left-8 md:left-margin-desktop">
+<h1 class="font-display-lg text-headline-lg tracking-tighter text-on-surface">ATELIER</h1>
+</div>
+<div class="w-full max-w-md space-y-8">
+<header class="space-y-2">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Create Your ATELIER Account</h2>
+<p class="font-body-md text-body-md text-secondary-fixed-dim">Join our community of technical enthusiasts and collectors.</p>
+</header>
+<div class="glass-panel p-8 rounded-xl shadow-2xl">
+<form class="space-y-5" onsubmit="event.preventDefault();">
+<div class="space-y-4">
+<!-- Full Name -->
+<div class="group">
+<label class="font-label-md text-label-md text-secondary uppercase block mb-1" for="name">Full Name</label>
+<input class="w-full bg-black border-0 border-b border-outline-variant focus:border-gold focus:ring-0 text-on-surface font-body-md transition-all duration-300 py-3 px-0 placeholder:text-surface-variant" id="name" placeholder="ALEXANDER VANCE" type="text"/>
+</div>
+<!-- Email -->
+<div class="group">
+<label class="font-label-md text-label-md text-secondary uppercase block mb-1" for="email">Email</label>
+<input class="w-full bg-black border-0 border-b border-outline-variant focus:border-gold focus:ring-0 text-on-surface font-body-md transition-all duration-300 py-3 px-0 placeholder:text-surface-variant" id="email" placeholder="AVANCE@ATELIER.COM" type="email"/>
+</div>
+<!-- Phone Number -->
+<div class="group">
+<label class="font-label-md text-label-md text-secondary uppercase block mb-1" for="phone">Phone Number</label>
+<input class="w-full bg-black border-0 border-b border-outline-variant focus:border-gold focus:ring-0 text-on-surface font-body-md transition-all duration-300 py-3 px-0 placeholder:text-surface-variant" id="phone" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+<!-- Password Fields -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="group">
+<label class="font-label-md text-label-md text-secondary uppercase block mb-1" for="password">Password</label>
+<input class="w-full bg-black border-0 border-b border-outline-variant focus:border-gold focus:ring-0 text-on-surface font-body-md transition-all duration-300 py-3 px-0 placeholder:text-surface-variant" id="password" placeholder="••••••••" type="password"/>
+</div>
+<div class="group">
+<label class="font-label-md text-label-md text-secondary uppercase block mb-1" for="confirm_password">Confirm Password</label>
+<input class="w-full bg-black border-0 border-b border-outline-variant focus:border-gold focus:ring-0 text-on-surface font-body-md transition-all duration-300 py-3 px-0 placeholder:text-surface-variant" id="confirm_password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+</div>
+<!-- Checkbox -->
+<div class="flex items-start gap-3 pt-2">
+<div class="relative flex items-center h-5">
+<input class="h-4 w-4 rounded border-outline-variant bg-surface-container text-gold focus:ring-gold focus:ring-offset-black" id="updates" name="updates" type="checkbox"/>
+</div>
+<label class="font-body-md text-label-md text-secondary-fixed-dim leading-tight select-none" for="updates">
+                                I agree to receive showroom updates and luxury car offers.
+                            </label>
+</div>
+<!-- CTA -->
+<div class="pt-6">
+<button class="w-full bg-gold hover:bg-gold/90 text-on-primary-fixed font-label-md text-label-md uppercase font-bold py-4 rounded-none transition-all duration-300 active:scale-[0.98] tracking-widest shadow-lg shadow-gold/10" type="submit">
+                                Create Account
+                            </button>
+</div>
+</form>
+<div class="mt-8 flex flex-col items-center gap-4">
+<div class="spec-divider"></div>
+<a class="font-label-md text-label-md text-secondary hover:text-on-surface transition-colors duration-200" href="#">
+                            Already have an account? <span class="text-gold border-b border-gold/30 ml-1">Sign In</span>
+</a>
+</div>
+</div>
+<!-- Technical Specs Footer -->
+<footer class="mt-12 flex justify-between items-center opacity-40">
+<div class="flex gap-4">
+<span class="font-label-md text-[10px] uppercase tracking-widest">Privacy encrypted</span>
+<span class="font-label-md text-[10px] uppercase tracking-widest">SSL 256-bit</span>
+</div>
+<p class="font-label-md text-[10px] uppercase tracking-widest">© 2024 ATELIER</p>
+</footer>
+</div>
+</section>
+</main>
+<!-- Visual Accents -->
+<div class="fixed top-0 right-0 w-1/3 h-1/3 bg-gold/5 blur-[120px] pointer-events-none"></div>
+<div class="fixed bottom-0 left-0 w-1/4 h-1/4 bg-primary/5 blur-[100px] pointer-events-none"></div>
+<script>
+        // Micro-interaction for input fields
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.querySelector('label').style.color = '#D4AF37';
+            });
+            input.addEventListener('blur', () => {
+                if (!input.value) {
+                    input.parentElement.querySelector('label').style.color = '';
+                }
+            });
+        });
+
+        // Submit animation effect
+        const form = document.querySelector('form');
+        const submitBtn = document.querySelector('button[type="submit"]');
+
+        form.addEventListener('submit', () => {
+            submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">refresh</span>';
+            submitBtn.disabled = true;
+            setTimeout(() => {
+                submitBtn.innerHTML = 'Account Created';
+                submitBtn.classList.remove('bg-gold');
+                submitBtn.classList.add('bg-white');
+            }, 1500);
+        });
+    </script>
+</body></html>

@@ -1,0 +1,341 @@
+.car-detail-page {
+  background: radial-gradient(ellipse at top, #121418 0%, #08080a 80%);
+  color: var(--color-text);
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.car-detail-hero {
+  position: relative;
+  height: 550px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 56px;
+  margin-bottom: 56px;
+}
+
+.car-detail-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, #0b0c10 0%, rgba(11, 12, 16, 0.4) 60%, transparent 100%);
+  z-index: 1;
+}
+
+.car-detail-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.car-detail-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 6vw, 48px);
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 12px 0 6px;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.car-detail-price {
+  font-family: var(--font-body);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-gold);
+  margin: 0;
+}
+
+.car-detail-container {
+  max-width: 1280px;
+}
+
+.detail-section-title {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  background: linear-gradient(180deg, #ffffff 0%, #a8adb7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.car-description {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+}
+
+.performance-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--color-white);
+}
+
+.perf-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.perf-value {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+/* Spec Table & Overview Container in Detail Page */
+.car-detail-page .spec-table-container {
+  background: linear-gradient(135deg, rgba(26, 29, 36, 0.55) 0%, rgba(15, 17, 21, 0.8) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(197, 168, 128, 0.2); /* luxury gold border */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.06);
+  overflow-x: auto;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+.car-detail-page .spec-table-container:hover {
+  border-color: rgba(197, 168, 128, 0.35);
+}
+
+/* Style for the right side Performance Specs Card */
+.car-detail-page .glass-card {
+  background: linear-gradient(135deg, rgba(26, 29, 36, 0.55) 0%, rgba(15, 17, 21, 0.8) 100%) !important;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(197, 168, 128, 0.2) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.06) !important;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.car-detail-page .glass-card:hover {
+  border-color: rgba(197, 168, 128, 0.35) !important;
+  transform: translateY(-2px);
+}
+
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.spec-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  transition: background-color 0.2s;
+}
+
+.spec-row:hover {
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+.spec-row td {
+  padding: 18px 24px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-white);
+}
+
+.spec-row td.spec-name-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.7);
+  width: 35%;
+}
+
+@media (max-width: 768px) {
+  .car-detail-hero {
+    height: 380px;
+  }
+}
+
+/* Cockpit Widget Styling */
+.cockpit-widget-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 6px;
+}
+
+.widget-subtitle {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: 0.1em;
+}
+
+/* Paint Configurator Swatches */
+.swatch-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.swatch-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swatch-btn:hover {
+  transform: scale(1.1);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.swatch-btn.active {
+  border-color: var(--color-gold);
+  transform: scale(1.1);
+  box-shadow: 0 0 14px rgba(197, 168, 128, 0.4);
+}
+
+/* Tooltip */
+.swatch-tooltip {
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  text-align: center;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 10px;
+  position: absolute;
+  z-index: 10;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.swatch-btn:hover .swatch-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Tachometer circular gauge */
+.tachometer-wrapper {
+  width: 140px;
+  height: 140px;
+}
+
+.tachometer {
+  width: 100%;
+  height: 100%;
+}
+
+.tacho-track {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.05);
+  stroke-width: 6;
+  stroke-dasharray: 251.2; /* 2 * PI * 40 */
+  stroke-dashoffset: 62.8; /* leaves 3/4 circle open */
+  transform: rotate(135deg);
+  transform-origin: 50px 50px;
+  stroke-linecap: round;
+}
+
+.tacho-progress {
+  fill: none;
+  stroke: var(--color-gold);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 251.2;
+  transform: rotate(135deg);
+  transform-origin: 50px 50px;
+  transition: stroke-dashoffset 0.1s ease;
+}
+
+.tacho-needle {
+  stroke: #ff3333;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  transform-origin: 50px 50px;
+  transition: transform 0.1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.tacho-hub {
+  fill: #ff3333;
+}
+
+.tacho-rpm-text {
+  font-family: var(--font-heading);
+  font-size: 8px;
+  font-weight: 700;
+  fill: var(--color-white);
+  letter-spacing: 0.5px;
+}
+
+/* Cockpit Action Buttons */
+.engine-start-btn {
+  background: radial-gradient(circle, #a80000 0%, #700000 100%);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 12px 24px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.engine-start-btn:hover {
+  background: radial-gradient(circle, #ff0000 0%, #aa0000 100%);
+  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.3);
+}
+
+.engine-start-btn.started {
+  background: radial-gradient(circle, #0099ff 0%, #0055bb 100%);
+  box-shadow: 0 0 20px rgba(0, 153, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.rev-pedal-btn {
+  background: linear-gradient(to bottom, #30333a 0%, #1e2025 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 14px 28px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.1s ease;
+  user-select: none;
+}
+
+.rev-pedal-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.rev-pedal-btn:active:not(:disabled) {
+  transform: translateY(3px) scale(0.98);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.6);
+  background: linear-gradient(to bottom, #1e2025 0%, #121316 100%);
+}
+

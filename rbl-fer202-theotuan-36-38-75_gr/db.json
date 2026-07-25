@@ -1,0 +1,686 @@
+{
+  "brands": [
+    {
+      "id": 1,
+      "name": "Lamborghini",
+      "country": "Ý",
+      "logoUrl": "https://upload.wikimedia.org/wikipedia/en/d/df/Lamborghini_Logo.svg",
+      "coverUrl": "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&auto=format&fit=crop&q=80",
+      "description": "Automobili Lamborghini S.p.A. là hãng xe siêu sang của Ý, được thành lập năm 1963 bởi Ferruccio Lamborghini. Nổi tiếng với những mẫu xe hình nêm góc cạnh và động cơ V10/V12 mạnh mẽ.",
+      "foundedYear": 1963,
+      "headquarters": "Sant'Agata Bolognese, Ý"
+    },
+    {
+      "id": 2,
+      "name": "Ferrari",
+      "country": "Ý",
+      "logoUrl": "https://upload.wikimedia.org/wikipedia/en/d/d1/Ferrari-Logo.svg",
+      "coverUrl": "https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=800&auto=format&fit=crop&q=80",
+      "description": "Ferrari S.p.A. là hãng xe thể thao huyền thoại của Ý, được Enzo Ferrari thành lập năm 1939. Biểu tượng ngựa phi trên nền vàng đã trở thành một trong những logo nổi tiếng nhất thế giới.",
+      "foundedYear": 1939,
+      "headquarters": "Maranello, Ý"
+    },
+    {
+      "id": 3,
+      "name": "Bugatti",
+      "country": "Pháp",
+      "logoUrl": "https://upload.wikimedia.org/wikipedia/en/a/a9/Bugatti_logo.svg",
+      "coverUrl": "https://images.unsplash.com/photo-1563720223185-11003d516935?w=800&auto=format&fit=crop&q=80",
+      "description": "Bugatti Automobiles S.A.S. là nhà sản xuất siêu xe đặc biệt của Pháp, nổi tiếng với những siêu phẩm đạt kỷ lục thế giới về tốc độ như Veyron và Chiron.",
+      "foundedYear": 1909,
+      "headquarters": "Molsheim, Pháp"
+    },
+    {
+      "id": 4,
+      "name": "McLaren",
+      "country": "Anh",
+      "logoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/3/30/McLaren_Automotive_logo.svg/1200px-McLaren_Automotive_logo.svg.png",
+      "coverUrl": "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=800&auto=format&fit=crop&q=80",
+      "description": "McLaren Automotive Limited là thương hiệu xe siêu sang của Anh Quốc, được xây dựng trên nền tảng công nghệ F1. Mọi mẫu xe đều được sản xuất thủ công tại nhà máy ở Woking, Surrey.",
+      "foundedYear": 1985,
+      "headquarters": "Woking, Surrey, Anh"
+    },
+    {
+      "id": 5,
+      "name": "Porsche",
+      "country": "Đức",
+      "logoUrl": "https://upload.wikimedia.org/wikipedia/de/5/5f/Porsche_Logo.svg",
+      "coverUrl": "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=800&auto=format&fit=crop&q=80",
+      "description": "Porsche AG là nhà sản xuất xe thể thao danh tiếng của Đức, được thành lập năm 1931. Nổi tiếng với dòng xe 911 huyền thoại và triết lý kỹ thuật 'mỗi chiếc xe đều có thể lái hằng ngày'.",
+      "foundedYear": 1931,
+      "headquarters": "Stuttgart, Đức"
+    },
+    {
+      "id": 6,
+      "name": "Aston Martin",
+      "country": "Anh",
+      "logoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b1/Aston_Martin_logo.svg/2560px-Aston_Martin_logo.svg.png",
+      "coverUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop&q=80",
+      "description": "Aston Martin Lagonda Global Holdings plc là hãng xe siêu sang của Anh, nổi tiếng là chiếc xe yêu thích của điệp viên James Bond. Mỗi chiếc xe được chế tạo thủ công với độ hoàn thiện tuyệt mỹ.",
+      "foundedYear": 1913,
+      "headquarters": "Gaydon, Warwickshire, Anh"
+    }
+  ],
+  "cars": [
+    {
+      "id": 1,
+      "name": "Huracán EVO",
+      "brandId": 1,
+      "brand": "Lamborghini",
+      "type": "Coupe",
+      "price": 230000,
+      "currency": "USD",
+      "engineCC": 5204,
+      "engineType": "V10 naturally aspirated",
+      "horsepower": 640,
+      "torque": 600,
+      "topSpeedKmh": 325,
+      "acceleration0to100": 2.9,
+      "transmission": "7-speed dual-clutch",
+      "drivetrain": "AWD",
+      "year": 2023,
+      "color": [
+        "Giallo Orion",
+        "Bianco Monocerus",
+        "Rosso Mars",
+        "Verde Mantis"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1742800074526-cc655bf036a4?w=800&auto=format&fit=crop&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1742800074526-cc655bf036a4?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1621135802920-133df287f89c?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1571607388263-1044f9ea01dd?w=800&auto=format&fit=crop&q=80"
+      ],
+      "description": "Lamborghini Huracán EVO kết hợp hoàn hảo giữa công nghệ tiên tiến và phong cách thiết kế đặc trưng của Lamborghini. Động cơ V10 hút khí tự nhiên 5.2L mang lại âm thanh đặc trưng không thể nhầm lẫn.",
+      "isFeatured": true,
+      "isNew": false,
+      "rating": 4.9,
+      "views": 12450
+    },
+    {
+      "id": 2,
+      "name": "Revuelto",
+      "brandId": 1,
+      "brand": "Lamborghini",
+      "type": "Hybrid Coupe",
+      "price": 517000,
+      "currency": "USD",
+      "engineCC": 6498,
+      "engineType": "V12 + 3 Electric Motors",
+      "horsepower": 1015,
+      "torque": 730,
+      "topSpeedKmh": 350,
+      "acceleration0to100": 2.5,
+      "transmission": "8-speed dual-clutch",
+      "drivetrain": "AWD",
+      "year": 2024,
+      "color": [
+        "Arancio Xanto",
+        "Blu Astraeus",
+        "Verde Selva"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1750712328073-50c67f7dcb7b?w=800&auto=format&fit=crop&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1750712328073-50c67f7dcb7b?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1742800214095-7bda3e5d705b?w=800&auto=format&fit=crop&q=80"
+      ],
+      "description": "Lamborghini Revuelto là thế hệ kế tiếp của Aventador huyền thoại, kết hợp động cơ V12 với hệ thống hybrid 3 motor điện, tạo ra công suất tổng 1.015 mã lực.",
+      "isFeatured": true,
+      "isNew": true,
+      "rating": 5.0,
+      "views": 28900
+    },
+    {
+      "id": 3,
+      "name": "SF90 Stradale",
+      "brandId": 2,
+      "brand": "Ferrari",
+      "type": "Hybrid Coupe",
+      "price": 507000,
+      "currency": "USD",
+      "engineCC": 3990,
+      "engineType": "V8 Twin-Turbo + 3 Electric Motors",
+      "horsepower": 986,
+      "torque": 800,
+      "topSpeedKmh": 340,
+      "acceleration0to100": 2.5,
+      "transmission": "8-speed dual-clutch",
+      "drivetrain": "AWD",
+      "year": 2023,
+      "color": [
+        "Rosso Corsa",
+        "Giallo Modena",
+        "Bianco Avus",
+        "Nero Daytona"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=800&auto=format&fit=crop&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1514867644123-6385d58d3cd4?w=800&auto=format&fit=crop&q=80"
+      ],
+      "description": "Ferrari SF90 Stradale là chiếc siêu xe hybrid mạnh nhất trong lịch sử Ferrari, mang công nghệ trực tiếp từ đường đua F1 xuống đường phố.",
+      "isFeatured": true,
+      "isNew": false,
+      "rating": 4.9,
+      "views": 19800
+    },
+    {
+      "id": 4,
+      "name": "296 GTB",
+      "brandId": 2,
+      "brand": "Ferrari",
+      "type": "Hybrid Coupe",
+      "price": 322000,
+      "currency": "USD",
+      "engineCC": 2992,
+      "engineType": "V6 Twin-Turbo + Electric Motor",
+      "horsepower": 830,
+      "torque": 740,
+      "topSpeedKmh": 330,
+      "acceleration0to100": 2.9,
+      "transmission": "8-speed dual-clutch",
+      "drivetrain": "RWD",
+      "year": 2023,
+      "color": [
+        "Rosso Imola",
+        "Blu Corsa",
+        "Verde Abetone"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800&auto=format&fit=crop&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800&auto=format&fit=crop&q=80"
+      ],
+      "description": "Ferrari 296 GTB mang trái tim V6 biturbo kết hợp motor điện, tạo ra hệ thống dẫn động hybrid hiệu suất cao trong một thân xe coupé đầy quyến rũ.",
+      "isFeatured": false,
+      "isNew": true,
+      "rating": 4.8,
+      "views": 14200
+    },
+    {
+      "id": 5,
+      "name": "Chiron Super Sport",
+      "brandId": 3,
+      "brand": "Bugatti",
+      "type": "Hypercar",
+      "price": 3900000,
+      "currency": "USD",
+      "engineCC": 7993,
+      "engineType": "W16 Quad-Turbo",
+      "horsepower": 1600,
+      "torque": 1600,
+      "topSpeedKmh": 440,
+      "acceleration0to100": 2.4,
+      "transmission": "7-speed dual-clutch",
+      "drivetrain": "AWD",
+      "year": 2023,
+      "color": [
+        "Sky View",
+        "Nocturne",
+        "Quartz White"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1744234469026-a58e95384440?w=800&auto=format&fit=crop&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1744234469026-a58e95384440?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1566737086988-5baacd2cbfcf?w=800&auto=format&fit=crop&q=80"
+      ],
+      "description": "Bugatti Chiron Super Sport là đỉnh cao của kỹ thuật ô tô hiện đại, với động cơ W16 8.0L quad-turbo tạo ra 1.600 mã lực và tốc độ tối đa lên đến 440 km/h.",
+      "isFeatured": true,
+      "isNew": false,
+      "rating": 5.0,
+      "views": 45600
+    },
+    {
+      "id": 6,
+      "name": "Tourbillon",
+      "brandId": 3,
+      "brand": "Bugatti",
+      "type": "Hybrid Hypercar",
+      "price": 4000000,
+      "currency": "USD",
+      "engineCC": 8300,
+      "engineType": "V16 + 3 Electric Motors",
+      "horsepower": 1800,
+      "torque": 1800,
+      "topSpeedKmh": 445,
+      "acceleration0to100": 2.0,
+      "transmission": "8-speed dual-clutch",
+      "drivetrain": "AWD",
+      "year": 2026,
+      "color": [
+        "Blanc Pur",
+        "Bleu Royal",
+        "Gris Carbon"
+      ],
+      "imageUrl": "/bugatti-tourbillon.png",
+      "gallery": [
+        "/bugatti-tourbillon.png"
+      ],
+      "description": "Bugatti Tourbillon là thế hệ siêu xe tiếp theo sau Chiron, kết hợp động cơ V16 tự hút 8.3L với 3 motor điện, tạo ra 1.800 mã lực tổng cộng.",
+      "isFeatured": true,
+      "isNew": true,
+      "rating": 5.0,
+      "views": 67800
+    },
+    {
+      "id": 7,
+      "name": "765LT Spider",
+      "brandId": 4,
+      "brand": "McLaren",
+      "type": "Spider",
+      "price": 382500,
+      "currency": "USD",
+      "engineCC": 3994,
+      "engineType": "V8 Twin-Turbo",
+      "horsepower": 765,
+      "torque": 800,
+      "topSpeedKmh": 330,
+      "acceleration0to100": 2.7,
+      "transmission": "7-speed dual-clutch",
+      "drivetrain": "RWD",
+      "year": 2023,
+      "color": [
+        "Papaya Spark",
+        "Volcano Yellow",
+        "Silica White"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=800&auto=format&fit=crop&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=800&auto=format&fit=crop&q=80"
+      ],
+      "description": "McLaren 765LT Spider mang trải nghiệm của xe đua xuống đường phố với mui trần. Được giảm 80kg so với 720S, mọi chi tiết đều được tối ưu cho hiệu suất tối đa.",
+      "isFeatured": false,
+      "isNew": false,
+      "rating": 4.8,
+      "views": 11200
+    },
+    {
+      "id": 8,
+      "name": "Artura",
+      "brandId": 4,
+      "brand": "McLaren",
+      "type": "Hybrid Coupe",
+      "price": 233000,
+      "currency": "USD",
+      "engineCC": 2993,
+      "engineType": "V6 Twin-Turbo + Electric Motor",
+      "horsepower": 680,
+      "torque": 720,
+      "topSpeedKmh": 330,
+      "acceleration0to100": 3.0,
+      "transmission": "8-speed dual-clutch",
+      "drivetrain": "RWD",
+      "year": 2024,
+      "color": [
+        "Flux Orange",
+        "Viola",
+        "Storm Grey"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1756250170972-79916e67e239?w=800&auto=format&fit=crop&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1756250170972-79916e67e239?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1753658477747-08c5548cfa9b?w=800&auto=format&fit=crop&q=80"
+      ],
+      "description": "McLaren Artura là chiếc xe hybrid đầu tiên của McLaren được thiết kế từ đầu, kết hợp động cơ V6 twin-turbo mới hoàn toàn với hệ thống điện tích hợp.",
+      "isFeatured": false,
+      "isNew": true,
+      "rating": 4.7,
+      "views": 9800
+    },
+    {
+      "id": 9,
+      "name": "911 GT3 RS",
+      "brandId": 5,
+      "brand": "Porsche",
+      "type": "Track-Focused",
+      "price": 225250,
+      "currency": "USD",
+      "engineCC": 3996,
+      "engineType": "Flat-6 naturally aspirated",
+      "horsepower": 525,
+      "torque": 465,
+      "topSpeedKmh": 296,
+      "acceleration0to100": 3.2,
+      "transmission": "7-speed PDK",
+      "drivetrain": "RWD",
+      "year": 2024,
+      "color": [
+        "Guards Red",
+        "Python Green",
+        "Ice Grey Metallic"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=800&auto=format&fit=crop&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=800&auto=format&fit=crop&q=80"
+      ],
+      "description": "Porsche 911 GT3 RS là phiên bản đường đua cực đoan nhất trong dòng 911. Hệ thống khí động học chủ động và động cơ 4.0L hút khí tự nhiên mang lại trải nghiệm lái thuần túy không gì sánh bằng.",
+      "isFeatured": true,
+      "isNew": false,
+      "rating": 4.9,
+      "views": 16700
+    },
+    {
+      "id": 10,
+      "name": "Taycan Turbo GT",
+      "brandId": 5,
+      "brand": "Porsche",
+      "type": "Electric Sedan",
+      "price": 235000,
+      "currency": "USD",
+      "engineCC": 0,
+      "engineType": "Dual Electric Motor",
+      "horsepower": 1092,
+      "torque": 1340,
+      "topSpeedKmh": 305,
+      "acceleration0to100": 2.2,
+      "transmission": "2-speed",
+      "drivetrain": "AWD",
+      "year": 2024,
+      "color": [
+        "Frozen Blue Metallic",
+        "Chalk",
+        "Black"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1725185943715-bafea43501b4?w=800&auto=format&fit=crop&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1725185943715-bafea43501b4?w=800&auto=format&fit=crop&q=80"
+      ],
+      "description": "Porsche Taycan Turbo GT là sedan điện nhanh nhất thế giới, đạt 0-100 km/h chỉ trong 2.2 giây với chế độ Overboost. Sự kết hợp hoàn hảo giữa hiệu suất thuần túy và công nghệ điện khí hóa.",
+      "isFeatured": false,
+      "isNew": true,
+      "rating": 4.8,
+      "views": 13400
+    },
+    {
+      "id": 11,
+      "name": "DB12",
+      "brandId": 6,
+      "brand": "Aston Martin",
+      "type": "Grand Tourer",
+      "price": 245000,
+      "currency": "USD",
+      "engineCC": 3982,
+      "engineType": "V8 Twin-Turbo",
+      "horsepower": 671,
+      "torque": 800,
+      "topSpeedKmh": 325,
+      "acceleration0to100": 3.5,
+      "transmission": "8-speed automatic",
+      "drivetrain": "RWD",
+      "year": 2024,
+      "color": [
+        "Onyx Black",
+        "Satin Neutron Silver",
+        "Iridescent Emerald"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1568954264787-80157b74c5f3?w=800&auto=format&fit=crop&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1568954264787-80157b74c5f3?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1745229760312-5a38ad26734d?w=800&auto=format&fit=crop&q=80"
+      ],
+      "description": "Aston Martin DB12 là chiếc siêu xe Grand Tourer mới nhất, được gọi là 'siêu GT' đầu tiên của thương hiệu. Nội thất sang trọng kết hợp với hiệu suất vận hành đỉnh cao.",
+      "isFeatured": true,
+      "isNew": true,
+      "rating": 4.7,
+      "views": 10300
+    },
+    {
+      "id": 12,
+      "name": "Vantage V8",
+      "brandId": 6,
+      "brand": "Aston Martin",
+      "type": "Sports Coupe",
+      "price": 165000,
+      "currency": "USD",
+      "engineCC": 3982,
+      "engineType": "V8 Twin-Turbo",
+      "horsepower": 503,
+      "torque": 685,
+      "topSpeedKmh": 314,
+      "acceleration0to100": 3.7,
+      "transmission": "8-speed automatic",
+      "drivetrain": "RWD",
+      "year": 2024,
+      "color": [
+        "Podium Pink",
+        "Lime Essence",
+        "Stealth Black"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop&q=80"
+      ],
+      "description": "Aston Martin Vantage mới sử dụng động cơ AMG V8 4.0L twin-turbo với 503 mã lực, được thiết kế lại hoàn toàn với ngoại thất hung hăng và nội thất hiện đại hơn.",
+      "isFeatured": false,
+      "isNew": true,
+      "rating": 4.6,
+      "views": 8900
+    }
+  ],
+  "news": [
+    {
+      "id": 1,
+      "title": "Bugatti Tourbillon 2026 — Siêu xe hybrid V16 mạnh nhất lịch sử",
+      "slug": "bugatti-tourbillon-2026-sieu-xe-hybrid-v16",
+      "summary": "Bugatti chính thức ra mắt Tourbillon — người kế thừa của Chiron với động cơ V16 tự hút 8.3L kết hợp 3 motor điện, tạo ra tổng công suất 1.800 mã lực.",
+      "content": "Bugatti Tourbillon là cột mốc lịch sử của ngành công nghiệp siêu xe toàn cầu. Được đặt tên theo bộ phận phức tạp nhất trong đồng hồ cơ học, Tourbillon hứa hẹn mang đến trải nghiệm lái xe chưa từng có. Động cơ V16 tự hút 8.3L phát triển riêng cùng 3 motor điện tạo ra 1.800 mã lực và 1.800 Nm mô-men xoắn. Từ 0 đến 100 km/h chỉ mất 2.0 giây và tốc độ tối đa đạt 445 km/h.",
+      "imageUrl": "/bugatti-tourbillon.png",
+      "publishedAt": "2026-06-20T08:00:00Z",
+      "author": "ATELIER Editorial",
+      "tag": "Ra mắt mới",
+      "carId": 6,
+      "views": 24500
+    },
+    {
+      "id": 2,
+      "title": "Lamborghini Revuelto — Kỷ nguyên mới của siêu xe V12 hybrid",
+      "slug": "lamborghini-revuelto-ky-nguyen-moi-v12-hybrid",
+      "summary": "Revuelto chính thức thay thế Aventador, mang đến 1.015 mã lực từ động cơ V12 6.5L kết hợp 3 motor điện. Đây là bước chuyển đổi lịch sử của Lamborghini.",
+      "content": "Lamborghini Revuelto đánh dấu kỷ nguyên mới cho thương hiệu bull của Ý. Không còn đơn thuần là siêu xe V12 truyền thống, Revuelto kết hợp khối động cơ V12 huyền thoại với 3 motor điện — một ở trục trước và hai ở trục sau — tạo ra hệ thống dẫn động AWD hoàn toàn mới. Công suất tổng 1.015 mã lực giúp Revuelto đạt 0-100 km/h trong 2.5 giây.",
+      "imageUrl": "https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?w=800&auto=format&fit=crop&q=80",
+      "publishedAt": "2026-05-15T09:00:00Z",
+      "author": "ATELIER Editorial",
+      "tag": "Review",
+      "carId": 2,
+      "views": 18700
+    },
+    {
+      "id": 3,
+      "title": "Top 5 siêu xe nhanh nhất năm 2026 — Cuộc đua tốc độ đỉnh cao",
+      "slug": "top-5-sieu-xe-nhanh-nhat-2026",
+      "summary": "Năm 2026 chứng kiến cuộc cách mạng trong phân khúc siêu xe với sự xuất hiện của nhiều mẫu xe hybrid mạnh mẽ vượt ngưỡng 1.000 mã lực.",
+      "content": "Thị trường siêu xe năm 2026 đang trong giai đoạn chuyển đổi mạnh mẽ. Các hãng xe hàng đầu đồng loạt ra mắt các mẫu hybrid hiệu suất cao, đẩy giới hạn của công nghệ ô tô lên tầm cao mới. Bugatti Tourbillon dẫn đầu danh sách với 1.800 mã lực, tiếp theo là Lamborghini Revuelto (1.015 mã lực), Ferrari SF90 Stradale (986 mã lực), Porsche Taycan Turbo GT (1.092 mã lực điện) và McLaren Solus GT.",
+      "imageUrl": "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&auto=format&fit=crop&q=80",
+      "publishedAt": "2026-05-01T10:00:00Z",
+      "author": "ATELIER Editorial",
+      "tag": "Bảng xếp hạng",
+      "carId": null,
+      "views": 35200
+    },
+    {
+      "id": 4,
+      "title": "Ferrari 296 GTB — Siêu xe V6 đầu tiên của Maranello",
+      "slug": "ferrari-296-gtb-sieu-xe-v6-dau-tien",
+      "summary": "Ferrari lần đầu tiên trong lịch sử trang bị động cơ V6 cho một mẫu xe mid-engine. 296 GTB với 830 mã lực chứng minh V6 không thua kém V8 trong phân khúc siêu xe.",
+      "content": "Ferrari 296 GTB là chiếc xe đánh dấu bước ngoặt quan trọng trong lịch sử Ferrari. Lần đầu tiên hãng xe Ý sử dụng cấu hình V6 cho mẫu xe mid-engine của mình. Động cơ V6 3.0L twin-turbo kết hợp motor điện tạo ra 830 mã lực và 740 Nm, tất cả truyền đến bánh sau qua hộp số 8 cấp dual-clutch.",
+      "imageUrl": "https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800&auto=format&fit=crop&q=80",
+      "publishedAt": "2026-04-10T11:00:00Z",
+      "author": "ATELIER Editorial",
+      "tag": "Review",
+      "carId": 4,
+      "views": 12800
+    },
+    {
+      "id": 5,
+      "title": "Porsche 911 GT3 RS — Biểu tượng lái thuần túy thời đại mới",
+      "slug": "porsche-911-gt3-rs-bieu-tuong-lai-thuan-tuy",
+      "summary": "911 GT3 RS tiếp tục duy trì triết lý lái xe thuần túy của Porsche với động cơ 4.0L hút khí tự nhiên và hệ thống khí động học chủ động tiên tiến.",
+      "content": "Trong thế giới siêu xe ngày càng phụ thuộc vào turbo và hybrid, Porsche 911 GT3 RS vẫn kiên định với triết lý của mình: động cơ tự nhiên, lái thuần túy, kết nối trực tiếp. Động cơ flat-6 4.0L hút khí tự nhiên cung cấp 525 mã lực và vù ga đến 9.000 vòng/phút — điều mà không một turbo engine nào có thể mang lại.",
+      "imageUrl": "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=800&auto=format&fit=crop&q=80",
+      "publishedAt": "2026-03-22T08:30:00Z",
+      "author": "ATELIER Editorial",
+      "tag": "Review",
+      "carId": 9,
+      "views": 15300
+    },
+    {
+      "id": 6,
+      "title": "Aston Martin DB12 — Định nghĩa lại Grand Tourer thế kỷ 21",
+      "slug": "aston-martin-db12-dinh-nghia-lai-grand-tourer",
+      "summary": "DB12 là 'Siêu GT' đầu tiên của Aston Martin — chiếc xe vừa đủ sang trọng để đi nghỉ dưỡng, vừa đủ mạnh để thách thức bất kỳ siêu xe nào.",
+      "content": "Aston Martin DB12 mang sứ mệnh đặc biệt: chứng minh rằng một chiếc Grand Tourer hoàn hảo không nhất thiết phải đánh đổi giữa thoải mái và hiệu suất. Với động cơ AMG V8 4.0L twin-turbo 671 mã lực, DB12 tăng tốc 0-100 km/h trong 3.5 giây trong khi nội thất vẫn đủ sang trọng để khiến bạn quên mất đây là một siêu xe.",
+      "imageUrl": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&auto=format&fit=crop&q=80",
+      "publishedAt": "2026-02-14T09:00:00Z",
+      "author": "ATELIER Editorial",
+      "tag": "Review",
+      "carId": 11,
+      "views": 9600
+    }
+  ],
+  "gallery": [
+    {
+      "id": 1,
+      "title": "Lamborghini Huracán EVO — Vẻ đẹp góc cạnh",
+      "imageUrl": "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=1200&auto=format&fit=crop&q=85",
+      "brandId": 1,
+      "carId": 1,
+      "type": "photo",
+      "tag": "exterior"
+    },
+    {
+      "id": 2,
+      "title": "Ferrari SF90 — Đỏ rực trên đường đua",
+      "imageUrl": "https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=1200&auto=format&fit=crop&q=85",
+      "brandId": 2,
+      "carId": 3,
+      "type": "photo",
+      "tag": "action"
+    },
+    {
+      "id": 3,
+      "title": "Bugatti Chiron — Nghệ thuật tốc độ",
+      "imageUrl": "https://images.unsplash.com/photo-1563720223185-11003d516935?w=1200&auto=format&fit=crop&q=85",
+      "brandId": 3,
+      "carId": 5,
+      "type": "photo",
+      "tag": "studio"
+    },
+    {
+      "id": 4,
+      "title": "McLaren 765LT — Nhẹ hơn, nhanh hơn",
+      "imageUrl": "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=1200&auto=format&fit=crop&q=85",
+      "brandId": 4,
+      "carId": 7,
+      "type": "photo",
+      "tag": "exterior"
+    },
+    {
+      "id": 5,
+      "title": "Porsche 911 GT3 RS — Công nghệ khí động học",
+      "imageUrl": "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=1200&auto=format&fit=crop&q=85",
+      "brandId": 5,
+      "carId": 9,
+      "type": "photo",
+      "tag": "technical"
+    },
+    {
+      "id": 6,
+      "title": "Aston Martin DB12 — Sang trọng và mạnh mẽ",
+      "imageUrl": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1200&auto=format&fit=crop&q=85",
+      "brandId": 6,
+      "carId": 11,
+      "type": "photo",
+      "tag": "lifestyle"
+    },
+    {
+      "id": 7,
+      "title": "Lamborghini Revuelto — Hybrid tương lai",
+      "imageUrl": "https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?w=1200&auto=format&fit=crop&q=85",
+      "brandId": 1,
+      "carId": 2,
+      "type": "photo",
+      "tag": "exterior"
+    },
+    {
+      "id": 8,
+      "title": "Ferrari 296 GTB — Động cơ giữa xe",
+      "imageUrl": "https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=1200&auto=format&fit=crop&q=85",
+      "brandId": 2,
+      "carId": 4,
+      "type": "photo",
+      "tag": "studio"
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Nguyễn Minh Tuấn",
+      "email": "tuan.nguyen@example.com",
+      "phone": "0901234567",
+      "carId": 1,
+      "message": "Tôi muốn đặt lịch lái thử Lamborghini Huracán EVO vào cuối tuần này.",
+      "status": "pending",
+      "createdAt": "2026-06-28T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "name": "Trần Thị Hoa",
+      "email": "hoa.tran@example.com",
+      "phone": "0912345678",
+      "carId": 3,
+      "message": "Cho tôi hỏi thêm thông tin về Ferrari SF90 Stradale, đặc biệt là thời gian giao xe.",
+      "status": "replied",
+      "createdAt": "2026-06-25T14:00:00Z"
+    },
+    {
+      "id": 3,
+      "name": "Lê Văn Bình",
+      "email": "binh.le@example.com",
+      "phone": "0923456789",
+      "carId": 5,
+      "message": "Tôi quan tâm đến Bugatti Chiron Super Sport. Xin vui lòng liên hệ lại với tôi để thảo luận chi tiết.",
+      "status": "pending",
+      "createdAt": "2026-06-22T09:00:00Z"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin123",
+      "email": "admin@atelier.com",
+      "fullName": "ATELIER Admin",
+      "role": "admin",
+      "avatarUrl": "https://ui-avatars.com/api/?name=Admin&background=gold&color=000&size=128",
+      "createdAt": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": 2,
+      "username": "user01",
+      "password": "user123",
+      "email": "user01@example.com",
+      "fullName": "Nguyễn Văn An",
+      "role": "user",
+      "avatarUrl": "https://ui-avatars.com/api/?name=Nguyen+Van+An&background=1a1a2e&color=fff&size=128",
+      "favoriteCarIds": [
+        1,
+        3,
+        9
+      ],
+      "createdAt": "2026-03-15T08:00:00Z"
+    },
+    {
+      "id": 3,
+      "username": "user02",
+      "password": "user123",
+      "email": "user02@example.com",
+      "fullName": "Phạm Thị Lan",
+      "role": "user",
+      "avatarUrl": "https://ui-avatars.com/api/?name=Pham+Thi+Lan&background=1a1a2e&color=fff&size=128",
+      "favoriteCarIds": [
+        2,
+        5
+      ],
+      "createdAt": "2026-04-10T09:00:00Z"
+    }
+  ]
+}

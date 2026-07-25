@@ -1,0 +1,83 @@
+.favorites-page-container {
+  padding: 60px 0;
+  min-height: calc(100vh - var(--navbar-height));
+  background-color: var(--color-bg);
+}
+
+.fav-page-header {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.fav-page-title {
+  font-size: 2.2rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.fav-page-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.fav-empty-card {
+  text-align: center;
+  padding: 80px 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+.fav-empty-icon {
+  font-size: 3.5rem;
+  color: var(--color-gold);
+  margin-bottom: 24px;
+  opacity: 0.6;
+}
+
+.fav-empty-card h4 {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+
+.fav-empty-card p {
+  font-family: var(--font-body);
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+}
+
+.fav-browse-btn {
+  padding: 10px 24px !important;
+  font-size: 0.85rem !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.fav-auth-alert {
+  background: rgba(197, 168, 128, 0.05);
+  border: 1px solid rgba(197, 168, 128, 0.15);
+  padding: 15px 25px;
+  border-radius: 8px;
+  margin-bottom: 35px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-gold-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.fav-auth-alert a {
+  color: var(--color-white);
+  text-decoration: underline;
+  font-weight: 600;
+}

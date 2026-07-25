@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ATELIER Admin | Showroom Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;700;800&amp;family=Manrope:wght@400;500&amp;family=Space+Grotesk:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@100..900&amp;family=Manrope:wght@100..900&amp;family=Space+Grotesk:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+        .glass-panel::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(to bottom right, rgba(255,255,255,0.1), rgba(255,255,255,0.02));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0e0e0e; }
+        ::-webkit-scrollbar-thumb { background: #353434; border-radius: 10px; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#141313",
+                        "surface-container-low": "#1c1b1b",
+                        "error": "#ffb4ab",
+                        "surface-container-high": "#2b2a2a",
+                        "on-background": "#e5e2e1",
+                        "tertiary-container": "#040505",
+                        "surface-variant": "#353434",
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#c6c6c6",
+                        "outline": "#8e9192",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "secondary-container": "#4a4949",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-secondary-container": "#bab8b7",
+                        "surface": "#141313",
+                        "outline-variant": "#444748",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "on-primary": "#313030",
+                        "on-tertiary": "#2f3131",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container-highest": "#353434",
+                        "surface-container": "#201f1f",
+                        "primary-fixed": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "tertiary-fixed": "#e3e2e2",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "background": "#141313",
+                        "surface-bright": "#3a3939",
+                        "on-surface": "#e5e2e1",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "primary-container": "#050505",
+                        "secondary": "#c8c6c5",
+                        "secondary-fixed": "#e5e2e1",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "primary": "#c9c6c5",
+                        "on-primary-container": "#797777",
+                        "surface-tint": "#c9c6c5",
+                        "on-secondary": "#313030",
+                        "on-primary-fixed": "#1c1b1b",
+                        "inverse-primary": "#5f5e5e",
+                        "on-error": "#690005",
+                        "on-tertiary-container": "#767777",
+                        "on-primary-fixed-variant": "#474646",
+                        "gold": "#D4AF37"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Anybody"],
+                        "body-lg": ["Manrope"],
+                        "headline-lg-mobile": ["Anybody"],
+                        "body-md": ["Manrope"],
+                        "label-md": ["Space Grotesk"],
+                        "display-lg": ["Anybody"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "0.03em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "0.05em", "fontWeight": "800"}]
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "container-max": "1440px",
+                        "gutter": "24px"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-gold selection:text-background overflow-x-hidden">
+<!-- Sidebar Navigation -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-lowest/80 backdrop-blur-2xl border-r border-white/5 shadow-2xl shadow-black z-50 flex flex-col py-8">
+<div class="px-6 mb-12">
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tighter">ATELIER</h1>
+<p class="font-label-md text-[10px] text-secondary-container tracking-[0.3em] uppercase mt-1">Management Suite</p>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Dashboard Tab (Active) -->
+<a class="flex items-center gap-4 bg-primary/10 text-primary border-l-4 border-primary px-4 py-3 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-body-md">Dashboard</span>
+</a>
+<!-- Inactive Tabs -->
+<a class="flex items-center gap-4 text-secondary-fixed-dim hover:text-on-surface hover:bg-white/5 px-4 py-3 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">directions_car</span>
+<span class="font-body-md">Cars</span>
+</a>
+<a class="flex items-center gap-4 text-secondary-fixed-dim hover:text-on-surface hover:bg-white/5 px-4 py-3 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">workspace_premium</span>
+<span class="font-body-md">Brands</span>
+</a>
+<a class="flex items-center gap-4 text-secondary-fixed-dim hover:text-on-surface hover:bg-white/5 px-4 py-3 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-body-md">Users</span>
+</a>
+<a class="flex items-center gap-4 text-secondary-fixed-dim hover:text-on-surface hover:bg-white/5 px-4 py-3 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-body-md">Inquiries</span>
+</a>
+<a class="flex items-center gap-4 text-secondary-fixed-dim hover:text-on-surface hover:bg-white/5 px-4 py-3 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">article</span>
+<span class="font-body-md">News</span>
+</a>
+<a class="flex items-center gap-4 text-secondary-fixed-dim hover:text-on-surface hover:bg-white/5 px-4 py-3 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">photo_library</span>
+<span class="font-body-md">Gallery</span>
+</a>
+<a class="flex items-center gap-4 text-secondary-fixed-dim hover:text-on-surface hover:bg-white/5 px-4 py-3 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md">Settings</span>
+</a>
+</nav>
+<div class="px-6 pt-8 mt-auto border-t border-white/5">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center border border-white/10 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up professional portrait of a male inventory lead with a confident expression, wearing a tailored charcoal suit against a minimal dark grey background. Soft cinematic side lighting highlights facial features and premium textile textures, evoking an atmosphere of high-end automotive luxury management and precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6WCJpyLAtp-D5530vy8I2FGD_Nj6TJGnH3E6PL77_IDKeafEWdaYojcrFZLxV_Y8_84ZQ4i5NBakYIT6tkYtzQjTQXJL55Ghy5UN6zB7CN65a3p7l4S-yVS3xceW3k_qRDbrifKS7-9oEXxTL7u9rK0qBYHGqT2aEgqB3Yi618zav-156nHNW23ZC2DhKzPJbr3t0W7BS0xSlGuNsIZ9X7m6UWCbW2zO6QjKK1VUx5rfmqdQ_GQB7TxJdxmLmYMrvXV25U8NBpIE"/>
+</div>
+<div>
+<p class="font-label-md text-on-surface text-[12px]">Admin Lead</p>
+<p class="font-body-md text-[10px] text-secondary-container uppercase tracking-wider">Inventory Lead</p>
+</div>
+</div>
+<a class="flex items-center gap-4 text-error/80 hover:text-error transition-colors font-label-md uppercase text-[12px] tracking-widest" href="#">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+                Logout
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen bg-background">
+<!-- Top Bar -->
+<header class="h-20 flex items-center justify-between px-10 glass-panel border-b border-white/10 sticky top-0 z-40">
+<div class="flex-1 max-w-md">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-secondary-container group-focus-within:text-gold transition-colors">search</span>
+<input class="w-full bg-surface-container-lowest border-0 border-b border-white/10 focus:border-gold focus:ring-0 text-body-md py-3 pl-12 pr-4 transition-all duration-300" placeholder="Search showroom, orders, or users..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<button class="relative text-on-surface hover:text-gold transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-gold rounded-full"></span>
+</button>
+<button class="bg-[#D4AF37] text-background px-6 py-2.5 font-label-md text-[12px] uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all">
+                    Add New Vehicle
+                </button>
+</div>
+</header>
+<div class="p-10 space-y-10">
+<!-- Dashboard Stats Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="glass-panel p-8 group hover:border-gold/30 transition-colors">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-secondary-container">directions_car</span>
+<span class="text-[10px] font-label-md text-gold bg-gold/10 px-2 py-0.5 rounded">+4 this month</span>
+</div>
+<p class="font-label-md text-secondary-container uppercase tracking-widest text-[11px] mb-1">Total Cars</p>
+<h3 class="font-headline-lg text-[32px] text-on-surface">142</h3>
+</div>
+<div class="glass-panel p-8 group hover:border-gold/30 transition-colors">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-secondary-container">workspace_premium</span>
+<span class="text-[10px] font-label-md text-secondary-container bg-white/5 px-2 py-0.5 rounded">Active Brands</span>
+</div>
+<p class="font-label-md text-secondary-container uppercase tracking-widest text-[11px] mb-1">Total Brands</p>
+<h3 class="font-headline-lg text-[32px] text-on-surface">12</h3>
+</div>
+<div class="glass-panel p-8 group hover:border-gold/30 transition-colors">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-secondary-container">group</span>
+<span class="text-[10px] font-label-md text-gold bg-gold/10 px-2 py-0.5 rounded">82% Verified</span>
+</div>
+<p class="font-label-md text-secondary-container uppercase tracking-widest text-[11px] mb-1">Total Users</p>
+<h3 class="font-headline-lg text-[32px] text-on-surface">1.2k</h3>
+</div>
+<div class="glass-panel p-8 group hover:border-gold/30 transition-colors">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-gold">timer</span>
+<span class="text-[10px] font-label-md text-gold border border-gold/30 px-2 py-0.5 rounded">High Priority</span>
+</div>
+<p class="font-label-md text-secondary-container uppercase tracking-widest text-[11px] mb-1">Test Drives</p>
+<h3 class="font-headline-lg text-[32px] text-on-surface">45</h3>
+</div>
+</section>
+<!-- Visualization Row -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-6 h-[400px]">
+<div class="lg:col-span-2 glass-panel p-8 overflow-hidden relative">
+<div class="flex justify-between items-center mb-8 relative z-10">
+<div>
+<h4 class="font-headline-lg text-headline-lg text-[20px]">Showroom Activity</h4>
+<p class="text-secondary-container text-body-md text-[13px]">Total views across all digital platforms</p>
+</div>
+<div class="flex gap-4">
+<button class="font-label-md text-[11px] text-on-surface border-b border-gold pb-1 uppercase">Week</button>
+<button class="font-label-md text-[11px] text-secondary-container uppercase">Month</button>
+</div>
+</div>
+<!-- Chart Placeholder using Gradient Shader -->
+<div class="absolute inset-x-0 bottom-0 h-64 opacity-60">
+
+</div>
+<div class="absolute bottom-8 left-8 right-8 h-32 flex items-end justify-between px-4 z-10 pointer-events-none">
+<div class="w-1.5 h-[40%] bg-white/5 rounded-full relative"><div class="absolute bottom-0 w-full h-[60%] bg-gold/50 rounded-full"></div></div>
+<div class="w-1.5 h-[60%] bg-white/5 rounded-full relative"><div class="absolute bottom-0 w-full h-[80%] bg-gold/50 rounded-full"></div></div>
+<div class="w-1.5 h-[45%] bg-white/5 rounded-full relative"><div class="absolute bottom-0 w-full h-[40%] bg-gold/50 rounded-full"></div></div>
+<div class="w-1.5 h-[80%] bg-white/5 rounded-full relative"><div class="absolute bottom-0 w-full h-[90%] bg-gold/50 rounded-full"></div></div>
+<div class="w-1.5 h-[55%] bg-white/5 rounded-full relative"><div class="absolute bottom-0 w-full h-[30%] bg-gold/50 rounded-full"></div></div>
+<div class="w-1.5 h-[90%] bg-white/5 rounded-full relative"><div class="absolute bottom-0 w-full h-[95%] bg-gold rounded-full shadow-[0_0_15px_rgba(212,175,55,0.5)]"></div></div>
+<div class="w-1.5 h-[70%] bg-white/5 rounded-full relative"><div class="absolute bottom-0 w-full h-[60%] bg-gold/50 rounded-full"></div></div>
+</div>
+</div>
+<div class="glass-panel p-8">
+<h4 class="font-headline-lg text-headline-lg text-[20px] mb-2">Inventory Heatmap</h4>
+<p class="text-secondary-container text-body-md text-[13px] mb-8">Popular models by inquiry volume</p>
+<div class="space-y-6">
+<div class="space-y-2">
+<div class="flex justify-between font-label-md text-[11px] uppercase tracking-widest">
+<span>Aero-GT Stealth</span>
+<span>88%</span>
+</div>
+<div class="h-1 bg-white/5 w-full rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-gold/40 to-gold w-[88%]"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between font-label-md text-[11px] uppercase tracking-widest">
+<span>Lusso V12 Coupé</span>
+<span>74%</span>
+</div>
+<div class="h-1 bg-white/5 w-full rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-gold/40 to-gold w-[74%]"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between font-label-md text-[11px] uppercase tracking-widest">
+<span>Voltara EV-1</span>
+<span>42%</span>
+</div>
+<div class="h-1 bg-white/5 w-full rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-gold/40 to-gold w-[42%]"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between font-label-md text-[11px] uppercase tracking-widest">
+<span>Veneno S Concept</span>
+<span>91%</span>
+</div>
+<div class="h-1 bg-white/5 w-full rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-gold/40 to-gold w-[91%] shadow-[0_0_8px_rgba(212,175,55,0.3)]"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Inventory Management Table -->
+<section class="glass-panel overflow-hidden">
+<div class="px-8 py-6 border-b border-white/5 flex items-center justify-between">
+<h4 class="font-headline-lg text-headline-lg text-[20px]">Live Inventory</h4>
+<div class="flex gap-2">
+<button class="p-2 border border-white/10 hover:border-gold transition-colors rounded-sm flex items-center">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+</button>
+<button class="p-2 border border-white/10 hover:border-gold transition-colors rounded-sm flex items-center">
+<span class="material-symbols-outlined text-[20px]">sort</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low font-label-md text-[11px] uppercase tracking-widest text-secondary-container">
+<tr>
+<th class="px-8 py-4 font-medium">Car Image</th>
+<th class="px-6 py-4 font-medium">Brand</th>
+<th class="px-6 py-4 font-medium">Model</th>
+<th class="px-6 py-4 font-medium">Price</th>
+<th class="px-6 py-4 font-medium">Status</th>
+<th class="px-8 py-4 font-medium text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5 text-body-md text-[14px]">
+<tr class="hover:bg-white/[0.02] transition-colors">
+<td class="px-8 py-4">
+<div class="w-20 h-12 rounded bg-surface-variant overflow-hidden border border-white/10">
+<img class="w-full h-full object-cover" data-alt="A high-end matte black supercar parked in a dimly lit, minimalist architectural garage. The scene features dramatic obsidian voids and cinematic top lighting that casts sharp specular highlights along the car's carbon fiber curves. The aesthetic is ultra-modern, luxury, and professional, perfectly reflecting an exclusive automotive atelier brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuWd_dW8c9JYYu7C1bvVj0ZpEx5GjZbTuDyZ-cXLw0a64cftscVUa223R2b7RFqeQx5xmZMJbkudISdLavlekR20YfI9rtzfJd9j5pZoFLxWJixGxXYFpUjo5BlOEiHP5Wp2J5_fzdN1a6PuIqnC-eS0PPmhq96JyJarISvFX-V6JK1NyeEzKK_GMHJ5b33KIgThzroo3M69R7le3Tr0vrDU0A6hspWEDehejsNz00D_-61YTeLGsHd5Pt8s6n3OMzzbxJkSwrCqo"/>
+</div>
+</td>
+<td class="px-6 py-4 font-label-md tracking-wider">AETERNA</td>
+<td class="px-6 py-4 text-on-surface">Veloce Spykder</td>
+<td class="px-6 py-4 font-label-md">$1,240,000</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-label-md bg-green-500/10 text-green-400 border border-green-500/20 uppercase tracking-tighter">Available</span>
+</td>
+<td class="px-8 py-4 text-right">
+<button class="text-secondary-container hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-white/[0.02] transition-colors">
+<td class="px-8 py-4">
+<div class="w-20 h-12 rounded bg-surface-variant overflow-hidden border border-white/10">
+<img class="w-full h-full object-cover" data-alt="Close-up of a vibrant red luxury Italian sports car focusing on the headlight and aerodynamic front bumper. The car is showcased in a high-tech studio environment with soft-box lighting reflecting off its polished glass-like finish. The surrounding space is dark and moody, emphasizing the raw power and technical precision of the vehicle's design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFJ9SiLDDSeKQPnWuw0kxOqoby3Vy2qRdVCznplYGs_b0IHP_WT8ozAFvH8bBJL8qTGhEvRik5b0UvR6z-zlq69iHYoF6kWfEHMFUTBDQRCwa9xz1dg_XqvPdVdbDfDe0NH-S17DfOwEaESKdHHBlR56tezX-7qmbnmUNaAgc7YjO-E5CtBpVWoWSFMCmFjAhW979A7E5wvAZvfHDhjs50wWVrqCwEy8oZKh1jk_0rzgx00Mio_Gd6hWIUkfejMSwW4gGlOElC1IQ"/>
+</div>
+</td>
+<td class="px-6 py-4 font-label-md tracking-wider">LUSSO</td>
+<td class="px-6 py-4 text-on-surface">Stratos GT</td>
+<td class="px-6 py-4 font-label-md">$890,000</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-label-md bg-gold/10 text-gold border border-gold/20 uppercase tracking-tighter">Reserved</span>
+</td>
+<td class="px-8 py-4 text-right">
+<button class="text-secondary-container hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-white/[0.02] transition-colors">
+<td class="px-8 py-4">
+<div class="w-20 h-12 rounded bg-surface-variant overflow-hidden border border-white/10">
+<img class="w-full h-full object-cover" data-alt="A sleek silver electric hypercar silhouette positioned in front of a futuristic, glowing digital screen wall displaying abstract data patterns. The setting is a minimalist supercar atelier with a polished concrete floor that reflects the silver brushed metal finish of the car. Cinematic atmospheric lighting creates a sense of physical presence and technical exclusivity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaUD_RUoTL4ljWc42JNqx69NEQKGdyoXEWm0F7aXDIiVsY3sayBhGpDpFTfnrhGM_TXtSAEKFm7HQaJsiR8LQc97qh9LovvmOuRZ2oPH414xHIENflIIWtXktGpnsYGAGu-MGd4FM7Yqwu0JWZqaf_WsAx2rZYoKkeQS2DcFkkcn2XpeZTgbishf_8dG-q2nGjrEEuiLCGkF7Kue5E2_t_4gvbJ2jOkPVdGRw-7LthRkaFTLhyF3UvUCdljVnrC_Ybs-bPw0IPojU"/>
+</div>
+</td>
+<td class="px-6 py-4 font-label-md tracking-wider">VOLTARA</td>
+<td class="px-6 py-4 text-on-surface">E-Hyper 01</td>
+<td class="px-6 py-4 font-label-md">$2,100,000</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-label-md bg-green-500/10 text-green-400 border border-green-500/20 uppercase tracking-tighter">Available</span>
+</td>
+<td class="px-8 py-4 text-right">
+<button class="text-secondary-container hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-8 py-6 bg-surface-container-low/50 flex justify-between items-center">
+<p class="text-secondary-container text-[12px] font-body-md">Showing 3 of 142 units</p>
+<div class="flex gap-4">
+<button class="text-secondary-container hover:text-on-surface text-[12px] uppercase font-label-md tracking-widest disabled:opacity-30" disabled="">Prev</button>
+<button class="text-on-surface hover:text-gold text-[12px] uppercase font-label-md tracking-widest">Next</button>
+</div>
+</div>
+</section>
+</div>
+<footer class="mt-20 border-t border-white/10 py-12 px-10 flex flex-col items-center gap-8 bg-surface-dim">
+<h2 class="font-display-lg text-headline-lg-mobile text-on-surface tracking-tighter">ATELIER</h2>
+<div class="flex gap-12">
+<a class="font-label-md text-label-md uppercase text-secondary-container hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md uppercase text-secondary-container hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-md text-label-md uppercase text-secondary-container hover:text-primary transition-colors" href="#">Contact</a>
+<a class="font-label-md text-label-md uppercase text-secondary-container hover:text-primary transition-colors" href="#">Careers</a>
+</div>
+<p class="font-label-md text-[10px] text-secondary tracking-widest opacity-40">© 2024 ATELIER SUPERCAR ATELIER. ALL RIGHTS RESERVED.</p>
+</footer>
+</main>
+<!-- Custom Micro-interaction Script -->
+<script>
+        // Subtle Mouse Follow Effect on Glass Panels
+        document.querySelectorAll('.glass-panel').forEach(panel => {
+            panel.addEventListener('mousemove', e => {
+                const rect = panel.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                panel.style.setProperty('--mouse-x', `${x}px`);
+                panel.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>

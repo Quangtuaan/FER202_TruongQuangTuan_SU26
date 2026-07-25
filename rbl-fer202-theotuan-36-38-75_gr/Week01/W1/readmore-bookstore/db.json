@@ -1,0 +1,98 @@
+{
+    "categories": [
+        {
+            "id": "1",
+            "name": "Công nghệ"
+        },
+        {
+            "id": "2",
+            "name": "Kinh doanh"
+        },
+        {
+            "id": "3",
+            "name": "Văn học"
+        },
+        {
+            "id": "4",
+            "name": "Kỹ năng sống"
+        },
+        {
+            "id": "5",
+            "name": "Thiếu nhi"
+        }
+    ],
+    "books": [
+        {
+            "id": "1",
+            "title": "Clean Code",
+            "author": "Robert C. Martin",
+            "price": 250000,
+            "categoryId": "1",
+            "image": "https://placehold.co/300x420?text=Clean+Code",
+            "description": "Hướng dẫn viết mã nguồn sạch."
+        },
+        {
+            "id": "2",
+            "title": "The Pragmatic Programmer",
+            "author": "Andrew Hunt",
+            "price": 280000,
+            "categoryId": "1",
+            "image": "https://placehold.co/300x420?text=Pragmatic+Programmer",
+            "description": "Kinh nghiệm thực tế dành cho lập trình viên."
+        },
+        {
+            "id": "3",
+            "title": "Nhà Giả Kim",
+            "author": "Paulo Coelho",
+            "price": 89000,
+            "categoryId": "3",
+            "image": "https://placehold.co/300x420?text=Nha+Gia+Kim",
+            "description": "Hành trình theo đuổi ước mơ."
+        },
+        {
+            "id": "4",
+            "title": "Đắc Nhân Tâm",
+            "author": "Dale Carnegie",
+            "price": 95000,
+            "categoryId": "4",
+            "image": "https://placehold.co/300x420?text=Dac+Nhan+Tam",
+            "description": "Nghệ thuật giao tiếp và xây dựng quan hệ."
+        },
+        {
+            "id": "5",
+            "title": "Tư Duy Nhanh Và Chậm",
+            "author": "Daniel Kahneman",
+            "price": 175000,
+            "categoryId": "4",
+            "image": "https://placehold.co/300x420?text=Tu+Duy",
+            "description": "Khám phá cách con người đưa ra quyết định."
+        },
+        {
+            "id": "6",
+            "title": "Khởi Nghiệp Tinh Gọn",
+            "author": "Eric Ries",
+            "price": 150000,
+            "categoryId": "2",
+            "image": "https://placehold.co/300x420?text=Khoi+Nghiep",
+            "description": "Phương pháp phát triển doanh nghiệp hiệu quả."
+        },
+        {
+            "id": "7",
+            "title": "Dế Mèn Phiêu Lưu Ký",
+            "author": "Tô Hoài",
+            "price": 65000,
+            "categoryId": "5",
+            "image": "https://placehold.co/300x420?text=De+Men",
+            "description": "Tác phẩm thiếu nhi nổi tiếng của Tô Hoài."
+        },
+        {
+            "id": "8",
+            "title": "Cho Tôi Xin Một Vé Đi Tuổi Thơ",
+            "author": "Nguyễn Nhật Ánh",
+            "price": 85000,
+            "categoryId": "3",
+            "image": "https://placehold.co/300x420?text=Tuoi+Tho",
+            "description": "Câu chuyện nhẹ nhàng về tuổi thơ."
+        }
+    ]
+}

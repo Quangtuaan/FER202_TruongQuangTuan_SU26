@@ -1,0 +1,20 @@
+.tech-prowess-section {
+  background-color: #1a1a1a;
+  padding: 4rem 0;
+  border-bottom: 1px solid #333;
+}
+
+.tech-prowess-col:last-child {
+  border-right: none !important;
+}
+
+/* On mobile, remove border right and add border bottom instead */
+@media (max-width: 991px) {
+  .tech-prowess-col {
+    border-right: none !important;
+    border-bottom: 1px solid #333 !important;
+  }
+  .tech-prowess-col:last-child {
+    border-bottom: none !important;
+  }
+}

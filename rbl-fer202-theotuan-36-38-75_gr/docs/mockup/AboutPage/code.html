@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>About | ATELIER Supercars</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;700;800&amp;family=Manrope:wght@400;600&amp;family=Space+Grotesk:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anybody:wght@100..900&amp;family=Manrope:wght@100..900&amp;family=Space+Grotesk:wght@100..900&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-surface {
+            background: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+
+        .glass-surface::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid transparent;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 50%, transparent 100%) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .gold-glow:hover {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .spec-divider {
+            height: 1px;
+            background: rgba(192, 192, 192, 0.1);
+        }
+
+        body {
+            background-color: #050505;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#141313",
+                        "surface-container-low": "#1c1b1b",
+                        "error": "#ffb4ab",
+                        "surface-container-high": "#2b2a2a",
+                        "on-background": "#e5e2e1",
+                        "tertiary-container": "#040505",
+                        "surface-variant": "#353434",
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#c6c6c6",
+                        "outline": "#8e9192",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "secondary-container": "#4a4949",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-secondary-container": "#bab8b7",
+                        "surface": "#141313",
+                        "outline-variant": "#444748",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "on-primary": "#313030",
+                        "on-tertiary": "#2f3131",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container-highest": "#353434",
+                        "surface-container": "#201f1f",
+                        "primary-fixed": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "tertiary-fixed": "#e3e2e2",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "background": "#141313",
+                        "surface-bright": "#3a3939",
+                        "on-surface": "#e5e2e1",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "primary-container": "#050505",
+                        "secondary": "#c8c6c5",
+                        "secondary-fixed": "#e5e2e1",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "primary": "#c9c6c5",
+                        "on-primary-container": "#797777",
+                        "surface-tint": "#c9c6c5",
+                        "on-secondary": "#313030",
+                        "on-primary-fixed": "#1c1b1b",
+                        "inverse-primary": "#5f5e5e",
+                        "on-error": "#690005",
+                        "on-tertiary-container": "#767777",
+                        "on-primary-fixed-variant": "#474646"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "container-max": "1440px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Anybody"],
+                        "body-lg": ["Manrope"],
+                        "headline-lg-mobile": ["Anybody"],
+                        "body-md": ["Manrope"],
+                        "label-md": ["Space Grotesk"],
+                        "display-lg": ["Anybody"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "0.03em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "0.03em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "display-lg": ["72px", { "lineHeight": "80px", "letterSpacing": "0.05em", "fontWeight": "800" }]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-primary-container text-on-surface selection:bg-primary/30">
+    <!-- Top Navigation -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-white/10 flex justify-between items-center px-margin-desktop py-4 w-full">
+        <div class="font-display-lg text-headline-lg tracking-tighter text-on-surface">ATELIER</div>
+        <div class="hidden md:flex gap-8 items-center">
+            <a class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-colors"
+                href="#">Showroom</a>
+            <a class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-colors"
+                href="#">Comparison</a>
+            <a class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-colors"
+                href="#">Journal</a>
+            <a class="font-label-md text-label-md uppercase tracking-widest text-primary border-b-2 border-primary pb-1"
+                href="#">About</a>
+        </div>
+        <div class="flex gap-6 items-center">
+            <button
+                class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-colors">Favorites</button>
+            <button
+                class="font-label-md text-label-md uppercase tracking-widest bg-primary text-on-primary px-6 py-2 transition-transform active:scale-95">Sign
+                In</button>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <header class="relative min-h-[819px] flex flex-col justify-center px-margin-desktop overflow-hidden pt-24">
+
+        <div class="relative z-10 max-w-4xl">
+            <span
+                class="inline-block px-3 py-1 bg-white/10 backdrop-blur-md font-label-md text-label-md uppercase tracking-widest mb-6 border border-white/5">Excellence
+                Defined</span>
+            <h1 class="font-display-lg text-display-lg text-white mb-6 leading-tight">About ATELIER</h1>
+            <p class="font-body-lg text-body-lg text-secondary max-w-2xl">A curated destination for the world’s most
+                exceptional supercars. We bridge the gap between engineering perfection and discerning collectors.</p>
+        </div>
+        <div class="absolute bottom-12 right-margin-desktop hidden lg:block animate-bounce">
+            <span class="material-symbols-outlined text-primary text-4xl">keyboard_double_arrow_down</span>
+        </div>
+    </header>
+    <main class="relative z-10">
+        <!-- Brand Story Section -->
+        <section class="py-24 px-margin-desktop bg-surface-container-lowest">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+                <div class="space-y-8">
+                    <h2 class="font-headline-lg text-headline-lg text-white uppercase tracking-tighter">The Pursuit of
+                        Absolute <br /><span class="text-primary">Performance</span></h2>
+                    <div class="spec-divider w-24 bg-[#D4AF37]"></div>
+                    <p class="font-body-lg text-body-lg text-secondary-fixed-dim leading-relaxed">
+                        Founded on the principle that a car is more than a vehicle—it is a masterpiece of kinetic
+                        art—ATELIER has spent over a decade curating the most exclusive automotive inventory on the
+                        planet. Our showroom isn't just a place of commerce; it's a sanctuary for the mechanical
+                        avant-garde.
+                    </p>
+                    <p class="font-body-lg text-body-lg text-secondary-fixed-dim leading-relaxed">
+                        From the roaring V12 legends of the past to the silent, lightning-fast hyper-electrics of the
+                        future, we provide a seamless acquisition experience tailored for those who demand nothing less
+                        than perfection. Every vehicle in our collection undergoes a 200-point technical validation by
+                        factory-trained artisans.
+                    </p>
+                </div>
+                <div class="relative aspect-[4/5] glass-surface overflow-hidden group">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                        data-alt="A cinematic, high-contrast photograph of a sleek carbon fiber supercar parked in a minimalist obsidian showroom. Soft gold lighting accents the sharp aerodynamic lines of the car, reflecting off a polished black floor. The atmosphere is quiet, exclusive, and luxurious, with a deep midnight color palette and subtle metallic glints."
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAF2NgUilGOmAeqW39di9av_hYyoi-mg84XnwVscrTRRxcaChf15VRyMQn1ckj5rmcL_blO5lyWiUE18lSZrK8f0D99hHpiV2QWmoMj9C-wHSK8UDXR-lN9gsS1cL2Y75UZDobKxSSPEKQ4OKLgxi1JrJX0Yu9DhN9YnJwFDQyzKBS13K1_J-GcUYR8RJWHKBTNa-1a7Cun9lBmHEGMzf_4ufuVzgbsSUpZN80-pPDx8BR4tPywSAYeAEE1cPLgj6f9GXLp9CeXuUM')">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                </div>
+            </div>
+        </section>
+        <!-- Mission Vision Values (Bento Grid) -->
+        <section class="py-24 px-margin-desktop bg-primary-container">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Mission -->
+                <div
+                    class="glass-surface p-10 flex flex-col justify-between min-h-[320px] transition-all hover:translate-y-[-8px]">
+                    <div>
+                        <span class="material-symbols-outlined text-[#D4AF37] text-4xl mb-6">workspace_premium</span>
+                        <h3 class="font-headline-lg text-headline-lg mb-4 text-white">Mission</h3>
+                        <p class="font-body-md text-body-md text-secondary">To redefine automotive luxury through
+                            transparency, technical expertise, and an unwavering commitment to the world's most rare
+                            vehicles.</p>
+                    </div>
+                </div>
+                <!-- Vision -->
+                <div
+                    class="glass-surface p-10 flex flex-col justify-between min-h-[320px] transition-all hover:translate-y-[-8px]">
+                    <div>
+                        <span class="material-symbols-outlined text-[#D4AF37] text-4xl mb-6">visibility</span>
+                        <h3 class="font-headline-lg text-headline-lg mb-4 text-white">Vision</h3>
+                        <p class="font-body-md text-body-md text-secondary">To become the global gold standard for
+                            hypercar acquisition and collection management for the next generation of enthusiasts.</p>
+                    </div>
+                </div>
+                <!-- Values -->
+                <div
+                    class="glass-surface p-10 flex flex-col justify-between min-h-[320px] transition-all hover:translate-y-[-8px]">
+                    <div>
+                        <span class="material-symbols-outlined text-[#D4AF37] text-4xl mb-6">shield_with_heart</span>
+                        <h3 class="font-headline-lg text-headline-lg mb-4 text-white">Values</h3>
+                        <p class="font-body-md text-body-md text-secondary">Integrity in every transaction, technical
+                            precision in every inspection, and an obsession with the details that others overlook.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Stats Grid -->
+        <section class="py-24 px-margin-desktop bg-surface-dim">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-gutter border-y border-white/5 py-16">
+                <div class="text-center group">
+                    <div
+                        class="font-display-lg text-headline-lg text-[#D4AF37] mb-2 transition-transform group-hover:scale-110">
+                        250+</div>
+                    <div class="font-label-md text-label-md uppercase tracking-widest text-secondary">Supercars Sold
+                    </div>
+                </div>
+                <div class="text-center group border-l border-white/5">
+                    <div
+                        class="font-display-lg text-headline-lg text-[#D4AF37] mb-2 transition-transform group-hover:scale-110">
+                        30+</div>
+                    <div class="font-label-md text-label-md uppercase tracking-widest text-secondary">Luxury Brands
+                    </div>
+                </div>
+                <div class="text-center group border-l border-white/5">
+                    <div
+                        class="font-display-lg text-headline-lg text-[#D4AF37] mb-2 transition-transform group-hover:scale-110">
+                        10+</div>
+                    <div class="font-label-md text-label-md uppercase tracking-widest text-secondary">Years Experience
+                    </div>
+                </div>
+                <div class="text-center group border-l border-white/5">
+                    <div
+                        class="font-display-lg text-headline-lg text-[#D4AF37] mb-2 transition-transform group-hover:scale-110">
+                        5-Star</div>
+                    <div class="font-label-md text-label-md uppercase tracking-widest text-secondary">Client Service
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Showcase Image Section -->
+        <section class="py-24 px-margin-desktop overflow-hidden">
+            <div class="relative w-full h-[600px] glass-surface overflow-hidden">
+                <img class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-1000"
+                    data-alt="A wide-angle, cinematic view of a luxury supercar showroom with a minimalist architectural design. The ceiling features recessed linear LED lighting strips that guide the eye toward a row of iconic Italian and German hypercars. The flooring is seamless grey micro-cement, reflecting the intricate details of the vehicles. The mood is silent, powerful, and impeccably clean, representing the ultimate high-end automotive atelier."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxpPN_Y80o4C3tkDN2a192s8LVNuzAKWxSalnkLD3-CgTEC4cu-OqfClxyIQ4fKc1Khs3UFG7G4mGusk2ngtc2-BtfFi9a0Dov6Bc161AWS6Aa53AOVTyWmUv-bX21dMDGm7elw89YDVRqONi5pxz5bCcIqQo1R-5s3ZFtDeqy3yrda_0M2cKWUfssWLrZbDYLAWMaYOAKOj9J4q7CXHtXim04oyV58MLYBPdaNfFGiyaxqzsUNptvxwR3i0beOORvSgzn2IA5yR0" />
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent flex items-center p-16">
+                    <div class="max-w-xl">
+                        <h2 class="font-headline-lg text-headline-lg text-white mb-6 uppercase">The Atelier Experience
+                        </h2>
+                        <p class="font-body-lg text-body-lg text-secondary mb-8">Our physical showroom is a bespoke
+                            space designed to showcase mechanical excellence in its purest form. Every viewing is
+                            private, every interaction is personal.</p>
+                        <button
+                            class="bg-[#D4AF37] text-black font-label-md text-label-md uppercase px-10 py-4 gold-glow transition-all active:scale-95">Schedule
+                            a Visit</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Global Presence / CTA -->
+        <section class="py-24 px-margin-desktop text-center bg-surface-container-low border-t border-white/5">
+            <h2 class="font-display-lg text-headline-lg text-white mb-8">Ready to start your journey?</h2>
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                <button
+                    class="border border-secondary px-10 py-4 font-label-md text-label-md uppercase tracking-widest text-on-surface hover:bg-white/5 transition-all">Download
+                    Catalogue</button>
+                <button
+                    class="bg-primary text-on-primary px-10 py-4 font-label-md text-label-md uppercase tracking-widest transition-all active:scale-95">Contact
+                    Specialist</button>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="w-full py-12 bg-surface-dim border-t border-white/10 flex flex-col items-center gap-8 px-margin-desktop">
+        <div class="font-display-lg text-headline-lg-mobile text-on-surface">ATELIER</div>
+        <div class="flex gap-12 flex-wrap justify-center">
+            <a class="font-label-md text-label-md uppercase text-secondary-container hover:text-primary transition-colors"
+                href="#">Privacy Policy</a>
+            <a class="font-label-md text-label-md uppercase text-secondary-container hover:text-primary transition-colors"
+                href="#">Terms of Service</a>
+            <a class="font-label-md text-label-md uppercase text-secondary-container hover:text-primary transition-colors"
+                href="#">Contact</a>
+            <a class="font-label-md text-label-md uppercase text-secondary-container hover:text-primary transition-colors"
+                href="#">Careers</a>
+        </div>
+        <div class="spec-divider w-full max-w-2xl opacity-20"></div>
+        <p class="font-label-md text-label-md uppercase text-secondary">© 2024 ATELIER SUPERCAR ATELIER. ALL RIGHTS
+            RESERVED.</p>
+    </footer>
+    <script>
+        // Micro-interaction for numbers counting up
+        document.addEventListener('DOMContentLoaded', () => {
+            const stats = document.querySelectorAll('.font-display-lg');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100');
+                        entry.target.classList.remove('opacity-0');
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            stats.forEach(stat => {
+                stat.classList.add('transition-all', 'duration-1000');
+                observer.observe(stat);
+            });
+        });
+    </script>
+</body>
+
+</html>

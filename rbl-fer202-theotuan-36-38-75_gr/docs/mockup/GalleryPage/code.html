@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gallery | ATELIER Supercar Atelier</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;700;800&amp;family=Manrope:wght@400;500&amp;family=Space+Grotesk:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#141313",
+                    "surface-container-low": "#1c1b1b",
+                    "error": "#ffb4ab",
+                    "surface-container-high": "#2b2a2a",
+                    "on-background": "#e5e2e1",
+                    "tertiary-container": "#040505",
+                    "surface-variant": "#353434",
+                    "on-error-container": "#ffdad6",
+                    "tertiary": "#c6c6c6",
+                    "outline": "#8e9192",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "secondary-container": "#4a4949",
+                    "on-surface-variant": "#c4c7c7",
+                    "on-secondary-container": "#bab8b7",
+                    "surface": "#141313",
+                    "outline-variant": "#444748",
+                    "on-tertiary-fixed-variant": "#464747",
+                    "on-primary": "#313030",
+                    "on-tertiary": "#2f3131",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-container-highest": "#353434",
+                    "surface-container": "#201f1f",
+                    "primary-fixed": "#e5e2e1",
+                    "error-container": "#93000a",
+                    "surface-container-lowest": "#0e0e0e",
+                    "tertiary-fixed": "#e3e2e2",
+                    "inverse-on-surface": "#313030",
+                    "on-secondary-fixed-variant": "#474646",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "background": "#141313",
+                    "surface-bright": "#3a3939",
+                    "on-surface": "#e5e2e1",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "primary-container": "#050505",
+                    "secondary": "#c8c6c5",
+                    "secondary-fixed": "#e5e2e1",
+                    "tertiary-fixed-dim": "#c6c6c6",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "primary": "#c9c6c5",
+                    "on-primary-container": "#797777",
+                    "surface-tint": "#c9c6c5",
+                    "on-secondary": "#313030",
+                    "on-primary-fixed": "#1c1b1b",
+                    "inverse-primary": "#5f5e5e",
+                    "on-error": "#690005",
+                    "on-tertiary-container": "#767777",
+                    "on-primary-fixed-variant": "#474646"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "container-max": "1440px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Anybody"],
+                    "body-lg": ["Manrope"],
+                    "headline-lg-mobile": ["Anybody"],
+                    "body-md": ["Manrope"],
+                    "label-md": ["Space Grotesk"],
+                    "display-lg": ["Anybody"]
+            },
+            "fontSize": {
+                    "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "0.03em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "0.03em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "0.05em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #050505;
+            color: #e5e2e1;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .glass-card {
+            background: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .specular-border {
+            position: relative;
+        }
+
+        .specular-border::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid transparent;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 50%, rgba(255,255,255,0) 100%) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-auto-rows: 250px;
+            gap: 24px;
+        }
+
+        .item-tall { grid-row: span 2; }
+        .item-wide { grid-column: span 2; }
+
+        @media (max-width: 768px) {
+            .masonry-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 300px;
+            }
+            .item-wide { grid-column: span 1; }
+        }
+
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .active-filter {
+            color: #D4AF37;
+            border-bottom: 2px solid #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-background">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 nav-blur border-b border-white/10 flex justify-between items-center px-margin-desktop py-4 w-full">
+<div class="font-display-lg text-headline-lg tracking-tighter text-on-surface">ATELIER</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-colors" href="#">Showroom</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-colors" href="#">Comparison</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-colors" href="#">Journal</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-colors" href="#">About</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-colors">Favorites</button>
+<button class="px-6 py-2 bg-[#D4AF37] text-black font-label-md text-label-md uppercase tracking-widest active:scale-95 transition-transform">Sign In</button>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Header Section -->
+<header class="mb-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg uppercase mb-4 tracking-tighter">Gallery</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl">Explore cinematic visuals of the world’s most desired machines.</p>
+</div>
+<!-- Filter Tabs -->
+<div class="flex flex-wrap gap-x-8 gap-y-4 border-b border-white/10 pb-2">
+<button class="font-label-md text-label-md uppercase tracking-widest active-filter transition-all">All</button>
+<button class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-all">Exterior</button>
+<button class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-all">Interior</button>
+<button class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-all">Cockpit</button>
+<button class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-all">Wheels</button>
+<button class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-on-surface transition-all">Videos</button>
+</div>
+</div>
+</header>
+<!-- Gallery Grid -->
+<div class="masonry-grid">
+<!-- Card 1: Wide feature -->
+<div class="group relative overflow-hidden glass-card item-wide specular-border cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A cinematic profile shot of a sleek obsidian black supercar parked in a midnight showroom with dramatic spotlighting. The lighting highlights the sharp aerodynamic lines and polished carbon fiber texture against a dark, moody background. Subtle gold accents on the brake calipers shimmer under the precise studio lights. The atmosphere is exclusive, powerful, and technical." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAui5vNQso0OZEtfD0gWPdoSYyXOMpPs1Uup-dsJgh8SkztmePFfz4RNeD06BeZReQTORTahsUWOT9n1THpGBivzqT74diOmdY6MgY_WuWV5SBJhURYqyJ2NVGb72dz_Az1IZVmHpLx7AIaJeNBZPL35avZH73Z0_AxtppQi6P7wLawT9wIqXcOkROs6xMnhHsfimgEQnCoLjJZ_B93yKEVb-PT_4QpMFbt73B5xD7816PXxLPXH-MklJRF-oeT2T9AIlfoXzJFbgU')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+<span class="font-label-md text-label-md text-[#D4AF37] uppercase mb-2">Exterior</span>
+<h3 class="font-headline-lg text-headline-lg-mobile text-white uppercase tracking-tight">Apex Midnight Edition</h3>
+</div>
+</div>
+<!-- Card 2: Tall item -->
+<div class="group relative overflow-hidden glass-card item-tall specular-border cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A macro detail shot of a supercar's alloy wheel featuring a complex forged multi-spoke design in matte silver. The camera angle is low and dramatic, focusing on the precision engineering and the carbon-ceramic brake disc behind the spokes. Soft ambient light reflects off the metallic surfaces in a dark, minimalist atelier setting. High-contrast lighting emphasizes the technical texture and craftsmanship." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDnzvkRGVoW6gIzW4tFsdgwRs_sFyVCPTe9hAgYwWRtkfubWYaJNEQfj8ftZxMrAr9FqBTD9gKyylCj3133DNj9pLU8wQqU9V0548YaL01n6zTf7ohHZGcKjBHqngDRAD7LLsVHfTdAlOJ4LwWOQPrJ49xq5IVMlsg6R9YDQxqEvPy0tuvHTc6eaIz4mgEEG2FzzniV5FI63jVqngdD4T8bd9U_i8844FYF86NODsWiZF7Z8_TlGxA9nYDOKKAfP4gWgyF5e9JkiXs')">
+</div>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-500"></div>
+<div class="absolute inset-0 flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+<span class="font-label-md text-label-md text-[#D4AF37] uppercase mb-2">Wheels</span>
+<h3 class="font-headline-lg text-headline-lg-mobile text-white uppercase tracking-tight">Forged Magnesium Core</h3>
+</div>
+</div>
+<!-- Card 3: Standard item -->
+<div class="group relative overflow-hidden glass-card specular-border cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="An ultra-modern supercar cockpit interior at night, illuminated by soft amber and cool white ambient LED lighting. The steering wheel is wrapped in fine Alcantara with integrated digital displays glowing in the dark. The dashboard features high-resolution screens showcasing performance telemetry. The atmosphere is high-tech, luxurious, and focused, reminiscent of a high-end aviation flight deck." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDmXX3KfTZwqY8go8n6HhLqoTAUFXuRdk5OhGrgMBReCG8mNt_0zZzc8p7CZfQFPsdd4LwGWNvBt8vvAJoziqO-4oNgMOBuS1f-9Y2jrrvVscrtHTGuZL4_17ZMW9Q2y-x5nBGhtzl1Acpwjm7Z7wcN2RmyH7MAjQMIz3tc5EP2I-hJxGhzmWRLfmJTXIzwMSv1ANPW-FnIFOOxj_Ld44KcGMbqEazO3J_Ohq6NbSqjYmV1UeEHVjnBURho780-SyhGV5JOUkscdz8')">
+</div>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/70 transition-all duration-500 flex items-center justify-center">
+<div class="opacity-0 group-hover:opacity-100 transition-opacity text-center p-4">
+<span class="font-label-md text-label-md text-[#D4AF37] uppercase">Cockpit</span>
+<h4 class="font-body-lg text-white font-bold">Vector Helm</h4>
+</div>
+</div>
+</div>
+<!-- Card 4: Video item -->
+<div class="group relative overflow-hidden glass-card specular-border cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A dynamic action shot of a vibrant red supercar speeding through a neon-lit city tunnel at night. Motion blur effects create a sense of raw power and extreme velocity. The tunnel's architecture features futuristic lighting that reflects off the car's glossy finish. The mood is cinematic, energetic, and high-performance, capturing the essence of technical precision in motion." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBraaTK4XMn_wmP7voWY3mYimwIJEkl2fg3oXMpMUrA4xdf_yiTQWlZh8SLOFRcRSZ50jOO_Fl3F7R1m_q5eVhDduz_emYAdWWvsgXsOeUDjxU-KmKAh1_GUNGdrz9OijrfldxRpeOQgLXRLWx3bBqXE1MwSGoiytfigPdxkBQw77Cmv_6UuCfNev0ZuF98lVwvwG2QohLYjqS6m35lX3YH3iNE-t2DIrjFG-k2iMl4CnOl5dfy5orr5Rt4QvMQ-lP3AQZ0rT4AfWk')">
+</div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-16 h-16 rounded-full border border-white/40 flex items-center justify-center backdrop-blur-md group-hover:scale-110 group-hover:bg-[#D4AF37] group-hover:border-[#D4AF37] transition-all duration-300">
+<span class="material-symbols-outlined text-white group-hover:text-black" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity">
+<p class="font-label-md text-white uppercase">Play Reel: Aerodynamics</p>
+</div>
+</div>
+<!-- Card 5: Tall item -->
+<div class="group relative overflow-hidden glass-card item-tall specular-border cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A vertical composition showing a close-up of a supercar's rear LED taillight assembly with a complex geometric pattern. The lights are glowing intensely against a dark, rainy street background, with raindrops reflecting the light on the car's surface. The design is sharp and aggressive, emphasizing the futuristic aesthetic of a high-end performance machine in a dramatic night environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDhta2UXJHgcQJJ0AmnEXUnTy48bFkXAZiZZ22ixkeTv6bBWS0yi_v3xm63PNibL6_aZhH6aweu-nzD8QcEUKy0hr9aN6SzXueLbeidbZf4LPcVydvFob4-Dh5RcUnCcUIF_hc2NY7FWPwr4BYOZ3qmNVSHhQhFqV7-UgQLlEAAspB_qCOyCtqDJUpPJr0rM7swqpbRxBKqGg2VH4u--CceEpjN_TvBU4pqJnIZJwMdWB1hQ6BqXsWegHcFG7cBHTL7GOq-VwFOfo')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end p-8">
+<span class="font-label-md text-label-md text-[#D4AF37] uppercase mb-2">Exterior</span>
+<h3 class="font-headline-lg text-headline-lg-mobile text-white uppercase tracking-tight">Lumina Signature</h3>
+</div>
+</div>
+<!-- Card 6: Standard -->
+<div class="group relative overflow-hidden glass-card specular-border cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A top-down view of a supercar engine bay, showcasing a masterpiece of engineering with carbon fiber covers and gold-plated heat shields. The lighting is crisp and cold, highlighting the intricate mechanical details and brushed metal finishes. The scene is immaculate and orderly, representing the peak of technical sophistication and high-performance craftsmanship in a luxury atelier setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuASqL3wzV986JDeG_1tlttffUxwCEp6G4Nct8OKRM7nnv0OFislEP8tbsTmv3SuzUmSNX2OiFlbL9H2HRlryQxwkbfea_qnoDlOGupHP84788Il05Mo-dj8WLNFMDFE-V2jYp_9IINJsgnNTe_BwUKfM7dVE3nqS4x282Zgt_aaSQ_eZ9R3uwouCQz8YO1Ba17ADmsxK0LhaZIUNt_d3zs7pOKsfdJ4TzmI5vSlD-kK9FkCkilNWS3Y6jpTYNVDOoP-suGj-WkCCzA')">
+</div>
+<div class="absolute inset-0 flex flex-col justify-end p-6 bg-black/40 group-hover:bg-black/60 transition-all">
+<h4 class="font-body-lg text-white font-bold uppercase opacity-0 group-hover:opacity-100 transition-opacity">V12 Heartbeat</h4>
+</div>
+</div>
+<!-- Card 7: Wide -->
+<div class="group relative overflow-hidden glass-card item-wide specular-border cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A wide cinematic shot of two supercars parked side-by-side in a minimalist concrete architectural space. The setting is illuminated by a single large overhead light source, creating deep shadows and high-contrast reflections on the cars' metallic paint. The mood is silent, powerful, and mysterious, suggesting a meeting of high-performance titans in a secluded, high-end private gallery environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBdhn8MXJJk2S-WRb1wDc0-7il8YZeddsbjTlsxoCwTO36fU7yPH9JB_UMiCfyrcus_dvTz7ernT7RiRHtzolSniygrKdMB-WhYTFs1lq6KMgEhCtv2WKxkKoFtfitg2C21nWDBlnavjiKMO-FxYPKsOx4apVzVLnZvxPKY_OgCgobHFy47AYbXfedD8JDS4Y7m3fFYnL0g9vju9tyFPXIQVgGI0SdT4zvimwesk1kiJOZsga0z5v7POC7-C99V0PdNSI1YSNhTgYk')">
+</div>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/0 transition-all"></div>
+<div class="absolute top-6 right-6">
+<div class="px-4 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+<span class="font-label-md text-xs text-white uppercase">Exclusive Feature</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Technical Spec Grid (Luxury Element) -->
+<section class="mt-32 pt-24 border-t border-white/10">
+<h2 class="font-headline-lg text-headline-lg-mobile uppercase mb-12 tracking-tighter">Technical Mastery</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+<div class="flex flex-col">
+<span class="font-label-md text-secondary uppercase mb-2">Resolution</span>
+<span class="font-display-lg text-headline-lg text-[#D4AF37] tracking-tighter">8K+</span>
+<div class="h-[1px] w-full bg-white/10 mt-4"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-secondary uppercase mb-2">Color Depth</span>
+<span class="font-display-lg text-headline-lg text-[#D4AF37] tracking-tighter">12-BIT</span>
+<div class="h-[1px] w-full bg-white/10 mt-4"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-secondary uppercase mb-2">Framerate</span>
+<span class="font-display-lg text-headline-lg text-[#D4AF37] tracking-tighter">120 FPS</span>
+<div class="h-[1px] w-full bg-white/10 mt-4"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-secondary uppercase mb-2">Dynamic Range</span>
+<span class="font-display-lg text-headline-lg text-[#D4AF37] tracking-tighter">HDR10+</span>
+<div class="h-[1px] w-full bg-white/10 mt-4"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 bg-surface-dim border-t border-white/10 flex flex-col items-center gap-8 px-margin-desktop">
+<div class="font-display-lg text-headline-lg-mobile text-on-surface">ATELIER</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-label-md text-label-md uppercase text-secondary-container hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md uppercase text-secondary-container hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-md text-label-md uppercase text-secondary-container hover:text-primary transition-colors" href="#">Contact</a>
+<a class="font-label-md text-label-md uppercase text-secondary-container hover:text-primary transition-colors" href="#">Careers</a>
+</div>
+<p class="font-label-md text-label-md uppercase text-secondary">© 2024 ATELIER SUPERCAR ATELIER. ALL RIGHTS RESERVED.</p>
+</footer>
+<!-- Lightbox Mockup (Interaction) -->
+<div class="fixed inset-0 z-[100] bg-black/95 backdrop-blur-3xl hidden items-center justify-center p-12 transition-all duration-500 opacity-0" id="lightbox">
+<button class="absolute top-12 right-12 text-white/40 hover:text-white transition-colors" id="close-lightbox">
+<span class="material-symbols-outlined text-4xl">close</span>
+</button>
+<div class="max-w-6xl w-full h-full flex flex-col items-center justify-center">
+<img class="max-h-[819px] object-contain shadow-2xl" data-alt="A high-resolution centerpiece image of a supercar parked in a futuristic, dark garage. The lighting is cinematic, with laser-like beams cutting through subtle atmospheric haze, focusing on the car's carbon fiber weave and mirror-like paint finish. The background is minimalist and industrial, emphasizing the vehicle as a work of technical art." id="lightbox-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2aov3B2a4uqNxBKn4A1nvZIGSlJhnwkaM9sTFs_2ld3AeNz_tcqCw0mpX6p29TOg6OwWFyNhiiMU8UfaxchXYri8XARimm0RotmATIG5iHRvI1NTOOwNpbae6kVmofz6fWA5BeLvtg2LsK7pQAQv9ahhpxalEEwUsv9XAUzYmh-da4rK6wbWu2ARqDiw2rg4mrxEj_uJGjW-NQu9VaYdkBDii4fRv9RT3RD2ZmC2AF9NtbFwcNuF06zmiregCoP84biGfMj3LkSc"/>
+<div class="mt-8 text-center">
+<h2 class="font-headline-lg text-white uppercase tracking-widest mb-2" id="lightbox-title"></h2>
+<p class="font-label-md text-[#D4AF37] uppercase tracking-widest" id="lightbox-category"></p>
+</div>
+</div>
+</div>
+<script>
+        // Lightbox Logic
+        const galleryItems = document.querySelectorAll('.group.glass-card');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxTitle = document.getElementById('lightbox-title');
+        const lightboxCategory = document.getElementById('lightbox-category');
+        const closeBtn = document.getElementById('close-lightbox');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const title = item.querySelector('h3, h4')?.innerText || 'Machine Detail';
+                const category = item.querySelector('span')?.innerText || 'Gallery';
+                
+                lightboxTitle.innerText = title;
+                lightboxCategory.innerText = category;
+                
+                lightbox.classList.remove('hidden');
+                lightbox.classList.add('flex');
+                setTimeout(() => lightbox.classList.add('opacity-100'), 10);
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('opacity-100');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+            }, 500);
+        });
+
+        // Filter Logic (Visual Only)
+        const filterBtns = document.querySelectorAll('button.font-label-md');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active-filter', 'text-on-surface'));
+                if(btn.innerText !== 'SIGN IN' && btn.innerText !== 'FAVORITES') {
+                    btn.classList.add('active-filter');
+                }
+            });
+        });
+
+        // Atmosphere Micro-interactions
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            // Subtle parallax effect on cards if desired, or background shifts
+            const bgX = (x - 0.5) * 20;
+            const bgY = (y - 0.5) * 20;
+            // No direct style change to keep it clean, but could apply to a background grain
+        });
+    </script>
+</body></html>

@@ -1,0 +1,70 @@
+.spec-table-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid var(--color-border);
+  background: rgba(26, 26, 26, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-family: var(--font-body);
+}
+
+.spec-table th {
+  background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+  color: var(--color-gold);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  padding: 20px;
+  border-bottom: 2px solid var(--color-gold);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.spec-table tr {
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--transition-fast);
+}
+
+.spec-table tr:last-child {
+  border-bottom: none;
+}
+
+.spec-table tr:hover {
+  background-color: rgba(212, 175, 55, 0.05);
+}
+
+.spec-table td {
+  padding: 16px 24px;
+  font-size: 0.95rem;
+}
+
+.spec-label {
+  color: var(--color-text-muted);
+  font-weight: 500;
+  width: 40%;
+}
+
+.spec-value {
+  color: var(--color-white);
+  font-weight: 600;
+  text-align: right;
+}
+
+.spec-table-empty {
+  text-align: center;
+  padding: 40px;
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  border: 1px dashed var(--color-border);
+  border-radius: 8px;
+}

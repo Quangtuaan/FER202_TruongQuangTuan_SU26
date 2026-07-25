@@ -1,0 +1,87 @@
+.showroom-intro-section {
+  background: radial-gradient(ellipse at bottom, #121418 0%, #08080a 80%);
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 100px 0;
+  position: relative;
+}
+
+.showroom-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 5vw, 38px);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  background: linear-gradient(180deg, #ffffff 0%, #a8adb7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+}
+
+.showroom-desc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 540px;
+}
+
+/* Stat Box glassmorphism */
+.stat-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  padding: 20px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stat-box:hover {
+  border-color: rgba(197, 168, 128, 0.25);
+  background: rgba(197, 168, 128, 0.03);
+  transform: translateY(-2px);
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-gold);
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Image frame & gold glow */
+.showroom-img-frame {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(197, 168, 128, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.showroom-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.showroom-img-frame:hover .showroom-img {
+  transform: scale(1.03);
+}
+
+.showroom-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(197, 168, 128, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: screen;
+}

@@ -1,0 +1,444 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Anybody:wght@400;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =====================================================
+   ATELIER — Global CSS
+   Design System: Dark Mode + Gold Accent
+   ===================================================== */
+
+/* Import font */
+
+/* CSS Variables — Design Tokens */
+:root {
+  /* Colors */
+  --color-bg: #0b0c10; /* Obsidian Black */
+  --color-surface: #13151a; /* Graphite */
+  --color-surface-2: #1b1d24; /* Charcoal */
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-gold: #c5a880; /* Luxurious Champagne Gold replacing Silver */
+  --color-gold-light: #e2d1b9;
+  --color-text: #f5f5f5;
+  --color-text-muted: #a8adb7;
+  --color-white: #ffffff;
+
+  /* Typography */
+  --font-heading: 'Anybody', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+
+  /* Spacing */
+  --navbar-height: 72px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+
+  /* Luxury Gloss & Gold Effects */
+  --glass-bg: rgba(19, 21, 26, 0.65);
+  --glass-border: rgba(197, 168, 128, 0.18);
+  --gold-glow: 0 0 20px rgba(197, 168, 128, 0.35);
+  --gold-gradient: linear-gradient(135deg, #c5a880 0%, #f3e5ab 50%, #8e7048 100%);
+  --metallic-shine: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 3px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+a {
+  color: var(--color-gold);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+a:hover {
+  color: var(--color-gold-light);
+}
+
+/* Utilities */
+.text-gold { color: var(--color-gold); }
+.bg-surface { background-color: var(--color-surface); }
+.border-gold { border-color: var(--color-gold) !important; }
+
+/* Glass effect with top reflection highlight */
+.glass {
+  background: linear-gradient(135deg, rgba(20, 22, 26, 0.65) 0%, rgba(11, 12, 16, 0.8) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.06), 0 8px 32px rgba(0, 0, 0, 0.45);
+}
+
+/* Section Wrapper Styling */
+.section-wrapper {
+  padding: 60px 0;
+  background-color: var(--color-bg);
+  position: relative;
+}
+
+.section-wrapper h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-white);
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  display: block;
+}
+
+.section-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  text-align: center;
+  margin-bottom: 8px;
+  opacity: 1;
+  transition: opacity var(--transition-normal), letter-spacing var(--transition-normal);
+}
+
+.section-wrapper:hover .section-subtitle {
+  opacity: 1;
+  letter-spacing: 6px;
+}
+
+.section-wrapper h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: var(--color-gold);
+  margin: 10px auto 0;
+  border-radius: 2px;
+  transition: width var(--transition-normal);
+}
+
+.section-wrapper:hover h2::after {
+  width: 100px;
+}
+
+/* =====================================================
+   LUXURY GLOSS & SHIMMER EFFECTS (Week 7 Custom)
+   ===================================================== */
+
+/* Ultra-Premium Glassmorphism Panels */
+.luxury-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  box-shadow: 
+    inset 0 1px 2px rgba(255, 255, 255, 0.05),
+    0 15px 35px rgba(0, 0, 0, 0.6),
+    var(--gold-glow);
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.luxury-glass:hover {
+  border-color: rgba(197, 168, 128, 0.35);
+  box-shadow: 
+    inset 0 1px 2px rgba(255, 255, 255, 0.1),
+    0 20px 40px rgba(0, 0, 0, 0.75),
+    0 0 25px rgba(197, 168, 128, 0.45);
+}
+
+/* Shimmer metallic shine effect container */
+.shimmer-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: var(--metallic-shine);
+  transform: skewX(-25deg);
+  transition: 0.75s;
+}
+
+.shimmer-container:hover::after {
+  left: 150%;
+  transition: 0.75s ease-in-out;
+}
+
+/* Metallic Shimmer Button */
+.btn-gold-shimmer {
+  background: var(--gold-gradient);
+  color: #000000 !important;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(197, 168, 128, 0.3);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.btn-gold-shimmer:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 7px 20px rgba(197, 168, 128, 0.5),
+    0 0 15px rgba(243, 229, 171, 0.4);
+}
+
+.btn-gold-shimmer:active {
+  transform: translateY(0);
+}
+
+.btn-gold-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: var(--metallic-shine);
+  transform: skewX(-25deg);
+}
+
+.btn-gold-shimmer:hover::after {
+  animation: shine-animation 1.2s infinite ease-in-out;
+}
+
+/* Keyframes */
+@keyframes shine-animation {
+  0% {
+    left: -150%;
+  }
+  50% {
+    left: 150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+@keyframes pulse-gold-glow {
+  0% {
+    box-shadow: 0 0 15px rgba(197, 168, 128, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(197, 168, 128, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(197, 168, 128, 0.2);
+  }
+}
+
+@keyframes pulse-heart {
+  0% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.25);
+  }
+  30% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.15);
+  }
+  60% {
+    transform: scale(1);
+  }
+}
+
+@keyframes spinner-glow {
+  0%, 100% {
+    opacity: 0.6;
+    filter: drop-shadow(0 0 5px rgba(197, 168, 128, 0.4));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 25px rgba(197, 168, 128, 0.9));
+  }
+}
+
+/* Glowing spinner container */
+.luxury-spinner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #07080a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.luxury-spinner-logo {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: var(--color-white);
+  animation: spinner-glow 2s infinite ease-in-out;
+  margin-bottom: 20px;
+}
+
+.luxury-spinner-logo span {
+  color: var(--color-gold);
+}
+
+.luxury-spinner-ring {
+  width: 50px;
+  height: 50px;
+  border: 2px solid rgba(197, 168, 128, 0.1);
+  border-top: 2px solid var(--color-gold);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* =====================================================
+   HOMEPAGE SCROLL REVEAL (Week 7 Custom Implementation)
+   ===================================================== */
+
+/* Base Reveal Element Style */
+.reveal-el {
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(6px);
+  transition: 
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform, filter;
+}
+
+/* Reduced displacement on Mobile screens */
+@media (max-width: 768px) {
+  .reveal-el {
+    transform: translateY(20px);
+  }
+}
+
+/* Revealed Active State */
+.reveal-el.revealed {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Stagger Delay Classes */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+.delay-600 { transition-delay: 600ms; }
+.delay-700 { transition-delay: 700ms; }
+.delay-800 { transition-delay: 800ms; }
+
+/* Accessibility support: Disable motion for users who prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-el {
+    transform: none !important;
+    transition-duration: 0.1s !important;
+    transition-delay: 0s !important;
+    filter: none !important;
+  }
+}
+
+/* =====================================================
+   PREMIUM EFFECT ENHANCEMENTS
+   ===================================================== */
+
+/* Text Line Masking wrapper */
+.text-mask-wrapper {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  width: 100%;
+}
+
+/* Ambient Glow for Sections */
+.section-wrapper {
+  position: relative;
+}
+
+.section-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(197, 168, 128, 0.05) 0%, transparent 75%);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.5s ease-out;
+}
+
+.section-wrapper.revealed::before {
+  opacity: 1;
+}
+
+/* Auto Shimmer Swipe on Reveal completion */
+.reveal-el.revealed .car-card::after {
+  animation: shine-animation 1.4s ease-in-out 1;
+  animation-delay: 600ms;
+}
+
+
+
+
